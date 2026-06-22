@@ -3,9 +3,11 @@
 namespace App\Livewire;
 
 use Livewire\Attributes\Locked;
+use Livewire\Attributes\Layout;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 
+#[Layout('layouts.public')]
 #[Title('Glow Healthcare Outreach Initiative')]
 class Home extends Component
 {
