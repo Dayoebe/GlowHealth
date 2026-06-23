@@ -6,8 +6,8 @@
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait-primary",
-  "background_color": "#fbfaf7",
-  "theme_color": "#0a0a0a",
+  "background_color": "#0f172a",
+  "theme_color": "#172554",
   "categories": ["health", "medical", "lifestyle"],
   "icons": [
     {
@@ -34,7 +34,7 @@
       "name": "Care Programs",
       "short_name": "Programs",
       "description": "View Glow Free Medical Initiative services.",
-      "url": "/#programs",
+      "url": "/#services",
       "icons": [
         {
           "src": "/icons/icon-192x192.png",

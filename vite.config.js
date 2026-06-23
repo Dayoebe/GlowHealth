@@ -2,7 +2,7 @@ import {
     defineConfig
 } from 'vite';
 import laravel from 'laravel-vite-plugin';
-import { bunny } from 'laravel-vite-plugin/fonts';
+import { fontsource } from 'laravel-vite-plugin/fonts';
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
@@ -15,10 +15,10 @@ export default defineConfig({
             ],
             refresh: true,
             fonts: [
-                bunny('Ubuntu', {
+                fontsource('Ubuntu', {
                     weights: [400, 500],
                 }),
-                bunny('Montserrat', {
+                fontsource('Montserrat', {
                     weights: [800],
                 }),
             ],
