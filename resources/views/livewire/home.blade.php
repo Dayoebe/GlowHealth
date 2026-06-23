@@ -2,7 +2,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
+        [x-cloak] {
+            display: none !important;
+        }
+
         html {
             scroll-behavior: smooth;
         }
@@ -22,6 +27,53 @@
 
         .gh-mobile-nav::-webkit-scrollbar {
             display: none;
+        }
+
+        .gh-reveal {
+            opacity: 0;
+        }
+
+        .gh-reveal.animate__animated {
+            opacity: 1;
+        }
+
+        .gh-pulse-ring {
+            animation: gh-pulse-ring 2.6s ease-out infinite;
+        }
+
+        .gh-float {
+            animation: gh-float 5.5s ease-in-out infinite;
+        }
+
+        @keyframes gh-pulse-ring {
+            0% {
+                box-shadow: 0 0 0 0 rgba(52, 211, 153, .42);
+            }
+            70% {
+                box-shadow: 0 0 0 16px rgba(52, 211, 153, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(52, 211, 153, 0);
+            }
+        }
+
+        @keyframes gh-float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .gh-reveal,
+            .gh-pulse-ring,
+            .gh-float {
+                animation: none !important;
+                opacity: 1 !important;
+                transform: none !important;
+            }
         }
     </style>
 @endpush
@@ -93,9 +145,45 @@
             'bg' => '#f5f3ff',
         ],
     ];
+
+    $focusPlans = [
+        'screening' => [
+            'label' => 'Medical screening',
+            'title' => 'Screen early, explain clearly, refer safely.',
+            'copy' => 'The field team sets up vitals, blood pressure, blood sugar, malaria risk education, and counseling desks so families can understand their health status before problems become emergencies.',
+            'accent' => '#e11d48',
+        ],
+        'education' => [
+            'label' => 'Health education',
+            'title' => 'Turn health information into household action.',
+            'copy' => 'Short talks and one-on-one guidance cover hypertension, diabetes, malaria prevention, sanitation, nutrition, medication use, maternal warning signs, and when to seek urgent care.',
+            'accent' => '#0e7490',
+        ],
+        'referral' => [
+            'label' => 'Referral support',
+            'title' => 'Keep vulnerable cases visible after outreach day.',
+            'copy' => 'High-risk findings are documented with referral notes, partner clinic contacts, and follow-up lists so people are not left alone after screening.',
+            'accent' => '#047857',
+        ],
+    ];
 @endphp
 
-<div class="gh-page min-h-screen bg-[#fbfaf7] text-neutral-950 antialiased">
+<div
+    class="gh-page min-h-screen bg-[#fbfaf7] text-neutral-950 antialiased"
+    x-data="{
+        activeStation: 0,
+        activeFocus: 'screening',
+        focusPlans: @js($focusPlans),
+        stationCount: {{ count($fieldStations) }},
+        init() {
+            this.$nextTick(() => {
+                setInterval(() => {
+                    this.activeStation = (this.activeStation + 1) % this.stationCount
+                }, 4200)
+            })
+        }
+    }"
+>
     <header class="sticky top-0 z-40 border-b border-zinc-200 bg-white/95 backdrop-blur">
         <div class="mx-auto flex max-w-7xl items-center justify-between gap-3 px-3 py-3 sm:gap-5 sm:px-6 sm:py-4 lg:px-8">
             <a href="#top" class="flex min-w-0 items-center gap-3" aria-label="Glow Healthcare Outreach Initiative home">
@@ -158,17 +246,17 @@
 
         <div class="relative mx-auto grid min-h-[calc(100svh-8rem)] max-w-7xl items-center gap-8 px-4 py-10 sm:min-h-[82svh] sm:gap-10 sm:px-6 sm:py-16 lg:grid-cols-[1fr_0.58fr] lg:px-8 lg:py-24">
             <div class="max-w-3xl">
-                <p class="inline-flex max-w-full rounded-md border border-cyan-200/50 bg-cyan-300/15 px-3 py-1 text-xs font-semibold leading-5 text-cyan-100 sm:text-sm">
+                <p class="animate__animated animate__fadeInDown inline-flex max-w-full rounded-md border border-cyan-200/50 bg-cyan-300/15 px-3 py-1 text-xs font-semibold leading-5 text-cyan-100 sm:text-sm">
                     Non-profit community health outreach led by Dr. Ezekiel Akande
                 </p>
-                <h1 class="gh-display mt-5 max-w-4xl text-4xl font-semibold leading-[1.04] text-white sm:mt-6 sm:text-5xl lg:text-7xl">
+                <h1 class="gh-display animate__animated animate__fadeInUp mt-5 max-w-4xl text-4xl font-semibold leading-[1.04] text-white sm:mt-6 sm:text-5xl lg:text-7xl">
                     Free health outreach for families who need care closer.
                 </h1>
-                <p class="mt-5 max-w-2xl text-sm leading-7 text-zinc-100 sm:mt-6 sm:text-lg sm:leading-8">
+                <p class="animate__animated animate__fadeInUp animate__delay-1s mt-5 max-w-2xl text-sm leading-7 text-zinc-100 sm:mt-6 sm:text-lg sm:leading-8">
                     Glow Healthcare Outreach Initiative is an NGO-style medical outreach bringing free screening, health education, counseling, basic care navigation, and referral support to underserved communities.
                 </p>
 
-                <div class="mt-7 grid gap-3 sm:mt-8 sm:flex sm:flex-row">
+                <div class="animate__animated animate__fadeInUp animate__delay-1s mt-7 grid gap-3 sm:mt-8 sm:flex sm:flex-row">
                     <a
                         href="#programs"
                         class="inline-flex items-center justify-center gap-2 rounded-md bg-rose-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-rose-500 focus:outline-none focus:ring-2 focus:ring-rose-200 focus:ring-offset-2 focus:ring-offset-neutral-950"
@@ -185,7 +273,7 @@
                     </a>
                 </div>
 
-                <dl class="mt-8 grid max-w-2xl grid-cols-3 gap-2 sm:mt-10 sm:gap-3">
+                <dl class="animate__animated animate__fadeInUp animate__delay-2s mt-8 grid max-w-2xl grid-cols-3 gap-2 sm:mt-10 sm:gap-3">
                     <div class="rounded-lg border border-white/15 bg-white/10 p-3 backdrop-blur sm:p-4">
                         <dt class="text-xs font-semibold uppercase text-rose-200">Screening</dt>
                         <dd class="mt-2 text-2xl font-semibold text-white sm:text-3xl">Free</dd>
@@ -201,7 +289,7 @@
                 </dl>
             </div>
 
-            <aside class="rounded-lg border border-white/15 bg-white/12 p-4 shadow-2xl backdrop-blur sm:p-5">
+            <aside class="gh-float rounded-lg border border-white/15 bg-white/12 p-4 shadow-2xl backdrop-blur sm:p-5">
                 <div class="flex items-center gap-3 sm:gap-4">
                     <img
                         src="{{ $ownerImage }}"
@@ -220,7 +308,7 @@
                     <div class="rounded-md border border-white/15 bg-white/10 p-4">
                         <div class="flex items-center justify-between gap-3">
                             <p class="font-medium text-cyan-100">Field clinic readiness</p>
-                            <span class="rounded-md bg-emerald-400 px-2 py-1 text-xs font-semibold text-emerald-950">Active</span>
+                            <span class="gh-pulse-ring rounded-md bg-emerald-400 px-2 py-1 text-xs font-semibold text-emerald-950">Active</span>
                         </div>
                         <p class="mt-2 leading-6 text-zinc-100">Registration, vitals, screening, counseling, referral notes, and follow-up lists prepared before each outreach.</p>
                     </div>
@@ -269,7 +357,11 @@
                         ][$loop->index] ?? ['bar' => '#334155', 'bg' => '#f8fafc'];
                     @endphp
 
-                    <article class="overflow-hidden rounded-lg border border-stone-200 bg-white shadow-sm">
+                    <article
+                        class="gh-reveal overflow-hidden rounded-lg border border-stone-200 bg-white shadow-sm"
+                        x-intersect.once="$el.classList.add('animate__animated', 'animate__fadeInUp')"
+                        style="animation-delay: {{ $loop->index * 120 }}ms"
+                    >
                         <div class="h-1.5" style="background-color: {{ $metricColors['bar'] }}"></div>
                         <div class="p-5" style="background-color: {{ $metricColors['bg'] }}">
                             <p class="text-2xl font-semibold text-neutral-950 sm:text-3xl">{{ $metric['value'] }}</p>
@@ -282,7 +374,10 @@
         </section>
 
         <section id="owner" class="border-y border-stone-200 bg-[#fdf8f0] py-12 sm:py-20">
-            <div class="mx-auto grid max-w-7xl gap-8 px-4 sm:gap-10 sm:px-6 lg:grid-cols-[0.74fr_1.26fr] lg:items-center lg:px-8">
+            <div
+                class="gh-reveal mx-auto grid max-w-7xl gap-8 px-4 sm:gap-10 sm:px-6 lg:grid-cols-[0.74fr_1.26fr] lg:items-center lg:px-8"
+                x-intersect.once="$el.classList.add('animate__animated', 'animate__fadeInUp')"
+            >
                 <div class="relative overflow-hidden rounded-lg border border-amber-200 bg-white shadow-sm">
                     <img
                         src="{{ $ownerImage }}"
@@ -350,7 +445,11 @@
                             $accent = $programAccents[$loop->index] ?? $programAccents[0];
                         @endphp
 
-                        <article class="rounded-lg border bg-white p-5 shadow-sm sm:p-6" style="border-color: {{ $accent['border'] }}">
+                        <article
+                            class="gh-reveal rounded-lg border bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg sm:p-6"
+                            x-intersect.once="$el.classList.add('animate__animated', 'animate__fadeInUp')"
+                            style="border-color: {{ $accent['border'] }}; animation-delay: {{ $loop->index * 110 }}ms"
+                        >
                             <div class="mb-5 flex size-12 items-center justify-center rounded-md" style="background-color: {{ $accent['bg'] }}; color: {{ $accent['text'] }}">
                                 @switch($program['icon'])
                                     @case('clipboard-document-check')
@@ -373,6 +472,49 @@
                             <p class="mt-3 text-sm leading-7 text-stone-600">{{ $program['description'] }}</p>
                         </article>
                     @endforeach
+                </div>
+
+                <div
+                    class="gh-reveal mt-10 overflow-hidden rounded-lg border border-stone-200 bg-white shadow-sm"
+                    x-intersect.once="$el.classList.add('animate__animated', 'animate__fadeInUp')"
+                >
+                    <div class="grid gap-0 lg:grid-cols-[0.72fr_1.28fr]">
+                        <div class="border-b border-stone-200 bg-neutral-950 p-5 text-white sm:p-6 lg:border-b-0 lg:border-r">
+                            <p class="text-sm font-semibold text-amber-200">Outreach focus planner</p>
+                            <h3 class="gh-display mt-3 text-2xl font-semibold leading-tight sm:text-3xl">
+                                Choose the need and see how the outreach responds.
+                            </h3>
+                            <p class="mt-4 text-sm leading-7 text-zinc-300">
+                                Alpine keeps this planner instant on the page, while the content stays practical for host communities, donors, and volunteers.
+                            </p>
+                        </div>
+
+                        <div class="p-5 sm:p-6">
+                            <div class="grid gap-2 sm:grid-cols-3" role="tablist" aria-label="Outreach focus options">
+                                @foreach ($focusPlans as $key => $plan)
+                                    <button
+                                        type="button"
+                                        x-on:click="activeFocus = '{{ $key }}'"
+                                        class="rounded-md border px-4 py-3 text-left text-sm font-semibold transition"
+                                        :class="activeFocus === '{{ $key }}' ? 'border-neutral-950 bg-neutral-950 text-white shadow-sm' : 'border-stone-200 bg-white text-stone-700 hover:border-neutral-400'"
+                                    >
+                                        {{ $plan['label'] }}
+                                    </button>
+                                @endforeach
+                            </div>
+
+                            <div
+                                class="mt-5 rounded-lg border-l-4 bg-[#fbfaf7] p-5"
+                                :style="'border-color: ' + focusPlans[activeFocus].accent"
+                                x-transition.opacity.duration.250ms
+                                x-cloak
+                            >
+                                <p class="text-xs font-semibold uppercase text-stone-500">Selected response</p>
+                                <h4 class="mt-2 text-lg font-semibold text-neutral-950" x-text="focusPlans[activeFocus].title"></h4>
+                                <p class="mt-3 text-sm leading-7 text-stone-700" x-text="focusPlans[activeFocus].copy"></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -400,7 +542,11 @@
                                 ][$loop->index] ?? ['bg' => '#71717a', 'text' => '#fafafa'];
                             @endphp
 
-                            <article class="rounded-lg border border-white/15 bg-white/5 p-4 sm:p-5">
+                            <article
+                                class="gh-reveal rounded-lg border border-white/15 bg-white/5 p-4 transition duration-300 hover:bg-white/10 sm:p-5"
+                                x-intersect.once="$el.classList.add('animate__animated', 'animate__fadeInRight')"
+                                style="animation-delay: {{ $loop->index * 120 }}ms"
+                            >
                                 <div class="flex gap-4">
                                     <span
                                         class="flex size-11 shrink-0 items-center justify-center rounded-md text-sm font-semibold"
@@ -444,7 +590,11 @@
                             $accent = $outreachAccents[$loop->index] ?? $outreachAccents[0];
                         @endphp
 
-                        <article class="rounded-lg border bg-white p-5 shadow-sm sm:p-6" style="border-color: {{ $accent['border'] }}">
+                        <article
+                            class="gh-reveal rounded-lg border bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg sm:p-6"
+                            x-intersect.once="$el.classList.add('animate__animated', 'animate__fadeInUp')"
+                            style="border-color: {{ $accent['border'] }}; animation-delay: {{ $loop->index * 110 }}ms"
+                        >
                             <p class="inline-flex rounded-md px-3 py-1 text-sm font-semibold" style="background-color: {{ $accent['bg'] }}; color: {{ $accent['text'] }}">{{ $outreach['label'] }}</p>
                             <h3 class="mt-5 text-lg font-semibold text-neutral-950">{{ $outreach['title'] }}</h3>
                             <p class="mt-3 text-sm leading-7 text-stone-600">{{ $outreach['description'] }}</p>
@@ -478,7 +628,15 @@
                                 ][$loop->index] ?? ['border' => '#e7e5e4', 'bg' => '#ffffff', 'text' => '#57534e'];
                             @endphp
 
-                            <article class="rounded-lg border p-5" style="border-color: {{ $stationColors['border'] }}; background-color: {{ $stationColors['bg'] }}">
+                            <article
+                                class="gh-reveal rounded-lg border p-5 transition duration-300"
+                                x-intersect.once="$el.classList.add('animate__animated', 'animate__fadeInUp')"
+                                x-on:mouseenter="activeStation = {{ $loop->index }}"
+                                x-on:focusin="activeStation = {{ $loop->index }}"
+                                :class="activeStation === {{ $loop->index }} ? 'scale-[1.02] shadow-lg ring-2 ring-neutral-950 ring-offset-2' : 'shadow-sm'"
+                                style="border-color: {{ $stationColors['border'] }}; background-color: {{ $stationColors['bg'] }}; animation-delay: {{ $loop->index * 110 }}ms"
+                                tabindex="0"
+                            >
                                 @switch($station['icon'])
                                     @case('clipboard-document-check')
                                         <flux:icon.clipboard-document-check class="size-6" style="color: {{ $stationColors['text'] }}" />
@@ -549,6 +707,7 @@
                 <p class="font-medium text-neutral-900">Glow Healthcare Outreach Initiative</p>
             </div>
             <p>Free community screening, prevention education, referral support, and volunteer-led follow-up.</p>
+            <a href="https://www.dayoebe.github.io" class="text-blue-500 hover:text-blue-700">Wireless </a>
         </div>
     </footer>
 </div>
