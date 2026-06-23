@@ -158,16 +158,16 @@
 >
     <header class="sticky top-0 z-50 border-b border-white/70 bg-white/90 shadow-sm backdrop-blur-xl">
         <div class="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
-            <a href="#top" class="flex min-w-0 items-center gap-3" aria-label="Glow FM Free Medical Initiative home">
+            <a href="#top" class="flex min-w-0 items-center gap-3" aria-label="Glow Free Medical Initiative home">
                 <img
                     src="{{ $brandLogo }}"
-                    alt="Glow FM logo"
+                    alt="Glow logo"
                     class="size-11 shrink-0 rounded-xl border border-emerald-100 bg-white object-cover shadow-sm"
                     loading="eager"
                     fetchpriority="high"
                 >
                 <span class="min-w-0">
-                    <span class="gh-display block truncate text-base font-semibold leading-5 text-slate-950 sm:text-lg">Glow FM Free Medical Initiative</span>
+                    <span class="gh-display block truncate text-base font-semibold leading-5 text-slate-950 sm:text-lg">Glow Free Medical Initiative</span>
                     <span class="block truncate text-xs leading-5 text-slate-600">Free healthcare outreach across Ondo State</span>
                 </span>
             </a>
@@ -210,7 +210,7 @@
                 <div>
                     <p class="animate__animated animate__fadeInDown inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white/80 px-4 py-2 text-sm font-semibold text-emerald-800 shadow-sm backdrop-blur">
                         <span class="gh-pulse size-2 rounded-full bg-emerald-500"></span>
-                        Enabled by Glow FM for community health impact
+                        Enabled by Dr. Ezekiel Akande for community health impact
                     </p>
 
                     <h1 class="gh-display animate__animated animate__fadeInUp mt-6 max-w-4xl text-4xl font-semibold leading-[1.04] text-slate-950 sm:text-5xl lg:text-7xl">
@@ -218,7 +218,7 @@
                     </h1>
 
                     <p class="animate__animated animate__fadeInUp animate__delay-1s mt-6 max-w-2xl text-base leading-8 text-slate-700 sm:text-lg">
-                        The Glow FM Free Medical Initiative brings free consultations, health screenings, medications, and health education directly to communities across Ondo State.
+                        The Glow Free Medical Initiative brings free consultations, health screenings, medications, and health education directly to communities across Ondo State.
                     </p>
 
                     <div class="animate__animated animate__fadeInUp animate__delay-1s mt-8 grid gap-3 sm:flex">
@@ -497,10 +497,10 @@
                     <p class="text-sm font-semibold text-teal-700">Why this initiative matters</p>
                     <h2 class="gh-display mt-3 text-3xl font-semibold leading-tight text-slate-950 sm:text-5xl">Healthcare should reach people before crisis does.</h2>
                     <p class="mt-5 text-base leading-8 text-slate-700">
-                        Many families delay seeking healthcare because of cost, distance, or lack of access. The Glow FM Free Medical Initiative exists to bridge that gap by bringing healthcare closer to the people who need it most.
+                        Many families delay seeking healthcare because of cost, distance, or lack of access. The Glow Free Medical Initiative exists to bridge that gap by bringing healthcare closer to the people who need it most.
                     </p>
                     <p class="mt-4 text-sm leading-7 text-slate-600">
-                        Glow FM serves as the public-interest enabler: using trusted community reach, media visibility, and convening power to connect residents, health workers, volunteers, NGOs, government agencies, and sponsors around practical medical outreach.
+                        Glow serves as the public-interest enabler: using trusted community reach, media visibility, and convening power to connect residents, health workers, volunteers, NGOs, government agencies, and sponsors around practical medical outreach.
                     </p>
                 </div>
             </div>
@@ -566,7 +566,7 @@
                         <h2 class="gh-display mt-3 text-3xl font-semibold leading-tight text-slate-950 sm:text-5xl">Our Partners in Community Health</h2>
                     </div>
                     <p class="max-w-xl text-sm leading-7 text-slate-600">
-                        The initiative grows through medical expertise, community trust, responsible sponsorship, and Glow FM's ability to mobilize people for good.
+                        The initiative grows through medical expertise, community trust, responsible sponsorship, and Glow's ability to mobilize people for good.
                     </p>
                 </div>
 
@@ -626,10 +626,10 @@
         <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
             <div>
                 <div class="flex items-center gap-3">
-                    <img src="{{ $brandLogo }}" alt="Glow FM logo" class="size-11 rounded-xl border border-white/10 object-cover">
+                    <img src="{{ $brandLogo }}" alt="Glow logo" class="size-11 rounded-xl border border-white/10 object-cover">
                     <div>
-                        <p class="gh-display text-xl font-semibold">Glow FM Free Medical Initiative</p>
-                        <p class="text-sm text-slate-400">Health impact enabled by Glow FM</p>
+                        <p class="gh-display text-xl font-semibold">Glow Free Medical Initiative</p>
+                        <p class="text-sm text-slate-400">Health impact Enabled by Dr. Ezekiel Akande</p>
                     </div>
                 </div>
                 <p class="mt-5 max-w-xl text-sm leading-7 text-slate-300">
@@ -653,14 +653,14 @@
                     <button type="submit" class="rounded-xl bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300">Subscribe</button>
                 </form>
                 <div class="mt-5 flex gap-3 text-sm text-slate-300">
-                    <a href="https://www.glowfmradio.com" class="hover:text-white">Glow FM</a>
+                    <a href="https://www.glowfmradio.com" class="hover:text-white">Glow</a>
                     <a href="#partners" class="hover:text-white">Partners</a>
                     <a href="#impact" class="hover:text-white">Impact</a>
                 </div>
             </div>
         </div>
         <div class="border-t border-white/10 px-4 py-5 text-center text-xs text-slate-500">
-            &copy; {{ date('Y') }} Glow FM Free Medical Initiative. Built for community health, dignity, and access.
+            &copy; {{ date('Y') }} Glow Free Medical Initiative. Built for community health, dignity, and access.
         </div>
     </footer>
 </div>

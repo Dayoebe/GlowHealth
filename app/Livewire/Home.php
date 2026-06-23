@@ -8,7 +8,7 @@ use Livewire\Attributes\Title;
 use Livewire\Component;
 
 #[Layout('layouts.public')]
-#[Title('Glow FM Free Medical Initiative')]
+#[Title('Glow Free Medical Initiative')]
 class Home extends Component
 {
     /**
@@ -206,7 +206,7 @@ class Home extends Component
      */
     #[Locked]
     public array $partners = [
-        ['name' => 'Glow FM', 'initials' => 'GFM'],
+        ['name' => 'Glow', 'initials' => 'GFM'],
         ['name' => 'Licensed Medical Volunteers', 'initials' => 'LMV'],
         ['name' => 'Community Health Leaders', 'initials' => 'CHL'],
         ['name' => 'Pharmacy Support Partners', 'initials' => 'PSP'],

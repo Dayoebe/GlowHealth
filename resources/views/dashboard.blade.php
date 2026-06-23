@@ -4,7 +4,7 @@
             <div class="rounded-3xl border border-emerald-100 bg-gradient-to-br from-emerald-50 via-white to-cyan-50 p-6 shadow-sm dark:border-emerald-900/40 dark:from-zinc-900 dark:via-zinc-900 dark:to-slate-900">
                 <div class="max-w-3xl">
                     <p class="text-sm font-semibold uppercase tracking-wide text-emerald-700 dark:text-emerald-300">
-                        Glow FM Free Medical Initiative
+                        Glow Free Medical Initiative
                     </p>
                     <h1 class="mt-3 text-2xl font-semibold text-slate-950 dark:text-white sm:text-3xl">
                         Outreach operations dashboard
