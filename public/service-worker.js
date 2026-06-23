@@ -1,4 +1,4 @@
-const CACHE_NAME = 'glow-health-v1';
+const CACHE_NAME = 'glow-medical-v2';
 const PRECACHE_URLS = [
     '/',
     '/offline.html',

@@ -1,7 +1,7 @@
 {
-  "name": "Glow Healthcare Outreach Initiative",
-  "short_name": "Glow Health",
-  "description": "NGO health outreach with free community screenings, prevention education, referral support, and volunteer-led follow-up.",
+  "name": "Glow FM Free Medical Initiative",
+  "short_name": "Glow Medical",
+  "description": "Free medical outreach with consultations, health screenings, medication support, health education, and referrals across Ondo State.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
@@ -33,7 +33,7 @@
     {
       "name": "Care Programs",
       "short_name": "Programs",
-      "description": "View Glow Healthcare outreach programs.",
+      "description": "View Glow FM Free Medical Initiative services.",
       "url": "/#programs",
       "icons": [
         {

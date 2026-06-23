@@ -8,28 +8,33 @@ use Livewire\Attributes\Title;
 use Livewire\Component;
 
 #[Layout('layouts.public')]
-#[Title('Glow Healthcare Outreach Initiative')]
+#[Title('Glow FM Free Medical Initiative')]
 class Home extends Component
 {
     /**
      * @var list<array{value: string, label: string, detail: string}>
      */
     #[Locked]
-    public array $metrics = [
+    public array $heroStats = [
         [
-            'value' => 'Free',
-            'label' => 'Community screening',
-            'detail' => 'Blood pressure, blood sugar, malaria risk checks, basic vitals, and health counseling.',
+            'value' => '5,000+',
+            'label' => 'Residents Reached',
+            'detail' => 'Community members engaged through medical outreaches and health education.',
         ],
         [
-            'value' => 'NGO',
-            'label' => 'Outreach model',
-            'detail' => 'Volunteer-led field teams supported by clinicians, community leaders, and local partners.',
+            'value' => '1,500+',
+            'label' => 'Free Consultations',
+            'detail' => 'Consultations delivered through volunteer clinicians and outreach partners.',
         ],
         [
-            'value' => 'Refer',
-            'label' => 'Continuity of care',
-            'detail' => 'People who need more help are guided toward clinics, hospitals, and follow-up support.',
+            'value' => '800+',
+            'label' => 'Medications Distributed',
+            'detail' => 'Essential medication support provided where clinically appropriate.',
+        ],
+        [
+            'value' => '100+',
+            'label' => 'Volunteers',
+            'detail' => 'Medical and community volunteers supporting organized field care.',
         ],
     ];
 
@@ -37,25 +42,72 @@ class Home extends Component
      * @var list<array{title: string, description: string, icon: string}>
      */
     #[Locked]
-    public array $programs = [
+    public array $trustFeatures = [
         [
-            'title' => 'Free Community Screening Clinics',
-            'description' => 'Pop-up medical outreaches in schools, churches, markets, town halls, and rural communities for blood pressure, blood sugar, temperature, weight, and basic health risk checks.',
-            'icon' => 'clipboard-document-check',
+            'title' => 'Licensed Medical Team',
+            'description' => 'Outreaches are supported by qualified doctors, nurses, pharmacists, laboratory personnel, and allied health professionals.',
+            'icon' => 'shield-check',
         ],
         [
-            'title' => 'Maternal, Child, And Family Wellness',
-            'description' => 'Health talks and counseling for mothers, caregivers, children, and older adults, with attention to nutrition, hygiene, antenatal warning signs, immunization awareness, and home safety.',
+            'title' => 'Community Impact',
+            'description' => 'The initiative begins in Akure and expands through Ondo State with community leaders, volunteers, and host organizations.',
+            'icon' => 'user-group',
+        ],
+        [
+            'title' => 'Free Healthcare Access',
+            'description' => 'Residents receive consultations, screenings, medication support, and health education without paying consultation fees.',
             'icon' => 'heart',
         ],
         [
-            'title' => 'Disease Prevention And Health Education',
-            'description' => 'Plain-language sessions on hypertension, diabetes, malaria prevention, sanitation, medication adherence, mental wellbeing, and when to seek urgent care.',
+            'title' => 'Transparent Operations',
+            'description' => 'Registration, triage, screening, pharmacy support, referrals, and follow-up guidance are organized clearly for every outreach.',
+            'icon' => 'clipboard-document-check',
+        ],
+    ];
+
+    /**
+     * @var list<array{title: string, description: string, icon: string}>
+     */
+    #[Locked]
+    public array $services = [
+        [
+            'title' => 'Medical Consultation',
+            'description' => 'One-on-one consultation with qualified medical professionals for common health concerns.',
+            'icon' => 'user-group',
+        ],
+        [
+            'title' => 'Blood Pressure Screening',
+            'description' => 'Early detection and counseling for hypertension risk and lifestyle adjustments.',
+            'icon' => 'heart',
+        ],
+        [
+            'title' => 'Blood Sugar Testing',
+            'description' => 'Point-of-care checks and guidance for diabetes risk and follow-up care.',
+            'icon' => 'beaker',
+        ],
+        [
+            'title' => 'Malaria Testing',
+            'description' => 'Malaria risk assessment, testing support, prevention education, and treatment guidance.',
+            'icon' => 'plus-circle',
+        ],
+        [
+            'title' => 'Eye Screening',
+            'description' => 'Basic vision checks and referral guidance for residents who need further eye care.',
+            'icon' => 'eye',
+        ],
+        [
+            'title' => 'Health Education',
+            'description' => 'Practical talks on prevention, sanitation, nutrition, medication use, and family wellness.',
             'icon' => 'academic-cap',
         ],
         [
-            'title' => 'Referral Navigation And Patient Follow-Up',
-            'description' => 'Clear referral notes, partner clinic contacts, follow-up calls, and case tracking for people whose screening results suggest they need further medical attention.',
+            'title' => 'Medication Support',
+            'description' => 'Essential medications and pharmacy counseling where prescriptions and supplies permit.',
+            'icon' => 'clipboard-document-check',
+        ],
+        [
+            'title' => 'Referral Services',
+            'description' => 'Clear referral notes and follow-up guidance for conditions requiring advanced care.',
             'icon' => 'shield-check',
         ],
     ];
@@ -64,70 +116,128 @@ class Home extends Component
      * @var list<array{step: string, title: string, description: string}>
      */
     #[Locked]
-    public array $process = [
+    public array $steps = [
         [
             'step' => '01',
-            'title' => 'Assess the community need',
-            'description' => 'Meet local leaders, schools, faith groups, and health workers to understand common illnesses, access barriers, and the safest outreach location.',
+            'title' => 'Register Online',
+            'description' => 'Submit your basic details so the team can plan attendance, triage flow, and outreach supplies.',
         ],
         [
             'step' => '02',
-            'title' => 'Set up the field clinic',
-            'description' => 'Register guests, check vitals, run screening stations, provide health education, counsel families, and document people who need urgent attention.',
+            'title' => 'Receive Confirmation',
+            'description' => 'Get the outreach date, time, venue details, and what to bring for a smoother visit.',
         ],
         [
             'step' => '03',
-            'title' => 'Refer and follow up',
-            'description' => 'Give referral guidance, contact partner facilities where needed, and keep vulnerable cases visible after the outreach day.',
+            'title' => 'Attend the Outreach',
+            'description' => 'Arrive at the venue in Akure or your host community and follow the registration desk guidance.',
+        ],
+        [
+            'step' => '04',
+            'title' => 'Get Screened and Treated',
+            'description' => 'Move through consultation, screening, counseling, pharmacy support, and health education stations.',
+        ],
+        [
+            'step' => '05',
+            'title' => 'Receive Follow-Up Guidance',
+            'description' => 'Leave with referral notes, medication instructions, and practical advice for ongoing care.',
         ],
     ];
 
     /**
-     * @var list<array{label: string, title: string, description: string}>
+     * @var list<array{key: string, value: int, suffix: string, label: string, detail: string}>
      */
     #[Locked]
-    public array $outreaches = [
+    public array $impactMetrics = [
         [
-            'label' => 'Medical outreach',
-            'title' => 'Free screening and counseling days',
-            'description' => 'Community members receive basic checks, private counseling, health education, and referral advice without paying a consultation fee.',
+            'key' => 'patients',
+            'value' => 5000,
+            'suffix' => '+',
+            'label' => 'Patients Served',
+            'detail' => 'Residents reached through outreach services and health education.',
         ],
         [
-            'label' => 'Health education',
-            'title' => 'Prevention talks for families',
-            'description' => 'Interactive sessions help households understand high blood pressure, diabetes, malaria, sanitation, nutrition, medication use, and warning signs.',
+            'key' => 'communities',
+            'value' => 12,
+            'suffix' => '+',
+            'label' => 'Communities Reached',
+            'detail' => 'Starting from Akure and expanding across Ondo State.',
         ],
         [
-            'label' => 'Care connection',
-            'title' => 'Referral support for vulnerable cases',
-            'description' => 'The team documents high-risk findings and works with partner clinics, volunteers, and donors to support next steps where possible.',
+            'key' => 'volunteers',
+            'value' => 100,
+            'suffix' => '+',
+            'label' => 'Medical Volunteers',
+            'detail' => 'Clinicians, students, media professionals, and community workers.',
+        ],
+        [
+            'key' => 'medications',
+            'value' => 800,
+            'suffix' => '+',
+            'label' => 'Free Medications Distributed',
+            'detail' => 'Essential medication support provided through outreach partners.',
         ],
     ];
 
     /**
-     * @var list<array{title: string, detail: string, icon: string}>
+     * @var list<array{name: string, role: string, quote: string}>
      */
     #[Locked]
-    public array $fieldStations = [
+    public array $testimonials = [
         [
-            'title' => 'Registration and triage',
-            'detail' => 'Basic intake, consent, symptoms, medication history, and risk flags before screening.',
-            'icon' => 'clipboard-document-check',
+            'name' => 'Mrs. Funke A.',
+            'role' => 'Community resident, Akure',
+            'quote' => 'The screening helped me discover my blood pressure was high. The team explained what it meant and guided me on the next steps.',
         ],
         [
-            'title' => 'Screening stations',
-            'detail' => 'Blood pressure, blood sugar, temperature, weight, and malaria risk education based on available supplies.',
-            'icon' => 'heart',
+            'name' => 'Tosin Adeyemi',
+            'role' => 'Volunteer coordinator',
+            'quote' => 'What stands out is the organization. Residents are received with respect, screened properly, and referred when they need more care.',
         ],
         [
-            'title' => 'Counseling desk',
-            'detail' => 'One-on-one guidance on lifestyle, medication adherence, family health, and when to visit a clinic.',
-            'icon' => 'academic-cap',
+            'name' => 'Dr. K. Oladimeji',
+            'role' => 'Medical volunteer',
+            'quote' => 'This initiative meets people where they are. It combines consultation, prevention education, and practical referral support.',
+        ],
+    ];
+
+    /**
+     * @var list<array{name: string, initials: string}>
+     */
+    #[Locked]
+    public array $partners = [
+        ['name' => 'Glow FM', 'initials' => 'GFM'],
+        ['name' => 'Licensed Medical Volunteers', 'initials' => 'LMV'],
+        ['name' => 'Community Health Leaders', 'initials' => 'CHL'],
+        ['name' => 'Pharmacy Support Partners', 'initials' => 'PSP'],
+        ['name' => 'Diagnostic Support Teams', 'initials' => 'DST'],
+        ['name' => 'Youth Health Volunteers', 'initials' => 'YHV'],
+    ];
+
+    /**
+     * @var list<array{title: string, category: string, excerpt: string}>
+     */
+    #[Locked]
+    public array $articles = [
+        [
+            'title' => 'Understanding High Blood Pressure',
+            'category' => 'Prevention',
+            'excerpt' => 'Simple signs, risk factors, and daily choices that help families take hypertension seriously.',
         ],
         [
-            'title' => 'Referral and follow-up',
-            'detail' => 'Referral notes, partner contacts, and follow-up lists for people who need further care.',
-            'icon' => 'shield-check',
+            'title' => 'Malaria Prevention Tips',
+            'category' => 'Family Health',
+            'excerpt' => 'Practical steps for protecting children, older adults, and households during mosquito season.',
+        ],
+        [
+            'title' => 'Healthy Living for Families',
+            'category' => 'Wellness',
+            'excerpt' => 'Nutrition, hygiene, movement, sleep, and routine checks that strengthen community health.',
+        ],
+        [
+            'title' => 'Diabetes Awareness',
+            'category' => 'Screening',
+            'excerpt' => 'Why blood sugar testing matters and when residents should seek medical guidance.',
         ],
     ];
 }
