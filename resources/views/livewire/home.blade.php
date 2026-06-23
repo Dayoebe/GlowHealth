@@ -159,13 +159,13 @@
         <div class="relative mx-auto grid min-h-[calc(100svh-8rem)] max-w-7xl items-center gap-8 px-4 py-10 sm:min-h-[82svh] sm:gap-10 sm:px-6 sm:py-16 lg:grid-cols-[1fr_0.58fr] lg:px-8 lg:py-24">
             <div class="max-w-3xl">
                 <p class="inline-flex max-w-full rounded-md border border-cyan-200/50 bg-cyan-300/15 px-3 py-1 text-xs font-semibold leading-5 text-cyan-100 sm:text-sm">
-                    Owned by Dr. Ezekiel Akande, built for community care
+                    Non-profit community health outreach led by Dr. Ezekiel Akande
                 </p>
                 <h1 class="gh-display mt-5 max-w-4xl text-4xl font-semibold leading-[1.04] text-white sm:mt-6 sm:text-5xl lg:text-7xl">
-                    Healthcare outreach with a human glow.
+                    Free health outreach for families who need care closer.
                 </h1>
                 <p class="mt-5 max-w-2xl text-sm leading-7 text-zinc-100 sm:mt-6 sm:text-lg sm:leading-8">
-                    Glow Healthcare Outreach Initiative brings trained care teams into underserved communities for screenings, health education, referral navigation, and careful follow-up after every visit.
+                    Glow Healthcare Outreach Initiative is an NGO-style medical outreach bringing free screening, health education, counseling, basic care navigation, and referral support to underserved communities.
                 </p>
 
                 <div class="mt-7 grid gap-3 sm:mt-8 sm:flex sm:flex-row">
@@ -173,7 +173,7 @@
                         href="#programs"
                         class="inline-flex items-center justify-center gap-2 rounded-md bg-rose-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-rose-500 focus:outline-none focus:ring-2 focus:ring-rose-200 focus:ring-offset-2 focus:ring-offset-neutral-950"
                     >
-                        <span>View programs</span>
+                        <span>See outreach services</span>
                         <flux:icon.arrow-right class="size-4" />
                     </a>
                     <a
@@ -181,22 +181,22 @@
                         class="inline-flex items-center justify-center gap-2 rounded-md border border-white/40 px-5 py-3 text-sm font-semibold text-white transition hover:border-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-neutral-950"
                     >
                         <flux:icon.calendar-days class="size-4" />
-                        <span>See outreach tracks</span>
+                        <span>Field clinic plan</span>
                     </a>
                 </div>
 
                 <dl class="mt-8 grid max-w-2xl grid-cols-3 gap-2 sm:mt-10 sm:gap-3">
                     <div class="rounded-lg border border-white/15 bg-white/10 p-3 backdrop-blur sm:p-4">
-                        <dt class="text-xs font-semibold uppercase text-rose-200">Care pillars</dt>
-                        <dd class="mt-2 text-2xl font-semibold text-white sm:text-3xl">4</dd>
+                        <dt class="text-xs font-semibold uppercase text-rose-200">Screening</dt>
+                        <dd class="mt-2 text-2xl font-semibold text-white sm:text-3xl">Free</dd>
                     </div>
                     <div class="rounded-lg border border-white/15 bg-white/10 p-3 backdrop-blur sm:p-4">
-                        <dt class="text-xs font-semibold uppercase text-amber-200">Referral window</dt>
-                        <dd class="mt-2 text-2xl font-semibold text-white sm:text-3xl">24-48h</dd>
+                        <dt class="text-xs font-semibold uppercase text-amber-200">Model</dt>
+                        <dd class="mt-2 text-2xl font-semibold text-white sm:text-3xl">NGO</dd>
                     </div>
                     <div class="rounded-lg border border-white/15 bg-white/10 p-3 backdrop-blur sm:p-4">
-                        <dt class="text-xs font-semibold uppercase text-emerald-200">Outreach tracks</dt>
-                        <dd class="mt-2 text-2xl font-semibold text-white sm:text-3xl">3</dd>
+                        <dt class="text-xs font-semibold uppercase text-emerald-200">Care path</dt>
+                        <dd class="mt-2 text-2xl font-semibold text-white sm:text-3xl">Refer</dd>
                     </div>
                 </dl>
             </div>
@@ -219,37 +219,37 @@
                 <div class="mt-6 grid gap-3 text-sm">
                     <div class="rounded-md border border-white/15 bg-white/10 p-4">
                         <div class="flex items-center justify-between gap-3">
-                            <p class="font-medium text-cyan-100">Triage readiness</p>
+                            <p class="font-medium text-cyan-100">Field clinic readiness</p>
                             <span class="rounded-md bg-emerald-400 px-2 py-1 text-xs font-semibold text-emerald-950">Active</span>
                         </div>
-                        <p class="mt-2 leading-6 text-zinc-100">Vitals desk, screening forms, referral contacts, and education materials aligned before deployment.</p>
+                        <p class="mt-2 leading-6 text-zinc-100">Registration, vitals, screening, counseling, referral notes, and follow-up lists prepared before each outreach.</p>
                     </div>
                     <div class="grid gap-3">
                         <div class="flex items-center justify-between gap-3 rounded-md bg-white/10 px-4 py-3">
-                            <span class="text-zinc-100">Blood pressure and glucose screening</span>
+                            <span class="text-zinc-100">Blood pressure and blood sugar checks</span>
                             <flux:icon.check-circle class="size-5 text-lime-300" />
                         </div>
                         <div class="flex items-center justify-between gap-3 rounded-md bg-white/10 px-4 py-3">
-                            <span class="text-zinc-100">Maternal and family wellness desk</span>
+                            <span class="text-zinc-100">Maternal, child, and elderly health counseling</span>
                             <flux:icon.heart class="size-5 text-rose-300" />
                         </div>
                         <div class="flex items-center justify-between gap-3 rounded-md bg-white/10 px-4 py-3">
-                            <span class="text-zinc-100">Clinic referral follow-up list</span>
+                            <span class="text-zinc-100">Partner clinic referral and follow-up list</span>
                             <flux:icon.clipboard-document-check class="size-5 text-sky-300" />
                         </div>
                     </div>
                     <div class="grid grid-cols-3 gap-2 sm:gap-3">
                         <div class="rounded-md bg-red-500/90 p-3 text-center">
                             <p class="text-lg font-semibold">01</p>
-                            <p class="text-xs text-red-50">Screen</p>
+                            <p class="text-xs text-red-50">Register</p>
                         </div>
                         <div class="rounded-md bg-amber-400 p-3 text-center text-neutral-950">
                             <p class="text-lg font-semibold">02</p>
-                            <p class="text-xs">Refer</p>
+                            <p class="text-xs">Screen</p>
                         </div>
                         <div class="rounded-md bg-emerald-500 p-3 text-center">
                             <p class="text-lg font-semibold">03</p>
-                            <p class="text-xs text-emerald-50">Follow</p>
+                            <p class="text-xs text-emerald-50">Refer</p>
                         </div>
                     </div>
                 </div>
@@ -299,13 +299,16 @@
                 <div>
                     <p class="text-sm font-semibold text-orange-700">Owner profile</p>
                     <h2 class="gh-display mt-3 text-3xl font-semibold leading-tight text-neutral-950 sm:text-4xl lg:text-5xl">
-                        Physician-led outreach with a mission for people who need a voice.
+                        A healer, communicator, and visionary turning service into community health action.
                     </h2>
                     <p class="mt-5 text-sm leading-7 text-stone-700 sm:text-base sm:leading-8">
-                        Dr. Ezekiel Akande is the owner of Glow Healthcare Outreach Initiative. Public profile sources identify him as an author, philanthropist, anesthesiologist, and pain medicine practitioner with a long-running interest in community impact.
+                        Dr. Ezekiel Akande is a visionary leader, seasoned medical professional, and transformative communicator whose work bridges science, consciousness, and societal impact. A U.S.-trained anesthesiologist with over three decades of clinical experience, he brings the same precision, calm authority, and depth of insight from clinical practice into humanitarian service.
                     </p>
                     <p class="mt-4 text-sm leading-7 text-stone-700 sm:text-base sm:leading-8">
-                        His Glow brand leadership is tied to a broader service philosophy: using professional platforms to inform, empower, and connect underserved people to practical help.
+                        As the Chairman and driving force behind Glow 99.1 FM, Dr. Akande has built a tech-forward, community-centered institution that amplifies truth, inspiration, youth empowerment, and progressive dialogue. Glow Healthcare Outreach Initiative extends that same public-service spirit into free screening, prevention education, counseling, referral support, and volunteer-led follow-up for underserved families.
+                    </p>
+                    <p class="mt-4 text-sm leading-7 text-stone-700 sm:text-base sm:leading-8">
+                        His wider work in personal transformation, purposeful wealth, and human development gives this initiative a deeper mandate: health outreach should not only treat symptoms, but restore dignity, knowledge, confidence, and access. For Dr. Akande, when knowledge, consciousness, and service align, individuals and communities do not merely survive; they rise.
                     </p>
 
                     <div class="mt-8 grid gap-4 md:grid-cols-3">
@@ -320,7 +323,7 @@
                     <div class="mt-8 rounded-lg border border-[#c9d6ab] bg-[#f5f8ed] p-5">
                         <p class="text-sm font-semibold text-[#6f7f3f]">Leadership note</p>
                         <p class="mt-2 text-sm leading-7 text-stone-700">
-                            Glow Healthcare Outreach Initiative reflects Dr. Akande's clinical background and community-minded leadership: care should move closer to families, and follow-up should continue after the outreach day ends.
+                            Glow Healthcare Outreach Initiative reflects Dr. Akande's rare blend of healer, strategist, and visionary: bringing preventive healthcare closer to families, giving vulnerable people clearer next steps, and using service as a practical tool for community upliftment.
                         </p>
                     </div>
                 </div>
@@ -333,11 +336,11 @@
                     <div>
                         <p class="text-sm font-semibold text-rose-700">Our care model</p>
                         <h2 class="gh-display mt-3 text-3xl font-semibold leading-tight text-neutral-950 sm:text-4xl lg:text-5xl">
-                            Standard outreach systems for prevention, access, and continuity.
+                            Real outreach services for prevention, early detection, and referral.
                         </h2>
                     </div>
                     <p class="text-sm leading-7 text-stone-700 sm:text-base sm:leading-8">
-                        Every program is designed around measurable community needs, trained volunteers, clear referral paths, and health education that families can act on immediately.
+                        The initiative is built for communities with limited access to routine care. Each visit combines health talks, screening desks, volunteer support, and a referral process that helps people understand what to do next.
                     </p>
                 </div>
 
@@ -380,10 +383,10 @@
                     <div>
                         <p class="text-sm font-semibold text-lime-300">How outreach works</p>
                         <h2 class="gh-display mt-3 text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
-                            A calm operational rhythm for field care.
+                            From community invitation to patient follow-up.
                         </h2>
                         <p class="mt-5 text-sm leading-7 text-zinc-300">
-                            The model keeps the work accountable: listen before deployment, document each interaction, and keep referral support active after the event.
+                            A strong medical outreach is more than a crowd and a few tables. Glow Healthcare organizes each activity around preparation, respectful screening, clear documentation, and next-step support for people with concerning results.
                         </p>
                     </div>
 
@@ -423,7 +426,7 @@
                     <div class="max-w-2xl">
                         <p class="text-sm font-semibold text-blue-700">Outreach priorities</p>
                         <h2 class="gh-display mt-3 text-3xl font-semibold leading-tight text-neutral-950 sm:text-4xl lg:text-5xl">
-                            A practical calendar for communities, families, and partners.
+                            Program areas for families, schools, faith groups, and rural communities.
                         </h2>
                     </div>
                     <a
@@ -431,7 +434,7 @@
                         class="inline-flex w-full items-center justify-center gap-2 rounded-md border border-neutral-300 px-4 py-3 text-sm font-semibold text-neutral-800 transition hover:border-blue-700 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2 sm:w-fit sm:py-2"
                     >
                         <flux:icon.calendar-days class="size-4" />
-                        <span>Coordinate an outreach</span>
+                        <span>Invite the outreach team</span>
                     </a>
                 </div>
 
@@ -455,33 +458,47 @@
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
                     <div>
-                        <p class="text-sm font-semibold text-indigo-700">Community readiness</p>
+                        <p class="text-sm font-semibold text-indigo-700">Field clinic stations</p>
                         <h2 class="gh-display mt-3 text-3xl font-semibold leading-tight text-neutral-950 sm:text-4xl lg:text-5xl">
-                            Built to help partners move from interest to action.
+                            What happens when Glow sets up in a community.
                         </h2>
+                        <p class="mt-5 text-sm leading-7 text-stone-700 sm:text-base sm:leading-8">
+                            Each outreach is arranged so people can move from registration to screening, counseling, and referral without confusion. Volunteers help with crowd flow while clinical team members focus on risk detection and health guidance.
+                        </p>
                     </div>
 
                     <div class="grid gap-4 sm:grid-cols-2">
-                        <div class="rounded-lg border border-[#d8cfc4] bg-[#f7f3ee] p-5">
-                            <flux:icon.map-pin class="size-6 text-[#8b7a6b]" />
-                            <h3 class="mt-4 text-base font-semibold text-neutral-950">Local mapping</h3>
-                            <p class="mt-2 text-sm leading-6 text-stone-600">Identify underserved locations and prepare safe outreach points.</p>
-                        </div>
-                        <div class="rounded-lg border border-[#e4c9dd] bg-[#fbf2f8] p-5">
-                            <flux:icon.user-group class="size-6 text-[#9b6b8f]" />
-                            <h3 class="mt-4 text-base font-semibold text-neutral-950">Volunteer teams</h3>
-                            <p class="mt-2 text-sm leading-6 text-stone-600">Organize medical, logistics, education, and follow-up roles.</p>
-                        </div>
-                        <div class="rounded-lg border border-[#cbdde3] bg-[#f4fafb] p-5">
-                            <flux:icon.clipboard-document-check class="size-6 text-sky-700" />
-                            <h3 class="mt-4 text-base font-semibold text-neutral-950">Clinical notes</h3>
-                            <p class="mt-2 text-sm leading-6 text-stone-600">Capture essential screening and referral data responsibly.</p>
-                        </div>
-                        <div class="rounded-lg border border-[#c9d6ab] bg-[#f5f8ed] p-5">
-                            <flux:icon.shield-check class="size-6 text-[#6f7f3f]" />
-                            <h3 class="mt-4 text-base font-semibold text-neutral-950">Follow-up support</h3>
-                            <p class="mt-2 text-sm leading-6 text-stone-600">Keep urgent cases visible until care has been connected.</p>
-                        </div>
+                        @foreach ($fieldStations as $station)
+                            @php
+                                $stationColors = [
+                                    ['border' => '#d8cfc4', 'bg' => '#f7f3ee', 'text' => '#8b7a6b'],
+                                    ['border' => '#e4c9dd', 'bg' => '#fbf2f8', 'text' => '#9b6b8f'],
+                                    ['border' => '#cbdde3', 'bg' => '#f4fafb', 'text' => '#0369a1'],
+                                    ['border' => '#c9d6ab', 'bg' => '#f5f8ed', 'text' => '#6f7f3f'],
+                                ][$loop->index] ?? ['border' => '#e7e5e4', 'bg' => '#ffffff', 'text' => '#57534e'];
+                            @endphp
+
+                            <article class="rounded-lg border p-5" style="border-color: {{ $stationColors['border'] }}; background-color: {{ $stationColors['bg'] }}">
+                                @switch($station['icon'])
+                                    @case('clipboard-document-check')
+                                        <flux:icon.clipboard-document-check class="size-6" style="color: {{ $stationColors['text'] }}" />
+                                        @break
+
+                                    @case('heart')
+                                        <flux:icon.heart class="size-6" style="color: {{ $stationColors['text'] }}" />
+                                        @break
+
+                                    @case('academic-cap')
+                                        <flux:icon.academic-cap class="size-6" style="color: {{ $stationColors['text'] }}" />
+                                        @break
+
+                                    @default
+                                        <flux:icon.shield-check class="size-6" style="color: {{ $stationColors['text'] }}" />
+                                @endswitch
+                                <h3 class="mt-4 text-base font-semibold text-neutral-950">{{ $station['title'] }}</h3>
+                                <p class="mt-2 text-sm leading-6 text-stone-600">{{ $station['detail'] }}</p>
+                            </article>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -490,19 +507,19 @@
         <section id="contact" class="bg-neutral-950 py-12 text-white sm:py-20">
             <div class="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[1fr_0.72fr] lg:items-center lg:px-8">
                 <div>
-                    <p class="text-sm font-semibold text-fuchsia-300">Partner with Glow</p>
+                    <p class="text-sm font-semibold text-fuchsia-300">Partner with the outreach</p>
                     <h2 class="gh-display mt-3 text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
-                        Help bring trusted health support closer to people who need it.
+                        Support free healthcare access for underserved families.
                     </h2>
                     <p class="mt-5 max-w-2xl text-sm leading-7 text-zinc-300 sm:text-base sm:leading-8">
-                        Clinics, schools, faith communities, corporate sponsors, and medical volunteers can strengthen the next outreach with supplies, space, transport, clinical support, and follow-up care.
+                        Glow Healthcare Outreach Initiative welcomes clinics, medical volunteers, pharmacists, diagnostic partners, schools, churches, mosques, community associations, donors, and corporate sponsors who can help with medicines, consumables, transport, venues, equipment, health education, and referral care.
                     </p>
                 </div>
 
                 <div class="rounded-lg border border-white/15 bg-white p-5 text-neutral-950 shadow-sm sm:p-6">
-                    <h3 class="text-lg font-semibold">Start a partnership conversation</h3>
+                    <h3 class="text-lg font-semibold">Host, sponsor, or volunteer</h3>
                     <p class="mt-3 text-sm leading-7 text-stone-600">
-                        Share the community, preferred outreach focus, and support available. The Glow team can align the right care track and volunteer needs.
+                        Share the community location, expected audience, available venue, health concerns, and the support you can provide. The team can then plan the right mix of screening stations, health talks, supplies, and referral partners.
                     </p>
                     <div class="mt-6 grid gap-3">
                         <a
@@ -510,14 +527,14 @@
                             class="inline-flex items-center justify-center gap-2 rounded-md bg-rose-600 px-4 py-3 text-sm font-semibold text-white transition hover:bg-rose-500 focus:outline-none focus:ring-2 focus:ring-rose-600 focus:ring-offset-2"
                         >
                             <flux:icon.envelope class="size-4" />
-                            <span>Email the team</span>
+                            <span>Contact the outreach team</span>
                         </a>
                         <a
                             href="#programs"
                             class="inline-flex items-center justify-center gap-2 rounded-md border border-neutral-300 px-4 py-3 text-sm font-semibold text-neutral-800 transition hover:border-indigo-700 hover:text-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-700 focus:ring-offset-2"
                         >
                             <flux:icon.check-circle class="size-4" />
-                            <span>Review care pillars</span>
+                            <span>Review outreach services</span>
                         </a>
                     </div>
                 </div>
@@ -531,7 +548,7 @@
                 <img src="{{ $brandLogo }}" alt="Glow logo" class="size-9 rounded-md border border-stone-200 object-cover">
                 <p class="font-medium text-neutral-900">Glow Healthcare Outreach Initiative</p>
             </div>
-            <p>Community health outreach with dignity, prevention, and continuity.</p>
+            <p>Free community screening, prevention education, referral support, and volunteer-led follow-up.</p>
         </div>
     </footer>
 </div>

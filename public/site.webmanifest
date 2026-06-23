@@ -1,7 +1,7 @@
 {
   "name": "Glow Healthcare Outreach Initiative",
   "short_name": "Glow Health",
-  "description": "Community health outreach with screenings, education, referrals, and follow-up support.",
+  "description": "NGO health outreach with free community screenings, prevention education, referral support, and volunteer-led follow-up.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

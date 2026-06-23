@@ -17,19 +17,19 @@ class Home extends Component
     #[Locked]
     public array $metrics = [
         [
-            'value' => '4',
-            'label' => 'Care pillars',
-            'detail' => 'Screening, education, referrals, and follow-up.',
+            'value' => 'Free',
+            'label' => 'Community screening',
+            'detail' => 'Blood pressure, blood sugar, malaria risk checks, basic vitals, and health counseling.',
         ],
         [
-            'value' => '24-48h',
-            'label' => 'Referral window',
-            'detail' => 'Designed for fast escalation when care cannot wait.',
+            'value' => 'NGO',
+            'label' => 'Outreach model',
+            'detail' => 'Volunteer-led field teams supported by clinicians, community leaders, and local partners.',
         ],
         [
-            'value' => '3',
-            'label' => 'Outreach tracks',
-            'detail' => 'Clinics, community education, and partner response.',
+            'value' => 'Refer',
+            'label' => 'Continuity of care',
+            'detail' => 'People who need more help are guided toward clinics, hospitals, and follow-up support.',
         ],
     ];
 
@@ -39,23 +39,23 @@ class Home extends Component
     #[Locked]
     public array $programs = [
         [
-            'title' => 'Community Health Clinics',
-            'description' => 'Mobile screening days for blood pressure, glucose, malaria risk, basic vitals, and guided next steps.',
+            'title' => 'Free Community Screening Clinics',
+            'description' => 'Pop-up medical outreaches in schools, churches, markets, town halls, and rural communities for blood pressure, blood sugar, temperature, weight, and basic health risk checks.',
             'icon' => 'clipboard-document-check',
         ],
         [
-            'title' => 'Maternal And Family Wellness',
-            'description' => 'Practical health sessions for mothers, children, and caregivers with respectful guidance from trained volunteers.',
+            'title' => 'Maternal, Child, And Family Wellness',
+            'description' => 'Health talks and counseling for mothers, caregivers, children, and older adults, with attention to nutrition, hygiene, antenatal warning signs, immunization awareness, and home safety.',
             'icon' => 'heart',
         ],
         [
-            'title' => 'Preventive Health Education',
-            'description' => 'Clear, local-language education that helps households recognize risks early and make safer care decisions.',
+            'title' => 'Disease Prevention And Health Education',
+            'description' => 'Plain-language sessions on hypertension, diabetes, malaria prevention, sanitation, medication adherence, mental wellbeing, and when to seek urgent care.',
             'icon' => 'academic-cap',
         ],
         [
-            'title' => 'Referral And Follow-Up',
-            'description' => 'A structured handoff process that connects community members to clinics, hospitals, and partner support.',
+            'title' => 'Referral Navigation And Patient Follow-Up',
+            'description' => 'Clear referral notes, partner clinic contacts, follow-up calls, and case tracking for people whose screening results suggest they need further medical attention.',
             'icon' => 'shield-check',
         ],
     ];
@@ -67,18 +67,18 @@ class Home extends Component
     public array $process = [
         [
             'step' => '01',
-            'title' => 'Listen locally',
-            'description' => 'Meet community leaders, identify health barriers, and shape each outreach around real needs.',
+            'title' => 'Assess the community need',
+            'description' => 'Meet local leaders, schools, faith groups, and health workers to understand common illnesses, access barriers, and the safest outreach location.',
         ],
         [
             'step' => '02',
-            'title' => 'Bring care closer',
-            'description' => 'Deploy trained teams for screenings, education, counseling, and basic care navigation.',
+            'title' => 'Set up the field clinic',
+            'description' => 'Register guests, check vitals, run screening stations, provide health education, counsel families, and document people who need urgent attention.',
         ],
         [
             'step' => '03',
-            'title' => 'Follow through',
-            'description' => 'Track referrals, coordinate partners, and keep vulnerable families from falling through gaps.',
+            'title' => 'Refer and follow up',
+            'description' => 'Give referral guidance, contact partner facilities where needed, and keep vulnerable cases visible after the outreach day.',
         ],
     ];
 
@@ -88,19 +88,46 @@ class Home extends Component
     #[Locked]
     public array $outreaches = [
         [
-            'label' => 'Monthly',
-            'title' => 'Primary care screening days',
-            'description' => 'Vitals, glucose checks, malaria risk education, and clinician-led referral guidance.',
+            'label' => 'Medical outreach',
+            'title' => 'Free screening and counseling days',
+            'description' => 'Community members receive basic checks, private counseling, health education, and referral advice without paying a consultation fee.',
         ],
         [
-            'label' => 'Quarterly',
-            'title' => 'Women and family wellness forums',
-            'description' => 'Maternal health, child wellness, nutrition, hygiene, and family safety education.',
+            'label' => 'Health education',
+            'title' => 'Prevention talks for families',
+            'description' => 'Interactive sessions help households understand high blood pressure, diabetes, malaria, sanitation, nutrition, medication use, and warning signs.',
         ],
         [
-            'label' => 'Ongoing',
-            'title' => 'Partner response network',
-            'description' => 'Volunteer coordination, medicine support, and transport assistance for urgent cases.',
+            'label' => 'Care connection',
+            'title' => 'Referral support for vulnerable cases',
+            'description' => 'The team documents high-risk findings and works with partner clinics, volunteers, and donors to support next steps where possible.',
+        ],
+    ];
+
+    /**
+     * @var list<array{title: string, detail: string, icon: string}>
+     */
+    #[Locked]
+    public array $fieldStations = [
+        [
+            'title' => 'Registration and triage',
+            'detail' => 'Basic intake, consent, symptoms, medication history, and risk flags before screening.',
+            'icon' => 'clipboard-document-check',
+        ],
+        [
+            'title' => 'Screening stations',
+            'detail' => 'Blood pressure, blood sugar, temperature, weight, and malaria risk education based on available supplies.',
+            'icon' => 'heart',
+        ],
+        [
+            'title' => 'Counseling desk',
+            'detail' => 'One-on-one guidance on lifestyle, medication adherence, family health, and when to visit a clinic.',
+            'icon' => 'academic-cap',
+        ],
+        [
+            'title' => 'Referral and follow-up',
+            'detail' => 'Referral notes, partner contacts, and follow-up lists for people who need further care.',
+            'icon' => 'shield-check',
         ],
     ];
 }
