@@ -1,7 +1,4 @@
 @push('head')
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
         [x-cloak] {
@@ -14,11 +11,19 @@
 
         .gh-page {
             font-family: 'Ubuntu', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-weight: 400;
         }
 
         .gh-display {
-            font-family: 'Playfair Display', Georgia, Cambria, 'Times New Roman', serif;
+            font-family: 'Montserrat', 'Ubuntu', ui-sans-serif, system-ui, sans-serif;
+            font-weight: 800;
             letter-spacing: 0;
+        }
+
+        .gh-page button,
+        .gh-page .gh-button {
+            font-family: 'Ubuntu', ui-sans-serif, system-ui, sans-serif;
+            font-weight: 500;
         }
 
         .gh-scrollbar {
