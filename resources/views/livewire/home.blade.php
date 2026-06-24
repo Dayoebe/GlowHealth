@@ -115,9 +115,9 @@
 
 @php
     $brandLogo = asset('glowfm%20logo.jpeg');
-    $heroImage = 'https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1800&q=88';
-    $storyImage = 'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=1400&q=88';
-    $volunteerImage = 'https://images.unsplash.com/photo-1550831107-1553da8c8464?auto=format&fit=crop&w=1400&q=88';
+    $heroImage = asset('images/outreach/community-medical-outreach-akure.webp');
+    $storyImage = asset('images/outreach/family-health-education-ondo.webp');
+    $volunteerImage = asset('images/outreach/medical-volunteers-outreach-table.webp');
     $impactTargets = collect($impactMetrics)->mapWithKeys(fn ($metric) => [$metric['key'] => $metric['value']])->all();
     $impactSuffixes = collect($impactMetrics)->mapWithKeys(fn ($metric) => [$metric['key'] => $metric['suffix']])->all();
     $accentTextColors = ['text-sky-700', 'text-emerald-700', 'text-cyan-700', 'text-amber-700', 'text-teal-700', 'text-blue-700'];
@@ -201,7 +201,7 @@
                     fetchpriority="high"
                 >
                 <span class="min-w-0">
-                    <span class="gh-display block truncate text-base font-semibold leading-5 text-slate-950 sm:text-lg"><span class="text-sky-700">Glow</span> Free Medical Initiative</span>
+                    <span class="gh-display block truncate text-base font-semibold leading-5 text-slate-950 sm:text-lg"><span class="text-sky-700">Glow</span> Health Outreach Initiative</span>
                     <span class="block truncate text-xs leading-5 text-slate-500">Free healthcare outreach across Ondo State</span>
                 </span>
             </a>
@@ -344,7 +344,7 @@
                     <div class="gh-float-a relative overflow-hidden rounded-[2rem] border border-white/70 bg-white/70 p-5 shadow-2xl shadow-slate-900/10 backdrop-blur-xl">
                         <img
                             src="{{ $heroImage }}"
-                            alt="Healthcare worker supporting a patient during a community medical visit"
+                            alt="Black Nigerian medical team providing free screening at a community outreach in Akure"
                             class="aspect-[4/3] w-full rounded-[1.5rem] object-cover"
                             loading="eager"
                             fetchpriority="high"
@@ -539,7 +539,7 @@
         <section class="bg-slate-50 py-12 sm:py-20">
             <div class="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[1fr_0.92fr] lg:items-center lg:px-8">
                 <div class="gh-reveal overflow-hidden rounded-3xl shadow-2xl shadow-slate-900/10" x-intersect.once="$el.classList.add('animate__animated', 'animate__fadeIn')">
-                    <img src="{{ $storyImage }}" alt="Medical team providing community healthcare support" class="aspect-[4/3] w-full object-cover">
+                    <img src="{{ $storyImage }}" alt="Black Nigerian nurse explaining health education to a local family during community outreach" class="aspect-[4/3] w-full object-cover">
                 </div>
                 <div class="gh-reveal" x-intersect.once="$el.classList.add('animate__animated', 'animate__fadeInUp')">
                     <p class="text-sm font-semibold text-teal-700">Why this initiative matters</p>
@@ -574,7 +574,7 @@
                     </div>
                 </div>
                 <div class="gh-reveal relative overflow-hidden rounded-3xl shadow-2xl shadow-slate-900/10" x-intersect.once="$el.classList.add('animate__animated', 'animate__fadeIn')">
-                    <img src="{{ $volunteerImage }}" alt="Healthcare volunteer supporting a patient" class="aspect-[4/3] w-full object-cover">
+                    <img src="{{ $volunteerImage }}" alt="Black Nigerian medical volunteers preparing supplies for a free health outreach" class="aspect-[4/3] w-full object-cover">
                     <div class="absolute inset-x-5 bottom-5 rounded-2xl border border-white/70 bg-white/80 p-4 shadow-lg backdrop-blur-xl">
                         <p class="text-sm font-semibold text-slate-950">Volunteer roles include triage, health talks, pharmacy support, registration, media, logistics, and follow-up calls.</p>
                     </div>

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'glow-medical-v3';
+const CACHE_NAME = 'glow-medical-v4';
 const PRECACHE_URLS = [
     '/',
     '/offline.html',
@@ -9,6 +9,9 @@ const PRECACHE_URLS = [
     '/icons/icon-192x192.png',
     '/icons/icon-512x512.png',
     '/icons/icon-512x512-maskable.png',
+    '/images/outreach/community-medical-outreach-akure.webp',
+    '/images/outreach/family-health-education-ondo.webp',
+    '/images/outreach/medical-volunteers-outreach-table.webp',
 ];
 
 self.addEventListener('install', (event) => {
