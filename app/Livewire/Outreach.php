@@ -16,13 +16,13 @@ class Outreach extends Component
      */
     #[Locked]
     public array $outreach = [
-        'status' => 'Sample schedule',
+        'status' => 'Registration now open',
         'date' => 'Saturday, July 18, 2026',
         'time' => '9:00 AM - 3:00 PM',
-        'venue' => 'Akure Community Health Outreach Centre',
-        'area' => 'Akure, Ondo State',
+        'venue' => 'Akure South Community Outreach Centre',
+        'area' => 'Akure South, Ondo State',
         'capacity' => '300 residents',
-        'note' => 'This is dummy data for layout planning. The actual date, venue, and capacity will be replaced when confirmed by the initiative team.',
+        'note' => 'Registration is prioritized for Akure residents and nearby communities. Confirmed participants receive arrival guidance, queue grouping, and any venue update before the outreach day.',
     ];
 
     /**
@@ -31,7 +31,7 @@ class Outreach extends Component
     #[Locked]
     public array $quickFacts = [
         [
-            'label' => 'Sample Date',
+            'label' => 'Outreach Date',
             'value' => 'Jul 18, 2026',
             'icon' => 'fa-calendar-days',
             'color' => 'text-sky-700 bg-sky-50 border-sky-100',
@@ -49,7 +49,7 @@ class Outreach extends Component
             'color' => 'text-cyan-700 bg-cyan-50 border-cyan-100',
         ],
         [
-            'label' => 'Sample Capacity',
+            'label' => 'Planned Capacity',
             'value' => '300 residents',
             'icon' => 'fa-users',
             'color' => 'text-amber-700 bg-amber-50 border-amber-100',

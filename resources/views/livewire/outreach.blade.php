@@ -186,7 +186,7 @@
                     </a>
                     <p class="mt-5 inline-flex items-center gap-2 rounded-full border border-amber-200 bg-amber-50 px-3 py-2 text-xs font-semibold text-amber-800">
                         <span class="gh-pulse size-2 rounded-full bg-amber-500"></span>
-                        {{ $outreach['status'] }} - replace with confirmed details later
+                        {{ $outreach['status'] }}
                     </p>
                     <h1 class="gh-display mt-5 text-[2.35rem] leading-[1.04] text-slate-950 sm:text-5xl lg:text-6xl">
                         Plan for the Next <span class="text-blue-700">Medical Outreach</span> in <span class="text-emerald-700">Akure</span>
@@ -235,7 +235,7 @@
                             <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
                         </span>
                         <div>
-                            <h2 class="font-semibold">Dummy outreach data</h2>
+                            <h2 class="font-semibold">Registration guidance</h2>
                             <p class="mt-2 text-sm leading-7">{{ $outreach['note'] }}</p>
                         </div>
                     </div>
@@ -247,7 +247,7 @@
             <div class="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[0.92fr_1.08fr] lg:items-start lg:px-8">
                 <div class="rounded-3xl border border-white/70 bg-white/75 p-6 shadow-sm backdrop-blur-xl sm:p-8">
                     <p class="text-sm font-semibold text-blue-700">Outreach details</p>
-                    <h2 class="gh-display mt-3 text-3xl leading-tight text-slate-950 sm:text-5xl">Sample event card</h2>
+                    <h2 class="gh-display mt-3 text-3xl leading-tight text-slate-950 sm:text-5xl">Outreach information</h2>
                     <div class="mt-7 grid gap-4">
                         <div class="rounded-2xl border border-slate-200 bg-white p-4">
                             <p class="text-xs font-semibold uppercase text-sky-700">Date</p>
@@ -290,7 +290,7 @@
         <section class="bg-white py-12 sm:py-16">
             <div class="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:px-8">
                 <div>
-                    <p class="text-sm font-semibold text-emerald-700">Sample day plan</p>
+                    <p class="text-sm font-semibold text-emerald-700">Outreach day plan</p>
                     <h2 class="gh-display mt-3 text-3xl leading-tight text-slate-950 sm:text-5xl">A simple schedule for organized community care</h2>
                     <div class="mt-8 grid gap-4">
                         @foreach ($agenda as $item)
@@ -319,7 +319,7 @@
                     <p class="text-sm font-semibold text-amber-700">Before arrival</p>
                     <h2 class="gh-display mt-3 text-3xl leading-tight text-slate-950 sm:text-5xl">What residents should bring</h2>
                     <p class="mt-5 text-base leading-8 text-slate-700">
-                        These are sample preparation notes for the page structure. The final list can be adjusted for each confirmed outreach location and medical team requirement.
+                        These preparation notes help residents move through registration, screening, consultation, medication support, and referral guidance with fewer delays.
                     </p>
                 </div>
                 <div class="grid gap-3">

@@ -504,7 +504,7 @@
                     <div class="grid gap-4 sm:grid-cols-3">
                         <div class="rounded-2xl border border-white/70 bg-white/80 p-4 shadow-sm backdrop-blur-xl">
                             <p class="text-xs font-semibold uppercase text-emerald-700">Date</p>
-                            <p class="mt-2 text-lg font-bold text-slate-950">To be announced</p>
+                            <p class="mt-2 text-lg font-bold text-slate-950">Jul 18, 2026</p>
                         </div>
                         <div class="rounded-2xl border border-white/70 bg-white/80 p-4 shadow-sm backdrop-blur-xl">
                             <p class="text-xs font-semibold uppercase text-sky-700">Time</p>
@@ -512,12 +512,12 @@
                         </div>
                         <div class="rounded-2xl border border-white/70 bg-white/80 p-4 shadow-sm backdrop-blur-xl">
                             <p class="text-xs font-semibold uppercase text-amber-700">Venue</p>
-                            <p class="mt-2 text-lg font-bold text-slate-950">Akure, Ondo State</p>
+                            <p class="mt-2 text-lg font-bold text-slate-950">Akure South</p>
                         </div>
                     </div>
 
                     <p class="mt-5 text-sm leading-7 text-slate-600">
-                        Confirmed venue details will be shared with registered residents, volunteers, and partner organizations before the outreach day.
+                        Registered residents receive arrival guidance, queue grouping, and any venue update before the outreach day.
                     </p>
                     <a href="{{ route('outreach') }}" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-blue-700 hover:text-blue-800">
                         <span>View full outreach details</span>
