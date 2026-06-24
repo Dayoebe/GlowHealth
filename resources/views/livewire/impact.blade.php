@@ -71,7 +71,7 @@
 @php
     $brandLogo = asset('glowfm%20logo.jpeg');
     $heroImage = asset('images/outreach/family-health-education-ondo.webp');
-    $volunteerImage = asset('images/outreach/medical-volunteers-outreach-table.webp');
+    $supportImage = asset('images/outreach/community-medical-outreach-akure.webp');
     $homeUrl = route('home');
     $servicesUrl = route('services');
     $outreachUrl = route('outreach');
@@ -109,19 +109,19 @@
 
             <nav class="hidden items-center gap-6 text-sm font-medium text-slate-600 lg:flex" aria-label="Primary navigation">
                 <a href="{{ $homeUrl }}" class="transition hover:text-sky-700">Home</a>
-                <a href="{{ $servicesUrl }}" aria-current="page" class="font-semibold text-emerald-700">Services</a>
-                <a href="{{ $outreachUrl }}" class="transition hover:text-sky-700">Next Outreach</a>
-                <a href="{{ $impactUrl }}" class="transition hover:text-cyan-700">Impact</a>
+                <a href="{{ $servicesUrl }}" class="transition hover:text-emerald-700">Services</a>
+                <a href="{{ $outreachUrl }}" class="transition hover:text-blue-700">Next Outreach</a>
+                <a href="{{ $impactUrl }}" aria-current="page" class="font-semibold text-cyan-700">Impact</a>
                 <a href="{{ $homeUrl }}#volunteer" class="transition hover:text-amber-700">Volunteer</a>
                 <a href="{{ $homeUrl }}#partners" class="transition hover:text-teal-700">Partners</a>
             </nav>
 
             <div class="flex shrink-0 items-center gap-2">
                 <a
-                    href="mailto:hello@glowhealthcare.org?subject=Register%20for%20Glow%20FM%20Free%20Medical%20Initiative"
+                    href="mailto:hello@glowhealthcare.org?subject=Support%20Glow%20Health%20Impact"
                     class="gh-button hidden items-center justify-center gap-2 rounded-xl bg-slate-900 px-4 py-2.5 text-sm text-white shadow-sm transition hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2 sm:inline-flex"
                 >
-                    <span>Register</span>
+                    <span>Support</span>
                     <i class="fa-solid fa-arrow-right text-[0.85rem]" aria-hidden="true"></i>
                 </a>
 
@@ -155,17 +155,17 @@
                         <span class="flex size-10 items-center justify-center rounded-xl bg-sky-50 text-sky-700"><i class="fa-solid fa-house text-lg" aria-hidden="true"></i></span>
                         <span class="text-sky-700">Homepage</span>
                     </a>
-                    <a href="{{ $servicesUrl }}" aria-current="page" class="flex items-center gap-3 rounded-2xl bg-emerald-50 px-3 py-3 text-sm font-semibold text-emerald-800" @click="closeMenu()">
-                        <span class="flex size-10 items-center justify-center rounded-xl bg-white text-emerald-700"><i class="fa-solid fa-stethoscope text-lg" aria-hidden="true"></i></span>
-                        <span>Free healthcare services</span>
+                    <a href="{{ $servicesUrl }}" class="flex items-center gap-3 rounded-2xl px-3 py-3 text-sm font-medium text-slate-700 transition hover:bg-sky-50 hover:text-sky-700" @click="closeMenu()">
+                        <span class="flex size-10 items-center justify-center rounded-xl bg-sky-50 text-sky-700"><i class="fa-solid fa-stethoscope text-lg" aria-hidden="true"></i></span>
+                        <span class="text-emerald-700">Free healthcare services</span>
                     </a>
                     <a href="{{ $outreachUrl }}" class="flex items-center gap-3 rounded-2xl px-3 py-3 text-sm font-medium text-slate-700 transition hover:bg-sky-50 hover:text-sky-700" @click="closeMenu()">
                         <span class="flex size-10 items-center justify-center rounded-xl bg-sky-50 text-sky-700"><i class="fa-solid fa-circle-plus text-lg" aria-hidden="true"></i></span>
-                        <span class="text-sky-700">Next medical outreach</span>
+                        <span class="text-blue-700">Next medical outreach</span>
                     </a>
-                    <a href="{{ $impactUrl }}" class="flex items-center gap-3 rounded-2xl px-3 py-3 text-sm font-medium text-slate-700 transition hover:bg-sky-50 hover:text-sky-700" @click="closeMenu()">
-                        <span class="flex size-10 items-center justify-center rounded-xl bg-sky-50 text-sky-700"><i class="fa-solid fa-heart-pulse text-lg" aria-hidden="true"></i></span>
-                        <span class="text-cyan-700">Community impact</span>
+                    <a href="{{ $impactUrl }}" aria-current="page" class="flex items-center gap-3 rounded-2xl bg-cyan-50 px-3 py-3 text-sm font-semibold text-cyan-800" @click="closeMenu()">
+                        <span class="flex size-10 items-center justify-center rounded-xl bg-white text-cyan-700"><i class="fa-solid fa-heart-pulse text-lg" aria-hidden="true"></i></span>
+                        <span>Community impact</span>
                     </a>
                     <a href="{{ $homeUrl }}#volunteer" class="flex items-center gap-3 rounded-2xl px-3 py-3 text-sm font-medium text-slate-700 transition hover:bg-sky-50 hover:text-sky-700" @click="closeMenu()">
                         <span class="flex size-10 items-center justify-center rounded-xl bg-sky-50 text-sky-700"><i class="fa-solid fa-users text-lg" aria-hidden="true"></i></span>
@@ -179,26 +179,30 @@
     <main>
         <section class="relative isolate overflow-hidden bg-sky-50">
             <div class="absolute inset-x-0 top-0 h-1 bg-sky-200" aria-hidden="true"></div>
-            <div class="mx-auto grid max-w-7xl gap-8 px-4 pb-12 pt-8 sm:px-6 sm:py-16 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:px-8">
+            <div class="mx-auto grid max-w-7xl gap-8 px-4 pb-12 pt-8 sm:px-6 sm:py-16 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:px-8">
                 <div>
-                    <a href="{{ $homeUrl }}" class="animate__animated animate__fadeIn inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/75 px-3 py-2 text-xs font-semibold text-sky-800 shadow-sm backdrop-blur-xl sm:px-4 sm:text-sm">
+                    <a href="{{ $homeUrl }}" class="inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/75 px-3 py-2 text-xs font-semibold text-sky-800 shadow-sm backdrop-blur-xl sm:px-4 sm:text-sm">
                         <i class="fa-solid fa-arrow-left text-[0.75rem]" aria-hidden="true"></i>
                         Back to homepage
                     </a>
-                    <h1 class="gh-display animate__animated animate__fadeIn mt-5 text-[2.35rem] leading-[1.04] text-slate-950 sm:text-5xl lg:text-6xl">
-                        Free <span class="text-emerald-700">Healthcare</span> Services for Local Communities
+                    <p class="mt-5 inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-cyan-50 px-3 py-2 text-xs font-semibold text-cyan-800">
+                        <span class="gh-pulse size-2 rounded-full bg-cyan-500"></span>
+                        Community health outcomes across Ondo State
+                    </p>
+                    <h1 class="gh-display mt-5 text-[2.35rem] leading-[1.04] text-slate-950 sm:text-5xl lg:text-6xl">
+                        Measuring <span class="text-cyan-700">Health Impact</span> Where Access Matters Most
                     </h1>
-                    <p class="animate__animated animate__fadeIn mt-5 max-w-2xl text-base leading-8 text-slate-700">
-                        Each outreach is designed to give residents practical access to consultation, screening, medications, health education, and referral guidance without consultation fees.
+                    <p class="mt-5 max-w-2xl text-base leading-8 text-slate-700">
+                        Glow Health Outreach Initiative tracks reach, service delivery, referrals, and community feedback so partners can see how free healthcare support is changing lives.
                     </p>
                     <div class="mt-7 grid gap-3 sm:flex">
-                        <a href="mailto:hello@glowhealthcare.org?subject=Register%20for%20Glow%20FM%20Free%20Medical%20Initiative" class="inline-flex items-center justify-center gap-2 rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-slate-900/10 transition hover:-translate-y-0.5 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2">
-                            <span>Register for Care</span>
+                        <a href="{{ $outreachUrl }}" class="inline-flex items-center justify-center gap-2 rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-slate-900/10 transition hover:-translate-y-0.5 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2">
+                            <span>Join the Next Outreach</span>
                             <i class="fa-solid fa-arrow-right text-[0.85rem]" aria-hidden="true"></i>
                         </a>
-                        <a href="{{ $outreachUrl }}" class="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-800 shadow-sm transition hover:-translate-y-0.5 hover:border-sky-300 hover:text-sky-800 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2">
-                            <i class="fa-solid fa-calendar-check text-[0.9rem]" aria-hidden="true"></i>
-                            <span>View Next Outreach</span>
+                        <a href="mailto:hello@glowhealthcare.org?subject=Support%20Glow%20Health%20Impact" class="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-800 shadow-sm transition hover:-translate-y-0.5 hover:border-sky-300 hover:text-sky-800 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2">
+                            <i class="fa-solid fa-handshake text-[0.9rem]" aria-hidden="true"></i>
+                            <span>Support the Impact</span>
                         </a>
                     </div>
                 </div>
@@ -212,25 +216,24 @@
         <section class="bg-white py-12 sm:py-16">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="max-w-3xl">
-                    <p class="text-sm font-semibold text-emerald-700">Care areas</p>
-                    <h2 class="gh-display mt-3 text-3xl leading-tight text-slate-950 sm:text-5xl">What residents can receive</h2>
-                    <p class="mt-4 text-base leading-8 text-slate-700">
-                        Services are delivered by qualified professionals and trained volunteers according to available supplies, clinical need, and outreach capacity.
-                    </p>
+                    <p class="text-sm font-semibold text-cyan-700">Impact dashboard</p>
+                    <h2 class="gh-display mt-3 text-3xl leading-tight text-slate-950 sm:text-5xl">What the outreach is already making possible</h2>
                 </div>
 
                 <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                    @foreach ($services as $service)
+                    @foreach ($metrics as $metric)
                         <article
-                            class="gh-reveal rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-sky-200 hover:shadow-xl"
-                            x-intersect.once="$el.classList.add('animate__animated', 'animate__fadeInUp')"
-                            style="animation-delay: {{ $loop->index * 55 }}ms"
+                            class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-sky-200 hover:shadow-xl"
+                            style="animation-delay: {{ $loop->index * 70 }}ms"
                         >
-                            <div class="flex size-12 items-center justify-center rounded-2xl border {{ $service['color'] }}">
-                                <i class="fa-solid {{ $service['icon'] }} text-xl" aria-hidden="true"></i>
+                            <div class="flex size-12 items-center justify-center rounded-2xl border {{ $metric['color'] }}">
+                                <i class="fa-solid {{ $metric['icon'] }} text-xl" aria-hidden="true"></i>
                             </div>
-                            <h3 class="mt-5 text-lg font-semibold text-slate-950">{{ $service['title'] }}</h3>
-                            <p class="mt-3 text-sm leading-7 text-slate-600">{{ $service['description'] }}</p>
+                            <p class="mt-5 text-4xl font-bold text-slate-950">
+                                <span>{{ number_format($metric['value']) }}</span><span>{{ $metric['suffix'] }}</span>
+                            </p>
+                            <h3 class="mt-3 text-base font-semibold text-slate-950">{{ $metric['label'] }}</h3>
+                            <p class="mt-2 text-sm leading-7 text-slate-600">{{ $metric['description'] }}</p>
                         </article>
                     @endforeach
                 </div>
@@ -238,28 +241,72 @@
         </section>
 
         <section class="bg-slate-50 py-12 sm:py-16">
-            <div class="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[0.88fr_1.12fr] lg:items-center lg:px-8">
-                <div class="overflow-hidden rounded-3xl shadow-2xl shadow-slate-900/10">
-                    <img src="{{ $volunteerImage }}" alt="Black Nigerian medical volunteers preparing supplies for a free health outreach" class="aspect-[4/3] w-full object-cover">
-                </div>
+            <div class="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-start lg:px-8">
                 <div>
-                    <p class="text-sm font-semibold text-cyan-700">How care moves</p>
-                    <h2 class="gh-display mt-3 text-3xl leading-tight text-slate-950 sm:text-5xl">From arrival to follow-up guidance</h2>
-                    <div class="mt-7 grid gap-4">
-                        @foreach ($careFlow as $item)
-                            <article class="gh-reveal rounded-2xl border border-white/70 bg-white/80 p-5 shadow-sm backdrop-blur-xl" x-intersect.once="$el.classList.add('animate__animated', 'animate__fadeInUp')">
-                                <div class="flex gap-4">
-                                    <span class="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-sky-50 text-sky-700">
-                                        <i class="fa-solid {{ $item['icon'] }} text-lg" aria-hidden="true"></i>
-                                    </span>
-                                    <span>
-                                        <h3 class="font-semibold text-slate-950">{{ $item['title'] }}</h3>
-                                        <p class="mt-2 text-sm leading-7 text-slate-600">{{ $item['description'] }}</p>
-                                    </span>
-                                </div>
-                            </article>
-                        @endforeach
+                    <p class="text-sm font-semibold text-emerald-700">Community reach</p>
+                    <h2 class="gh-display mt-3 text-3xl leading-tight text-slate-950 sm:text-5xl">Growing from Akure into nearby communities</h2>
+                    <p class="mt-5 text-base leading-8 text-slate-700">
+                        The initiative combines media reach, local registration, community volunteers, and healthcare professionals to identify where free outreach can close urgent access gaps.
+                    </p>
+                    <div class="mt-7 overflow-hidden rounded-3xl shadow-2xl shadow-slate-900/10">
+                        <img src="{{ $supportImage }}" alt="Black Nigerian medical team providing free screening at a community outreach in Akure" class="aspect-[4/3] w-full object-cover">
                     </div>
+                </div>
+
+                <div class="grid gap-3 sm:grid-cols-2">
+                    @foreach ($communities as $community)
+                        <article class="gh-reveal rounded-2xl border border-white/70 bg-white/80 p-5 shadow-sm backdrop-blur-xl" x-intersect.once="$el.classList.add('animate__animated', 'animate__fadeInUp')">
+                            <h3 class="font-semibold text-slate-950">{{ $community['name'] }}</h3>
+                            <p class="mt-2 text-sm font-semibold text-cyan-700">{{ $community['status'] }}</p>
+                            <p class="mt-2 text-sm leading-7 text-slate-600">{{ $community['focus'] }}</p>
+                        </article>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white py-12 sm:py-16">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl">
+                    <p class="text-sm font-semibold text-blue-700">Outcome areas</p>
+                    <h2 class="gh-display mt-3 text-3xl leading-tight text-slate-950 sm:text-5xl">The kind of change partners can support</h2>
+                </div>
+
+                <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                    @foreach ($outcomes as $outcome)
+                        <article class="gh-reveal rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:-translate-y-1 hover:bg-white hover:shadow-xl" x-intersect.once="$el.classList.add('animate__animated', 'animate__fadeInUp')">
+                            <span class="flex size-12 items-center justify-center rounded-2xl bg-white text-blue-700 shadow-sm">
+                                <i class="fa-solid {{ $outcome['icon'] }} text-lg" aria-hidden="true"></i>
+                            </span>
+                            <h3 class="mt-5 font-semibold text-slate-950">{{ $outcome['title'] }}</h3>
+                            <p class="mt-3 text-sm leading-7 text-slate-600">{{ $outcome['description'] }}</p>
+                            <p class="mt-4 text-sm font-semibold text-emerald-700">{{ $outcome['result'] }}</p>
+                        </article>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-slate-50 py-12 sm:py-16">
+            <div class="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[0.82fr_1.18fr] lg:items-start lg:px-8">
+                <div>
+                    <p class="text-sm font-semibold text-amber-700">Human results</p>
+                    <h2 class="gh-display mt-3 text-3xl leading-tight text-slate-950 sm:text-5xl">Impact is more than a number</h2>
+                    <p class="mt-5 text-base leading-8 text-slate-700">
+                        Community health work is measured in screenings, consultations, and medications, but it is also measured in clarity, dignity, timely referral, and trust.
+                    </p>
+                </div>
+                <div class="grid gap-4">
+                    @foreach ($stories as $story)
+                        <article class="gh-reveal rounded-2xl border border-white/70 bg-white/80 p-5 shadow-sm backdrop-blur-xl" x-intersect.once="$el.classList.add('animate__animated', 'animate__fadeInUp')">
+                            <i class="fa-solid fa-quote-left text-xl text-cyan-600" aria-hidden="true"></i>
+                            <p class="mt-4 text-base leading-8 text-slate-700">{{ $story['quote'] }}</p>
+                            <div class="mt-5">
+                                <p class="font-semibold text-slate-950">{{ $story['name'] }}</p>
+                                <p class="text-sm text-slate-500">{{ $story['role'] }}</p>
+                            </div>
+                        </article>
+                    @endforeach
                 </div>
             </div>
         </section>
@@ -267,19 +314,17 @@
         <section class="bg-white py-12 sm:py-16">
             <div class="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[0.92fr_1.08fr] lg:items-start lg:px-8">
                 <div>
-                    <p class="text-sm font-semibold text-amber-700">Who should come</p>
-                    <h2 class="gh-display mt-3 text-3xl leading-tight text-slate-950 sm:text-5xl">Care is open to residents who need practical support</h2>
+                    <p class="text-sm font-semibold text-teal-700">Transparency</p>
+                    <h2 class="gh-display mt-3 text-3xl leading-tight text-slate-950 sm:text-5xl">What impact reporting tracks</h2>
                     <p class="mt-5 text-base leading-8 text-slate-700">
-                        The initiative prioritizes people who face cost, distance, or access barriers. Emergency cases should still go directly to the nearest hospital or emergency facility.
+                        The goal is to make outreach activity understandable to residents, volunteers, NGOs, public agencies, and sponsors who want evidence of community value.
                     </p>
                 </div>
                 <div class="grid gap-3">
-                    @foreach ($whoCanAttend as $item)
-                        <div class="gh-reveal flex gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4" x-intersect.once="$el.classList.add('animate__animated', 'animate__fadeInUp')">
-                            <span class="mt-1 flex size-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
-                                <i class="fa-solid fa-check text-xs" aria-hidden="true"></i>
-                            </span>
-                            <p class="text-sm leading-7 text-slate-700">{{ $item }}</p>
+                    @foreach ($reporting as $item)
+                        <div class="gh-reveal rounded-2xl border border-slate-200 bg-slate-50 p-5" x-intersect.once="$el.classList.add('animate__animated', 'animate__fadeInUp')">
+                            <p class="text-xs font-semibold uppercase text-slate-500">{{ $item['label'] }}</p>
+                            <p class="mt-2 text-base font-semibold text-slate-950">{{ $item['value'] }}</p>
                         </div>
                     @endforeach
                 </div>
@@ -289,18 +334,18 @@
         <section class="bg-slate-900 px-4 py-12 text-white sm:px-6 sm:py-16 lg:px-8">
             <div class="mx-auto max-w-7xl rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl sm:p-8 lg:flex lg:items-center lg:justify-between lg:gap-10">
                 <div>
-                    <p class="text-sm font-semibold text-sky-200">Ready for the next outreach?</p>
-                    <h2 class="gh-display mt-3 text-3xl leading-tight sm:text-4xl">Register, volunteer, or help sponsor care delivery.</h2>
+                    <p class="text-sm font-semibold text-cyan-200">Help deepen the impact</p>
+                    <h2 class="gh-display mt-3 text-3xl leading-tight sm:text-4xl">Sponsor care, volunteer skills, or help expand outreach coverage.</h2>
                     <p class="mt-4 max-w-2xl text-sm leading-7 text-slate-300">
-                        Glow helps connect residents, medical volunteers, community leaders, NGOs, public agencies, and sponsors around measurable health impact.
+                        Partnerships make it possible to add more screening supplies, medications, referral support, logistics, and follow-up capacity.
                     </p>
                 </div>
                 <div class="mt-6 grid gap-3 sm:flex lg:mt-0">
-                    <a href="mailto:hello@glowhealthcare.org?subject=Register%20for%20Glow%20FM%20Free%20Medical%20Initiative" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition hover:bg-sky-50">
-                        Register Now
+                    <a href="mailto:hello@glowhealthcare.org?subject=Support%20Glow%20Health%20Impact" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition hover:bg-sky-50">
+                        Support Impact
                     </a>
-                    <a href="{{ $homeUrl }}#volunteer" class="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
-                        Partner or Volunteer
+                    <a href="{{ $outreachUrl }}" class="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
+                        Join Outreach
                     </a>
                 </div>
             </div>
@@ -327,6 +372,7 @@
                     <a href="{{ $homeUrl }}" class="rounded-full border border-white/10 px-4 py-2 text-sky-200 hover:text-white">Home</a>
                     <a href="{{ $servicesUrl }}" class="rounded-full border border-white/10 px-4 py-2 text-emerald-200 hover:text-white">Services</a>
                     <a href="{{ $outreachUrl }}" class="rounded-full border border-white/10 px-4 py-2 text-blue-200 hover:text-white">Outreach</a>
+                    <a href="{{ $impactUrl }}" class="rounded-full border border-white/10 px-4 py-2 text-cyan-200 hover:text-white">Impact</a>
                     <a href="{{ $homeUrl }}#volunteer" class="rounded-full border border-white/10 px-4 py-2 text-amber-200 hover:text-white">Volunteer</a>
                     <a href="mailto:hello@glowhealthcare.org" class="rounded-full border border-white/10 px-4 py-2 text-teal-200 hover:text-white">Contact</a>
                 </div>
@@ -343,7 +389,7 @@
                 <i class="fa-solid fa-house text-base" aria-hidden="true"></i>
                 <span class="truncate">Home</span>
             </a>
-            <a href="{{ $servicesUrl }}" aria-current="page" class="flex min-w-0 flex-col items-center justify-center gap-1 rounded-2xl bg-white px-2 py-2 text-emerald-700 shadow-sm">
+            <a href="{{ $servicesUrl }}" class="flex min-w-0 flex-col items-center justify-center gap-1 rounded-2xl px-2 py-2 transition hover:bg-white hover:text-emerald-700">
                 <i class="fa-solid fa-stethoscope text-base" aria-hidden="true"></i>
                 <span class="truncate">Care</span>
             </a>
@@ -351,7 +397,7 @@
                 <i class="fa-solid fa-circle-plus text-base" aria-hidden="true"></i>
                 <span class="truncate">Outreach</span>
             </a>
-            <a href="{{ $impactUrl }}" class="flex min-w-0 flex-col items-center justify-center gap-1 rounded-2xl px-2 py-2 transition hover:bg-white hover:text-cyan-700">
+            <a href="{{ $impactUrl }}" aria-current="page" class="flex min-w-0 flex-col items-center justify-center gap-1 rounded-2xl bg-white px-2 py-2 text-cyan-700 shadow-sm">
                 <i class="fa-solid fa-heart-pulse text-base" aria-hidden="true"></i>
                 <span class="truncate">Impact</span>
             </a>

@@ -75,6 +75,7 @@
     $homeUrl = route('home');
     $servicesUrl = route('services');
     $outreachUrl = route('outreach');
+    $impactUrl = route('impact');
 @endphp
 
 <div
@@ -110,7 +111,7 @@
                 <a href="{{ $homeUrl }}" class="transition hover:text-sky-700">Home</a>
                 <a href="{{ $servicesUrl }}" class="transition hover:text-emerald-700">Services</a>
                 <a href="{{ $outreachUrl }}" aria-current="page" class="font-semibold text-blue-700">Next Outreach</a>
-                <a href="{{ $homeUrl }}#impact" class="transition hover:text-cyan-700">Impact</a>
+                <a href="{{ $impactUrl }}" class="transition hover:text-cyan-700">Impact</a>
                 <a href="{{ $homeUrl }}#volunteer" class="transition hover:text-amber-700">Volunteer</a>
                 <a href="{{ $homeUrl }}#partners" class="transition hover:text-teal-700">Partners</a>
             </nav>
@@ -162,7 +163,7 @@
                         <span class="flex size-10 items-center justify-center rounded-xl bg-white text-blue-700"><i class="fa-solid fa-circle-plus text-lg" aria-hidden="true"></i></span>
                         <span>Next medical outreach</span>
                     </a>
-                    <a href="{{ $homeUrl }}#impact" class="flex items-center gap-3 rounded-2xl px-3 py-3 text-sm font-medium text-slate-700 transition hover:bg-sky-50 hover:text-sky-700" @click="closeMenu()">
+                    <a href="{{ $impactUrl }}" class="flex items-center gap-3 rounded-2xl px-3 py-3 text-sm font-medium text-slate-700 transition hover:bg-sky-50 hover:text-sky-700" @click="closeMenu()">
                         <span class="flex size-10 items-center justify-center rounded-xl bg-sky-50 text-sky-700"><i class="fa-solid fa-heart-pulse text-lg" aria-hidden="true"></i></span>
                         <span class="text-cyan-700">Community impact</span>
                     </a>
@@ -400,7 +401,7 @@
                 <i class="fa-solid fa-circle-plus text-base" aria-hidden="true"></i>
                 <span class="truncate">Outreach</span>
             </a>
-            <a href="{{ $homeUrl }}#impact" class="flex min-w-0 flex-col items-center justify-center gap-1 rounded-2xl px-2 py-2 transition hover:bg-white hover:text-cyan-700">
+            <a href="{{ $impactUrl }}" class="flex min-w-0 flex-col items-center justify-center gap-1 rounded-2xl px-2 py-2 transition hover:bg-white hover:text-cyan-700">
                 <i class="fa-solid fa-heart-pulse text-base" aria-hidden="true"></i>
                 <span class="truncate">Impact</span>
             </a>

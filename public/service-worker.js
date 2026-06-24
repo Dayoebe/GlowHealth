@@ -1,6 +1,7 @@
-const CACHE_NAME = 'glow-medical-v6';
+const CACHE_NAME = 'glow-medical-v7';
 const PRECACHE_URLS = [
     '/',
+    '/impact',
     '/outreach',
     '/services',
     '/offline.html',

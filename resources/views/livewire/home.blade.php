@@ -209,7 +209,7 @@
             <nav class="hidden items-center gap-6 text-sm font-medium text-slate-600 lg:flex" aria-label="Primary navigation">
                 <a href="{{ route('services') }}" class="transition hover:text-emerald-700">Services</a>
                 <a href="{{ route('outreach') }}" class="transition hover:text-sky-700">Next Outreach</a>
-                <a href="#impact" @click="setActiveTab('impact')" class="transition hover:text-cyan-700">Impact</a>
+                <a href="{{ route('impact') }}" class="transition hover:text-cyan-700">Impact</a>
                 <a href="#volunteer" @click="setActiveTab('volunteer')" class="transition hover:text-amber-700">Volunteer</a>
                 <a href="#partners" @click="setActiveTab('partners')" class="transition hover:text-teal-700">Partners</a>
             </nav>
@@ -257,7 +257,7 @@
                         <span class="flex size-10 items-center justify-center rounded-xl bg-sky-50 text-sky-700"><i class="fa-solid fa-circle-plus text-lg" aria-hidden="true"></i></span>
                         <span class="text-sky-700">Next medical outreach</span>
                     </a>
-                    <a href="#impact" @click="setActiveTab('impact')" class="flex items-center gap-3 rounded-2xl px-3 py-3 text-sm font-medium text-slate-700 transition hover:bg-sky-50 hover:text-sky-700">
+                    <a href="{{ route('impact') }}" class="flex items-center gap-3 rounded-2xl px-3 py-3 text-sm font-medium text-slate-700 transition hover:bg-sky-50 hover:text-sky-700">
                         <span class="flex size-10 items-center justify-center rounded-xl bg-sky-50 text-sky-700"><i class="fa-solid fa-heart-pulse text-lg" aria-hidden="true"></i></span>
                         <span class="text-cyan-700">Community impact</span>
                     </a>
@@ -557,6 +557,10 @@
                         </article>
                     @endforeach
                 </div>
+                <a href="{{ route('impact') }}" class="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-cyan-700 hover:text-cyan-800">
+                    <span>Explore the full impact report</span>
+                    <i class="fa-solid fa-arrow-right text-[0.8rem]" aria-hidden="true"></i>
+                </a>
             </div>
         </section>
 
@@ -730,7 +734,7 @@
                 <div class="mt-5 flex gap-3 text-sm text-slate-300">
                     <a href="https://www.glowfmradio.com" class="text-sky-200 hover:text-white">Glow</a>
                     <a href="#partners" class="text-teal-200 hover:text-white">Partners</a>
-                    <a href="#impact" class="text-emerald-200 hover:text-white">Impact</a>
+                    <a href="{{ route('impact') }}" class="text-emerald-200 hover:text-white">Impact</a>
                 </div>
             </div>
         </div>
@@ -753,7 +757,7 @@
                 <i class="fa-solid fa-circle-plus text-base" aria-hidden="true"></i>
                 <span class="truncate">Outreach</span>
             </a>
-            <a href="#impact" @click="setActiveTab('impact')" class="flex min-w-0 flex-col items-center justify-center gap-1 rounded-2xl px-2 py-2 transition" :class="activeTab === 'impact' ? 'bg-white text-cyan-700 shadow-sm' : 'hover:bg-white hover:text-cyan-700'">
+            <a href="{{ route('impact') }}" class="flex min-w-0 flex-col items-center justify-center gap-1 rounded-2xl px-2 py-2 transition hover:bg-white hover:text-cyan-700">
                 <i class="fa-solid fa-heart-pulse text-base" aria-hidden="true"></i>
                 <span class="truncate">Impact</span>
             </a>
