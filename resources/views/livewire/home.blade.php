@@ -192,7 +192,7 @@
 >
     <header class="sticky top-0 z-50 border-b border-white/70 bg-white/80 shadow-lg shadow-slate-900/5 backdrop-blur-2xl">
         <div class="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
-            <a href="#top" class="flex min-w-0 items-center gap-3" aria-label="Glow Health Outreach Initiative home">
+            <a href="{{ route('home') }}" class="flex min-w-0 items-center gap-3" aria-label="Glow Health Outreach Initiative home">
                 <img
                     src="{{ $brandLogo }}"
                     alt="Glow logo"
@@ -207,7 +207,7 @@
             </a>
 
             <nav class="hidden items-center gap-6 text-sm font-medium text-slate-600 lg:flex" aria-label="Primary navigation">
-                <a href="#services" @click="setActiveTab('services')" class="transition hover:text-emerald-700">Services</a>
+                <a href="{{ route('services') }}" class="transition hover:text-emerald-700">Services</a>
                 <a href="#outreach" @click="setActiveTab('outreach')" class="transition hover:text-sky-700">Next Outreach</a>
                 <a href="#impact" @click="setActiveTab('impact')" class="transition hover:text-cyan-700">Impact</a>
                 <a href="#volunteer" @click="setActiveTab('volunteer')" class="transition hover:text-amber-700">Volunteer</a>
@@ -249,7 +249,7 @@
                 @click.outside="mobileMenuOpen = false"
             >
                 <nav class="grid gap-2" aria-label="Mobile menu">
-                    <a href="#services" @click="setActiveTab('services')" class="flex items-center gap-3 rounded-2xl px-3 py-3 text-sm font-medium text-slate-700 transition hover:bg-sky-50 hover:text-sky-700">
+                    <a href="{{ route('services') }}" class="flex items-center gap-3 rounded-2xl px-3 py-3 text-sm font-medium text-slate-700 transition hover:bg-sky-50 hover:text-sky-700">
                         <span class="flex size-10 items-center justify-center rounded-xl bg-sky-50 text-sky-700"><i class="fa-solid fa-shield-heart text-lg" aria-hidden="true"></i></span>
                         <span class="text-emerald-700">Free healthcare services</span>
                     </a>
@@ -428,9 +428,15 @@
                         <p class="text-sm font-semibold text-cyan-700">What residents receive</p>
                         <h2 class="gh-display mt-3 text-3xl font-semibold leading-tight text-slate-950 sm:text-5xl">Free <span class="text-emerald-700">Healthcare</span> <span class="text-cyan-700">Services</span></h2>
                     </div>
-                    <p class="max-w-xl text-sm leading-7 text-slate-700 sm:text-base">
-                        Services are arranged to identify common health risks early, provide immediate guidance, and connect residents to next-step care where needed.
-                    </p>
+                    <div class="max-w-xl">
+                        <p class="text-sm leading-7 text-slate-700 sm:text-base">
+                            Services are arranged to identify common health risks early, provide immediate guidance, and connect residents to next-step care where needed.
+                        </p>
+                        <a href="{{ route('services') }}" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-emerald-700 hover:text-emerald-800">
+                            <span>View the full services page</span>
+                            <i class="fa-solid fa-arrow-right text-[0.8rem]" aria-hidden="true"></i>
+                        </a>
+                    </div>
                 </div>
 
                 <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -701,7 +707,7 @@
                 </p>
                 <div class="mt-6 flex flex-wrap gap-3 text-sm">
                     <a href="#top" class="rounded-full border border-white/10 px-4 py-2 text-sky-200 hover:text-white">About</a>
-                    <a href="#services" class="rounded-full border border-white/10 px-4 py-2 text-emerald-200 hover:text-white">Programs</a>
+                    <a href="{{ route('services') }}" class="rounded-full border border-white/10 px-4 py-2 text-emerald-200 hover:text-white">Programs</a>
                     <a href="#volunteer" class="rounded-full border border-white/10 px-4 py-2 text-amber-200 hover:text-white">Volunteer</a>
                     <a href="mailto:hello@glowhealthcare.org?subject=Donate%20to%20Glow%20FM%20Free%20Medical%20Initiative" class="rounded-full border border-white/10 px-4 py-2 text-cyan-200 hover:text-white">Donate</a>
                     <a href="mailto:hello@glowhealthcare.org" class="rounded-full border border-white/10 px-4 py-2 text-teal-200 hover:text-white">Contact</a>
@@ -734,7 +740,7 @@
                 <i class="fa-solid fa-house text-base" aria-hidden="true"></i>
                 <span class="truncate">Home</span>
             </a>
-            <a href="#services" @click="setActiveTab('services')" class="flex min-w-0 flex-col items-center justify-center gap-1 rounded-2xl px-2 py-2 transition" :class="activeTab === 'services' ? 'bg-white text-emerald-700 shadow-sm' : 'hover:bg-white hover:text-emerald-700'">
+            <a href="{{ route('services') }}" class="flex min-w-0 flex-col items-center justify-center gap-1 rounded-2xl px-2 py-2 transition hover:bg-white hover:text-emerald-700">
                 <i class="fa-solid fa-stethoscope text-base" aria-hidden="true"></i>
                 <span class="truncate">Care</span>
             </a>

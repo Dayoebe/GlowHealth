@@ -1,6 +1,7 @@
-const CACHE_NAME = 'glow-medical-v4';
+const CACHE_NAME = 'glow-medical-v5';
 const PRECACHE_URLS = [
     '/',
+    '/services',
     '/offline.html',
     '/favicon.ico',
     '/glowfm%20logo.jpeg',
