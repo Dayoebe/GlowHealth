@@ -8,7 +8,7 @@ use Livewire\Attributes\Title;
 use Livewire\Component;
 
 #[Layout('layouts.public')]
-#[Title('Glow Free Medical Initiative')]
+#[Title('Glow Health Outreach Initiative')]
 class Home extends Component
 {
     /**

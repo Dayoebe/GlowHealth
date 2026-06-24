@@ -1,13 +1,13 @@
 @php
     $configuredName = config('app.name', 'Laravel');
-    $appName = $configuredName === 'Laravel' ? 'Glow Free Medical Initiative' : $configuredName;
+    $appName = $configuredName === 'Laravel' ? 'Glow Health Outreach Initiative' : $configuredName;
     $pageTitle = filled($title ?? null) && $title !== $appName ? $title.' - '.$appName : $appName;
 @endphp
 
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Glow Free Medical Initiative provides free consultations, health screenings, medication support, health education, and referrals for residents of Ondo State." />
-<meta name="theme-color" content="#172554" />
+<meta name="description" content="Glow Health Outreach Initiative provides free consultations, health screenings, medication support, health education, and referrals for residents of Ondo State." />
+<meta name="theme-color" content="#f8fafc" />
 <meta name="application-name" content="{{ $appName }}" />
 <meta name="apple-mobile-web-app-title" content="Glow Medical" />
 <meta name="apple-mobile-web-app-capable" content="yes" />

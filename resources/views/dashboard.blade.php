@@ -1,10 +1,10 @@
 <x-layouts::app.sidebar :title="__('Outreach Dashboard')">
     <flux:main>
         <section class="mx-auto flex w-full max-w-7xl flex-col gap-8 px-4 py-6 sm:px-6 lg:px-8">
-            <div class="rounded-3xl border border-emerald-100 bg-gradient-to-br from-emerald-50 via-white to-cyan-50 p-6 shadow-sm dark:border-emerald-900/40 dark:from-zinc-900 dark:via-zinc-900 dark:to-slate-900">
+            <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
                 <div class="max-w-3xl">
                     <p class="text-sm font-semibold uppercase tracking-wide text-emerald-700 dark:text-emerald-300">
-                        Glow Free Medical Initiative
+                        Glow Health Outreach Initiative
                     </p>
                     <h1 class="mt-3 text-2xl font-semibold text-slate-950 dark:text-white sm:text-3xl">
                         Outreach operations dashboard
