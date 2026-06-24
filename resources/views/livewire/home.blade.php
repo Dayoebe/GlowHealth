@@ -292,22 +292,22 @@
                 <div class="absolute bottom-0 right-0 hidden h-56 w-2 bg-slate-200 lg:block"></div>
             </div>
 
-            <div class="mx-auto grid min-h-[calc(100svh-7rem)] max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1.02fr_0.98fr] lg:px-8 lg:py-20">
+            <div class="mx-auto grid max-w-7xl items-start gap-7 px-4 pb-24 pt-8 sm:gap-10 sm:px-6 sm:py-16 lg:min-h-[calc(100svh-7rem)] lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:px-8 lg:py-20">
                 <div>
-                    <p class="animate__animated animate__fadeInDown inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/75 px-4 py-2 text-sm font-semibold text-sky-800 shadow-sm backdrop-blur-xl">
+                    <p class="animate__animated animate__fadeIn inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/75 px-3 py-2 text-xs font-semibold text-sky-800 shadow-sm backdrop-blur-xl sm:px-4 sm:text-sm">
                         <span class="gh-pulse size-2 rounded-full bg-sky-500"></span>
                         Enabled by Dr. Ezekiel Akande for community health impact
                     </p>
 
-                    <h1 class="gh-display animate__animated animate__fadeInUp mt-6 max-w-4xl text-4xl font-semibold leading-[1.04] text-slate-950 sm:text-5xl lg:text-7xl">
+                    <h1 class="gh-display animate__animated animate__fadeIn mt-5 max-w-4xl text-[2.35rem] font-semibold leading-[1.04] text-slate-950 sm:mt-6 sm:text-5xl lg:text-7xl">
                         Quality <span class="text-emerald-700">Healthcare</span> Should Not Be a <span class="text-sky-700">Privilege</span>
                     </h1>
 
-                    <p class="animate__animated animate__fadeInUp animate__delay-1s mt-6 max-w-2xl text-base leading-8 text-slate-700 sm:text-lg">
+                    <p class="animate__animated animate__fadeIn mt-4 max-w-2xl text-sm leading-7 text-slate-700 sm:mt-6 sm:text-lg sm:leading-8">
                         The Glow Health Outreach Initiative brings <span class="font-semibold text-emerald-700">free consultations</span>, <span class="font-semibold text-sky-700">health screenings</span>, <span class="font-semibold text-cyan-700">medications</span>, and <span class="font-semibold text-amber-700">health education</span> directly to communities across Ondo State.
                     </p>
 
-                    <div class="animate__animated animate__fadeInUp animate__delay-1s mt-8 grid gap-3 sm:flex">
+                    <div class="animate__animated animate__fadeIn mt-6 grid gap-3 sm:mt-8 sm:flex">
                         <a
                             href="mailto:hello@glowhealthcare.org?subject=Register%20for%20the%20Next%20Glow%20FM%20Medical%20Outreach"
                             class="inline-flex items-center justify-center gap-2 rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-slate-900/10 transition hover:-translate-y-0.5 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2"
@@ -324,12 +324,11 @@
                         </a>
                     </div>
 
-                    <dl class="mt-9 grid gap-3 sm:grid-cols-2">
+                    <dl class="mt-9 hidden gap-3 lg:grid lg:grid-cols-2">
                         @foreach ($heroStats as $stat)
                             @php($statColor = $accentTextColors[$loop->index % count($accentTextColors)])
                             <div
-                                class="gh-reveal rounded-2xl border border-white/70 bg-white/75 p-4 shadow-sm backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-sky-200 hover:bg-white/90 hover:shadow-lg"
-                                x-intersect.once="$el.classList.add('animate__animated', 'animate__fadeInUp')"
+                                class="animate__animated animate__fadeIn rounded-2xl border border-white/70 bg-white/75 p-4 shadow-sm backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-sky-200 hover:bg-white/90 hover:shadow-lg"
                                 style="animation-delay: {{ $loop->index * 90 }}ms"
                             >
                                 <dt class="text-2xl font-bold {{ $statColor }}">{{ $stat['value'] }}</dt>
@@ -341,26 +340,26 @@
                 </div>
 
                 <div class="relative">
-                    <div class="gh-float-a relative overflow-hidden rounded-[2rem] border border-white/70 bg-white/70 p-5 shadow-2xl shadow-slate-900/10 backdrop-blur-xl">
+                    <div class="gh-float-a relative overflow-hidden rounded-[1.75rem] border border-white/70 bg-white/70 p-3 shadow-2xl shadow-slate-900/10 backdrop-blur-xl sm:rounded-[2rem] sm:p-5">
                         <img
                             src="{{ $heroImage }}"
                             alt="Black Nigerian medical team providing free screening at a community outreach in Akure"
-                            class="aspect-[4/3] w-full rounded-[1.5rem] object-cover"
+                            class="aspect-[16/10] w-full rounded-[1.25rem] object-cover sm:aspect-[4/3] sm:rounded-[1.5rem]"
                             loading="eager"
                             fetchpriority="high"
                         >
 
-                        <div class="absolute left-8 top-8 rounded-2xl border border-white/70 bg-white/80 p-3 text-sky-700 shadow-lg backdrop-blur-xl">
-                            <i class="fa-solid fa-heart-pulse text-2xl" aria-hidden="true"></i>
+                        <div class="absolute left-5 top-5 rounded-2xl border border-white/70 bg-white/80 p-2 text-sky-700 shadow-lg backdrop-blur-xl sm:left-8 sm:top-8 sm:p-3">
+                            <i class="fa-solid fa-heart-pulse text-lg sm:text-2xl" aria-hidden="true"></i>
                         </div>
-                        <div class="gh-float-b absolute right-6 top-20 rounded-2xl border border-white/40 bg-sky-600/90 p-4 text-white shadow-xl backdrop-blur-xl">
+                        <div class="gh-float-b absolute right-6 top-20 hidden rounded-2xl border border-white/40 bg-sky-600/90 p-4 text-white shadow-xl backdrop-blur-xl sm:block">
                             <i class="fa-solid fa-shield-heart text-3xl" aria-hidden="true"></i>
                         </div>
-                        <div class="absolute bottom-7 left-7 right-7 rounded-2xl border border-white/70 bg-slate-950/88 p-4 text-white shadow-xl backdrop-blur">
+                        <div class="absolute bottom-4 left-4 right-4 rounded-2xl border border-white/70 bg-slate-950/88 p-3 text-white shadow-xl backdrop-blur sm:bottom-7 sm:left-7 sm:right-7 sm:p-4">
                             <div class="flex items-center justify-between gap-4">
                                 <div>
                                     <p class="text-xs font-semibold uppercase text-slate-300">Field care flow</p>
-                                    <p class="mt-1 text-lg font-semibold">Register. Screen. Treat. Refer.</p>
+                                    <p class="mt-1 text-sm font-semibold sm:text-lg">Register. Screen. Treat. Refer.</p>
                                 </div>
                                 <span class="gh-pulse rounded-full bg-white px-3 py-1 text-xs font-bold text-slate-950">Live</span>
                             </div>
@@ -372,6 +371,21 @@
                         <i class="fa-solid fa-circle-plus text-5xl text-sky-500" aria-hidden="true"></i>
                     </div>
                 </div>
+
+                <dl class="grid gap-3 sm:grid-cols-2 lg:hidden">
+                    @foreach ($heroStats as $stat)
+                        @php($statColor = $accentTextColors[$loop->index % count($accentTextColors)])
+                        <div
+                            class="gh-reveal rounded-2xl border border-white/70 bg-white/75 p-4 shadow-sm backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-sky-200 hover:bg-white/90 hover:shadow-lg"
+                            x-intersect.once="$el.classList.add('animate__animated', 'animate__fadeInUp')"
+                            style="animation-delay: {{ $loop->index * 90 }}ms"
+                        >
+                            <dt class="text-2xl font-bold {{ $statColor }}">{{ $stat['value'] }}</dt>
+                            <dd class="mt-1 text-sm font-semibold {{ $statColor }}">{{ $stat['label'] }}</dd>
+                            <p class="mt-2 text-xs leading-5 text-slate-600">{{ $stat['detail'] }}</p>
+                        </div>
+                    @endforeach
+                </dl>
             </div>
         </section>
 
