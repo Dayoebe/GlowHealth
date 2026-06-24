@@ -208,7 +208,7 @@
 
             <nav class="hidden items-center gap-6 text-sm font-medium text-slate-600 lg:flex" aria-label="Primary navigation">
                 <a href="{{ route('services') }}" class="transition hover:text-emerald-700">Services</a>
-                <a href="#outreach" @click="setActiveTab('outreach')" class="transition hover:text-sky-700">Next Outreach</a>
+                <a href="{{ route('outreach') }}" class="transition hover:text-sky-700">Next Outreach</a>
                 <a href="#impact" @click="setActiveTab('impact')" class="transition hover:text-cyan-700">Impact</a>
                 <a href="#volunteer" @click="setActiveTab('volunteer')" class="transition hover:text-amber-700">Volunteer</a>
                 <a href="#partners" @click="setActiveTab('partners')" class="transition hover:text-teal-700">Partners</a>
@@ -253,7 +253,7 @@
                         <span class="flex size-10 items-center justify-center rounded-xl bg-sky-50 text-sky-700"><i class="fa-solid fa-shield-heart text-lg" aria-hidden="true"></i></span>
                         <span class="text-emerald-700">Free healthcare services</span>
                     </a>
-                    <a href="#outreach" @click="setActiveTab('outreach')" class="flex items-center gap-3 rounded-2xl px-3 py-3 text-sm font-medium text-slate-700 transition hover:bg-sky-50 hover:text-sky-700">
+                    <a href="{{ route('outreach') }}" class="flex items-center gap-3 rounded-2xl px-3 py-3 text-sm font-medium text-slate-700 transition hover:bg-sky-50 hover:text-sky-700">
                         <span class="flex size-10 items-center justify-center rounded-xl bg-sky-50 text-sky-700"><i class="fa-solid fa-circle-plus text-lg" aria-hidden="true"></i></span>
                         <span class="text-sky-700">Next medical outreach</span>
                     </a>
@@ -519,6 +519,10 @@
                     <p class="mt-5 text-sm leading-7 text-slate-600">
                         Confirmed venue details will be shared with registered residents, volunteers, and partner organizations before the outreach day.
                     </p>
+                    <a href="{{ route('outreach') }}" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-blue-700 hover:text-blue-800">
+                        <span>View full outreach details</span>
+                        <i class="fa-solid fa-arrow-right text-[0.8rem]" aria-hidden="true"></i>
+                    </a>
 
                     <a
                         href="mailto:hello@glowhealthcare.org?subject=Register%20for%20Akure%20Medical%20Outreach"
@@ -708,6 +712,7 @@
                 <div class="mt-6 flex flex-wrap gap-3 text-sm">
                     <a href="#top" class="rounded-full border border-white/10 px-4 py-2 text-sky-200 hover:text-white">About</a>
                     <a href="{{ route('services') }}" class="rounded-full border border-white/10 px-4 py-2 text-emerald-200 hover:text-white">Programs</a>
+                    <a href="{{ route('outreach') }}" class="rounded-full border border-white/10 px-4 py-2 text-blue-200 hover:text-white">Outreach</a>
                     <a href="#volunteer" class="rounded-full border border-white/10 px-4 py-2 text-amber-200 hover:text-white">Volunteer</a>
                     <a href="mailto:hello@glowhealthcare.org?subject=Donate%20to%20Glow%20FM%20Free%20Medical%20Initiative" class="rounded-full border border-white/10 px-4 py-2 text-cyan-200 hover:text-white">Donate</a>
                     <a href="mailto:hello@glowhealthcare.org" class="rounded-full border border-white/10 px-4 py-2 text-teal-200 hover:text-white">Contact</a>
@@ -744,7 +749,7 @@
                 <i class="fa-solid fa-stethoscope text-base" aria-hidden="true"></i>
                 <span class="truncate">Care</span>
             </a>
-            <a href="#outreach" @click="setActiveTab('outreach')" class="flex min-w-0 flex-col items-center justify-center gap-1 rounded-2xl px-2 py-2 transition" :class="activeTab === 'outreach' ? 'bg-white text-blue-700 shadow-sm' : 'hover:bg-white hover:text-blue-700'">
+            <a href="{{ route('outreach') }}" class="flex min-w-0 flex-col items-center justify-center gap-1 rounded-2xl px-2 py-2 transition hover:bg-white hover:text-blue-700">
                 <i class="fa-solid fa-circle-plus text-base" aria-hidden="true"></i>
                 <span class="truncate">Outreach</span>
             </a>
