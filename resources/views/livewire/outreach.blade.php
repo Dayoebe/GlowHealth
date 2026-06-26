@@ -1,73 +1,3 @@
-@push('head')
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <style>
-        [x-cloak] {
-            display: none !important;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        .gh-page {
-            font-family: 'Ubuntu', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            font-weight: 400;
-        }
-
-        .gh-display {
-            font-family: 'Montserrat', 'Ubuntu', ui-sans-serif, system-ui, sans-serif;
-            font-weight: 800;
-            letter-spacing: 0;
-        }
-
-        .gh-page a.inline-flex,
-        .gh-page button,
-        .gh-page .gh-button {
-            font-family: 'Ubuntu', ui-sans-serif, system-ui, sans-serif;
-            font-weight: 500;
-        }
-
-        .gh-page.gh-js .gh-reveal {
-            opacity: 0;
-        }
-
-        .gh-page.gh-js .gh-reveal.animate__animated {
-            opacity: 1;
-        }
-
-        .gh-pulse {
-            animation: gh-pulse 2.4s ease-out infinite;
-        }
-
-        @keyframes gh-pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(14, 165, 233, .28);
-            }
-            70% {
-                box-shadow: 0 0 0 18px rgba(14, 165, 233, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(14, 165, 233, 0);
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                animation-duration: .01ms !important;
-                animation-iteration-count: 1 !important;
-                scroll-behavior: auto !important;
-                transition-duration: .01ms !important;
-            }
-
-            .gh-page.gh-js .gh-reveal {
-                opacity: 1 !important;
-            }
-        }
-    </style>
-@endpush
-
 @php
     $brandLogo = asset('glowfm%20logo.jpeg');
     $heroImage = asset('images/outreach/community-medical-outreach-akure.webp');
@@ -76,6 +6,9 @@
     $servicesUrl = route('services');
     $outreachUrl = route('outreach');
     $impactUrl = route('impact');
+    $volunteerUrl = route('volunteer');
+    $partnerUrl = route('partner');
+    $contactUrl = route('contact');
 @endphp
 
 <div
@@ -93,7 +26,7 @@
 >
     <header class="sticky top-0 z-50 border-b border-white/70 bg-white/80 shadow-lg shadow-slate-900/5 backdrop-blur-2xl">
         <div class="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
-            <a href="{{ $homeUrl }}" class="flex min-w-0 items-center gap-3" aria-label="Glow Health Outreach Initiative home">
+            <a href="{{ $homeUrl }}" wire:navigate class="flex min-w-0 items-center gap-3" aria-label="Glow Health Outreach Initiative home">
                 <img
                     src="{{ $brandLogo }}"
                     alt="Glow logo"
@@ -107,18 +40,19 @@
                 </span>
             </a>
 
-            <nav class="hidden items-center gap-6 text-sm font-medium text-slate-600 lg:flex" aria-label="Primary navigation">
-                <a href="{{ $homeUrl }}" class="transition hover:text-sky-700">Home</a>
-                <a href="{{ $servicesUrl }}" class="transition hover:text-emerald-700">Services</a>
-                <a href="{{ $outreachUrl }}" aria-current="page" class="font-semibold text-blue-700">Next Outreach</a>
-                <a href="{{ $impactUrl }}" class="transition hover:text-cyan-700">Impact</a>
-                <a href="{{ $homeUrl }}#volunteer" class="transition hover:text-amber-700">Volunteer</a>
-                <a href="{{ $homeUrl }}#partners" class="transition hover:text-teal-700">Partners</a>
+            <nav class="hidden items-center gap-6 text-sm font-medium text-slate-600 xl:flex" aria-label="Primary navigation">
+                <a href="{{ $homeUrl }}" wire:navigate class="transition hover:text-sky-700">Home</a>
+                <a href="{{ $servicesUrl }}" wire:navigate class="transition hover:text-emerald-700">Services</a>
+                <a href="{{ $outreachUrl }}" wire:navigate aria-current="page" class="font-semibold text-blue-700">Next Outreach</a>
+                <a href="{{ $impactUrl }}" wire:navigate class="transition hover:text-cyan-700">Impact</a>
+                <a href="{{ $volunteerUrl }}" wire:navigate class="transition hover:text-amber-700">Volunteer</a>
+                <a href="{{ $partnerUrl }}" wire:navigate class="transition hover:text-teal-700">Partners</a>
+                <a href="{{ $contactUrl }}" wire:navigate class="transition hover:text-slate-900">Contact</a>
             </nav>
 
             <div class="flex shrink-0 items-center gap-2">
                 <a
-                    href="mailto:hello@glowhealthcare.org?subject=Register%20for%20the%20Next%20Glow%20Medical%20Outreach"
+                    href="mailto:chairman@glowfmhealth.com?subject=Register%20for%20the%20Next%20Glow%20Medical%20Outreach"
                     class="gh-button hidden items-center justify-center gap-2 rounded-xl bg-slate-900 px-4 py-2.5 text-sm text-white shadow-sm transition hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2 sm:inline-flex"
                 >
                     <span>Register</span>
@@ -127,7 +61,7 @@
 
                 <button
                     type="button"
-                    class="inline-flex size-11 items-center justify-center rounded-2xl border border-slate-200 bg-slate-50 text-slate-800 shadow-sm transition hover:border-sky-200 hover:bg-sky-50 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 lg:hidden"
+                    class="inline-flex size-11 items-center justify-center rounded-2xl border border-slate-200 bg-slate-50 text-slate-800 shadow-sm transition hover:border-sky-200 hover:bg-sky-50 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 xl:hidden"
                     aria-controls="mobile-menu"
                     :aria-expanded="mobileMenuOpen.toString()"
                     @click="mobileMenuOpen = ! mobileMenuOpen"
@@ -144,32 +78,40 @@
             x-cloak
             x-show="mobileMenuOpen"
             x-transition.opacity.duration.180ms
-            class="lg:hidden"
+            class="xl:hidden"
         >
             <div
                 class="mx-4 mb-3 rounded-[1.5rem] border border-white/70 bg-white/85 p-3 shadow-2xl shadow-slate-900/10 backdrop-blur-2xl"
                 @click.outside="mobileMenuOpen = false"
             >
                 <nav class="grid gap-2" aria-label="Mobile menu">
-                    <a href="{{ $homeUrl }}" class="flex items-center gap-3 rounded-2xl px-3 py-3 text-sm font-medium text-slate-700 transition hover:bg-sky-50 hover:text-sky-700" @click="closeMenu()">
+                    <a href="{{ $homeUrl }}" wire:navigate class="flex items-center gap-3 rounded-2xl px-3 py-3 text-sm font-medium text-slate-700 transition hover:bg-sky-50 hover:text-sky-700" @click="closeMenu()">
                         <span class="flex size-10 items-center justify-center rounded-xl bg-sky-50 text-sky-700"><i class="fa-solid fa-house text-lg" aria-hidden="true"></i></span>
                         <span class="text-sky-700">Homepage</span>
                     </a>
-                    <a href="{{ $servicesUrl }}" class="flex items-center gap-3 rounded-2xl px-3 py-3 text-sm font-medium text-slate-700 transition hover:bg-sky-50 hover:text-sky-700" @click="closeMenu()">
+                    <a href="{{ $servicesUrl }}" wire:navigate class="flex items-center gap-3 rounded-2xl px-3 py-3 text-sm font-medium text-slate-700 transition hover:bg-sky-50 hover:text-sky-700" @click="closeMenu()">
                         <span class="flex size-10 items-center justify-center rounded-xl bg-sky-50 text-sky-700"><i class="fa-solid fa-stethoscope text-lg" aria-hidden="true"></i></span>
                         <span class="text-emerald-700">Free healthcare services</span>
                     </a>
-                    <a href="{{ $outreachUrl }}" aria-current="page" class="flex items-center gap-3 rounded-2xl bg-blue-50 px-3 py-3 text-sm font-semibold text-blue-800" @click="closeMenu()">
+                    <a href="{{ $outreachUrl }}" wire:navigate aria-current="page" class="flex items-center gap-3 rounded-2xl bg-blue-50 px-3 py-3 text-sm font-semibold text-blue-800" @click="closeMenu()">
                         <span class="flex size-10 items-center justify-center rounded-xl bg-white text-blue-700"><i class="fa-solid fa-circle-plus text-lg" aria-hidden="true"></i></span>
                         <span>Next medical outreach</span>
                     </a>
-                    <a href="{{ $impactUrl }}" class="flex items-center gap-3 rounded-2xl px-3 py-3 text-sm font-medium text-slate-700 transition hover:bg-sky-50 hover:text-sky-700" @click="closeMenu()">
+                    <a href="{{ $impactUrl }}" wire:navigate class="flex items-center gap-3 rounded-2xl px-3 py-3 text-sm font-medium text-slate-700 transition hover:bg-sky-50 hover:text-sky-700" @click="closeMenu()">
                         <span class="flex size-10 items-center justify-center rounded-xl bg-sky-50 text-sky-700"><i class="fa-solid fa-heart-pulse text-lg" aria-hidden="true"></i></span>
                         <span class="text-cyan-700">Community impact</span>
                     </a>
-                    <a href="{{ $homeUrl }}#volunteer" class="flex items-center gap-3 rounded-2xl px-3 py-3 text-sm font-medium text-slate-700 transition hover:bg-sky-50 hover:text-sky-700" @click="closeMenu()">
+                    <a href="{{ $volunteerUrl }}" wire:navigate class="flex items-center gap-3 rounded-2xl px-3 py-3 text-sm font-medium text-slate-700 transition hover:bg-sky-50 hover:text-sky-700" @click="closeMenu()">
                         <span class="flex size-10 items-center justify-center rounded-xl bg-sky-50 text-sky-700"><i class="fa-solid fa-users text-lg" aria-hidden="true"></i></span>
                         <span class="text-amber-700">Volunteer with us</span>
+                    </a>
+                    <a href="{{ $partnerUrl }}" wire:navigate class="flex items-center gap-3 rounded-2xl px-3 py-3 text-sm font-medium text-slate-700 transition hover:bg-sky-50 hover:text-sky-700" @click="closeMenu()">
+                        <span class="flex size-10 items-center justify-center rounded-xl bg-sky-50 text-sky-700"><i class="fa-solid fa-handshake text-lg" aria-hidden="true"></i></span>
+                        <span class="text-teal-700">Sponsors and partners</span>
+                    </a>
+                    <a href="{{ $contactUrl }}" wire:navigate class="flex items-center gap-3 rounded-2xl px-3 py-3 text-sm font-medium text-slate-700 transition hover:bg-sky-50 hover:text-sky-700" @click="closeMenu()">
+                        <span class="flex size-10 items-center justify-center rounded-xl bg-sky-50 text-sky-700"><i class="fa-solid fa-envelope text-lg" aria-hidden="true"></i></span>
+                        <span class="text-slate-700">Contact the desk</span>
                     </a>
                 </nav>
             </div>
@@ -181,7 +123,7 @@
             <div class="absolute inset-x-0 top-0 h-1 bg-sky-200" aria-hidden="true"></div>
             <div class="mx-auto grid max-w-7xl gap-8 px-4 pb-12 pt-8 sm:px-6 sm:py-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:px-8">
                 <div>
-                    <a href="{{ $homeUrl }}" class="inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/75 px-3 py-2 text-xs font-semibold text-sky-800 shadow-sm backdrop-blur-xl sm:px-4 sm:text-sm">
+                    <a href="{{ $homeUrl }}" wire:navigate class="inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/75 px-3 py-2 text-xs font-semibold text-sky-800 shadow-sm backdrop-blur-xl sm:px-4 sm:text-sm">
                         <i class="fa-solid fa-arrow-left text-[0.75rem]" aria-hidden="true"></i>
                         Back to homepage
                     </a>
@@ -196,11 +138,11 @@
                         This page gives residents, volunteers, partners, and sponsors one place to understand the outreach schedule, care stations, arrival flow, and preparation requirements.
                     </p>
                     <div class="mt-7 grid gap-3 sm:flex">
-                        <a href="mailto:hello@glowhealthcare.org?subject=Register%20for%20the%20Next%20Glow%20Medical%20Outreach" class="inline-flex items-center justify-center gap-2 rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-slate-900/10 transition hover:-translate-y-0.5 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2">
+                        <a href="mailto:chairman@glowfmhealth.com?subject=Register%20for%20the%20Next%20Glow%20Medical%20Outreach" class="inline-flex items-center justify-center gap-2 rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-slate-900/10 transition hover:-translate-y-0.5 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2">
                             <span>Register Interest</span>
                             <i class="fa-solid fa-arrow-right text-[0.85rem]" aria-hidden="true"></i>
                         </a>
-                        <a href="{{ $servicesUrl }}" class="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-800 shadow-sm transition hover:-translate-y-0.5 hover:border-sky-300 hover:text-sky-800 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2">
+                        <a href="{{ $servicesUrl }}" wire:navigate class="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-800 shadow-sm transition hover:-translate-y-0.5 hover:border-sky-300 hover:text-sky-800 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2">
                             <i class="fa-solid fa-stethoscope text-[0.9rem]" aria-hidden="true"></i>
                             <span>Review Services</span>
                         </a>
@@ -346,10 +288,10 @@
                     </p>
                 </div>
                 <div class="mt-6 grid gap-3 sm:flex lg:mt-0">
-                    <a href="mailto:hello@glowhealthcare.org?subject=Register%20Interest%20for%20Glow%20Medical%20Outreach" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition hover:bg-sky-50">
+                    <a href="mailto:chairman@glowfmhealth.com?subject=Register%20Interest%20for%20Glow%20Medical%20Outreach" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition hover:bg-sky-50">
                         Register Interest
                     </a>
-                    <a href="{{ $homeUrl }}#volunteer" class="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
+                    <a href="{{ $volunteerUrl }}" wire:navigate class="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
                         Volunteer or Partner
                     </a>
                 </div>
@@ -374,11 +316,12 @@
             <div class="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl">
                 <h3 class="text-lg font-semibold"><span class="text-cyan-200">Page links</span></h3>
                 <div class="mt-5 flex flex-wrap gap-3 text-sm">
-                    <a href="{{ $homeUrl }}" class="rounded-full border border-white/10 px-4 py-2 text-sky-200 hover:text-white">Home</a>
-                    <a href="{{ $servicesUrl }}" class="rounded-full border border-white/10 px-4 py-2 text-emerald-200 hover:text-white">Services</a>
-                    <a href="{{ $outreachUrl }}" class="rounded-full border border-white/10 px-4 py-2 text-blue-200 hover:text-white">Outreach</a>
-                    <a href="{{ $homeUrl }}#volunteer" class="rounded-full border border-white/10 px-4 py-2 text-amber-200 hover:text-white">Volunteer</a>
-                    <a href="mailto:hello@glowhealthcare.org" class="rounded-full border border-white/10 px-4 py-2 text-teal-200 hover:text-white">Contact</a>
+                    <a href="{{ $homeUrl }}" wire:navigate class="rounded-full border border-white/10 px-4 py-2 text-sky-200 hover:text-white">Home</a>
+                    <a href="{{ $servicesUrl }}" wire:navigate class="rounded-full border border-white/10 px-4 py-2 text-emerald-200 hover:text-white">Services</a>
+                    <a href="{{ $outreachUrl }}" wire:navigate class="rounded-full border border-white/10 px-4 py-2 text-blue-200 hover:text-white">Outreach</a>
+                    <a href="{{ $volunteerUrl }}" wire:navigate class="rounded-full border border-white/10 px-4 py-2 text-amber-200 hover:text-white">Volunteer</a>
+                    <a href="{{ $partnerUrl }}" wire:navigate class="rounded-full border border-white/10 px-4 py-2 text-teal-200 hover:text-white">Partner</a>
+                    <a href="{{ $contactUrl }}" wire:navigate class="rounded-full border border-white/10 px-4 py-2 text-slate-200 hover:text-white">Contact</a>
                 </div>
             </div>
         </div>
@@ -389,23 +332,23 @@
 
     <nav class="fixed inset-x-0 bottom-0 z-50 border-t border-white/70 bg-white/80 px-2 pb-[max(env(safe-area-inset-bottom),0.5rem)] pt-2 shadow-[0_-18px_40px_rgba(15,23,42,0.08)] backdrop-blur-2xl lg:hidden" aria-label="Mobile page tabs">
         <div class="mx-auto grid max-w-md grid-cols-5 gap-1 rounded-[1.35rem] border border-white/70 bg-slate-100/70 p-1 text-[0.68rem] font-medium text-slate-500 backdrop-blur-xl">
-            <a href="{{ $homeUrl }}" class="flex min-w-0 flex-col items-center justify-center gap-1 rounded-2xl px-2 py-2 transition hover:bg-white hover:text-sky-700">
+            <a href="{{ $homeUrl }}" wire:navigate class="flex min-w-0 flex-col items-center justify-center gap-1 rounded-2xl px-2 py-2 transition hover:bg-white hover:text-sky-700">
                 <i class="fa-solid fa-house text-base" aria-hidden="true"></i>
                 <span class="truncate">Home</span>
             </a>
-            <a href="{{ $servicesUrl }}" class="flex min-w-0 flex-col items-center justify-center gap-1 rounded-2xl px-2 py-2 transition hover:bg-white hover:text-emerald-700">
+            <a href="{{ $servicesUrl }}" wire:navigate class="flex min-w-0 flex-col items-center justify-center gap-1 rounded-2xl px-2 py-2 transition hover:bg-white hover:text-emerald-700">
                 <i class="fa-solid fa-stethoscope text-base" aria-hidden="true"></i>
                 <span class="truncate">Care</span>
             </a>
-            <a href="{{ $outreachUrl }}" aria-current="page" class="flex min-w-0 flex-col items-center justify-center gap-1 rounded-2xl bg-white px-2 py-2 text-blue-700 shadow-sm">
+            <a href="{{ $outreachUrl }}" wire:navigate aria-current="page" class="flex min-w-0 flex-col items-center justify-center gap-1 rounded-2xl bg-white px-2 py-2 text-blue-700 shadow-sm">
                 <i class="fa-solid fa-circle-plus text-base" aria-hidden="true"></i>
                 <span class="truncate">Outreach</span>
             </a>
-            <a href="{{ $impactUrl }}" class="flex min-w-0 flex-col items-center justify-center gap-1 rounded-2xl px-2 py-2 transition hover:bg-white hover:text-cyan-700">
+            <a href="{{ $impactUrl }}" wire:navigate class="flex min-w-0 flex-col items-center justify-center gap-1 rounded-2xl px-2 py-2 transition hover:bg-white hover:text-cyan-700">
                 <i class="fa-solid fa-heart-pulse text-base" aria-hidden="true"></i>
                 <span class="truncate">Impact</span>
             </a>
-            <a href="{{ $homeUrl }}#volunteer" class="flex min-w-0 flex-col items-center justify-center gap-1 rounded-2xl px-2 py-2 transition hover:bg-white hover:text-amber-700">
+            <a href="{{ $volunteerUrl }}" wire:navigate class="flex min-w-0 flex-col items-center justify-center gap-1 rounded-2xl px-2 py-2 transition hover:bg-white hover:text-amber-700">
                 <i class="fa-solid fa-users text-base" aria-hidden="true"></i>
                 <span class="truncate">Join</span>
             </a>
