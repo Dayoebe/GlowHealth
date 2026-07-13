@@ -17,9 +17,11 @@ export default defineConfig({
             fonts: [
                 fontsource('Ubuntu', {
                     weights: [400, 500],
+                    preload: false,
                 }),
                 fontsource('Montserrat', {
                     weights: [800],
+                    preload: false,
                 }),
             ],
         }),
