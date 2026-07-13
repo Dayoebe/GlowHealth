@@ -1,4 +1,4 @@
-const CACHE_NAME = 'glow-medical-v11';
+const CACHE_NAME = 'glow-medical-v12';
 const PRECACHE_URLS = [
     '/',
     '/contact',

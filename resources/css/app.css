@@ -27,16 +27,16 @@
     --color-zinc-900: #171717;
     --color-zinc-950: #0a0a0a;
 
-    --color-accent: var(--color-neutral-800);
-    --color-accent-content: var(--color-neutral-800);
+    --color-accent: #071b57;
+    --color-accent-content: #071b57;
     --color-accent-foreground: var(--color-white);
 }
 
 @layer theme {
     .dark {
-        --color-accent: var(--color-white);
-        --color-accent-content: var(--color-white);
-        --color-accent-foreground: var(--color-neutral-800);
+        --color-accent: #ff7a2f;
+        --color-accent-content: #ff7a2f;
+        --color-accent-foreground: #04123d;
     }
 }
 
@@ -61,8 +61,79 @@ html {
 }
 
 .gh-page {
+    /* Glow brand palette: navy and orange lead; clinical colors remain supporting accents. */
+    --color-sky-50: #f4f7ff;
+    --color-sky-100: #e8eeff;
+    --color-sky-200: #c8d5ff;
+    --color-sky-300: #9db4ff;
+    --color-sky-400: #6487f2;
+    --color-sky-500: #315bd4;
+    --color-sky-600: #173eae;
+    --color-sky-700: #102f8f;
+    --color-sky-800: #0c2675;
+    --color-sky-900: #071b57;
+    --color-sky-950: #04123d;
+
+    --color-blue-50: #f4f7ff;
+    --color-blue-100: #e8eeff;
+    --color-blue-200: #c8d5ff;
+    --color-blue-300: #9db4ff;
+    --color-blue-400: #6487f2;
+    --color-blue-500: #315bd4;
+    --color-blue-600: #173eae;
+    --color-blue-700: #102f8f;
+    --color-blue-800: #0c2675;
+    --color-blue-900: #071b57;
+    --color-blue-950: #04123d;
+
+    --color-amber-50: #fff6ed;
+    --color-amber-100: #ffead5;
+    --color-amber-200: #ffd1aa;
+    --color-amber-300: #ffad70;
+    --color-amber-400: #ff7a2f;
+    --color-amber-500: #f4510b;
+    --color-amber-600: #d83b05;
+    --color-amber-700: #b52b06;
+    --color-amber-800: #90230c;
+    --color-amber-900: #741f0d;
+    --color-amber-950: #3f0d05;
+
+    --color-orange-50: #fff6ed;
+    --color-orange-100: #ffead5;
+    --color-orange-200: #ffd1aa;
+    --color-orange-300: #ffad70;
+    --color-orange-400: #ff7a2f;
+    --color-orange-500: #f4510b;
+    --color-orange-600: #d83b05;
+    --color-orange-700: #b52b06;
+    --color-orange-800: #90230c;
+    --color-orange-900: #741f0d;
+    --color-orange-950: #3f0d05;
+
+    --color-slate-50: #f8faff;
+    --color-slate-100: #eef2f8;
+    --color-slate-200: #dce3ee;
+    --color-slate-300: #bec9da;
+    --color-slate-400: #8796ad;
+    --color-slate-500: #607089;
+    --color-slate-600: #44536b;
+    --color-slate-700: #2e3d58;
+    --color-slate-800: #192a4b;
+    --color-slate-900: #0b1d45;
+    --color-slate-950: #061235;
+
     font-family: 'Ubuntu', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-weight: 400;
+}
+
+.gh-page::selection,
+.gh-page ::selection {
+    background: var(--color-orange-200);
+    color: #04123d;
+}
+
+.gh-page > header {
+    border-bottom-color: color-mix(in srgb, var(--color-orange-500) 28%, transparent);
 }
 
 .gh-display {
@@ -76,6 +147,26 @@ html {
 .gh-page .gh-button {
     font-family: 'Ubuntu', ui-sans-serif, system-ui, sans-serif;
     font-weight: 500;
+}
+
+/* Orange is reserved for conversion actions; navy remains the structural color. */
+.gh-page a.bg-slate-900,
+.gh-page button.bg-slate-900,
+.gh-page .gh-button.bg-slate-900 {
+    background-color: var(--color-orange-700);
+    box-shadow: 0 8px 20px rgba(181, 43, 6, .16);
+}
+
+.gh-page a.bg-slate-900:hover,
+.gh-page button.bg-slate-900:hover,
+.gh-page .gh-button.bg-slate-900:hover {
+    background-color: var(--color-orange-800);
+}
+
+.gh-page a.bg-slate-900:focus-visible,
+.gh-page button.bg-slate-900:focus-visible,
+.gh-page .gh-button.bg-slate-900:focus-visible {
+    --tw-ring-color: var(--color-orange-400);
 }
 
 .gh-scrollbar {
@@ -135,15 +226,15 @@ html {
 
 @keyframes gh-pulse {
     0% {
-        box-shadow: 0 0 0 0 rgba(14, 165, 233, .28);
+        box-shadow: 0 0 0 0 rgba(244, 81, 11, .3);
     }
 
     70% {
-        box-shadow: 0 0 0 18px rgba(14, 165, 233, 0);
+        box-shadow: 0 0 0 18px rgba(244, 81, 11, 0);
     }
 
     100% {
-        box-shadow: 0 0 0 0 rgba(14, 165, 233, 0);
+        box-shadow: 0 0 0 0 rgba(244, 81, 11, 0);
     }
 }
 
