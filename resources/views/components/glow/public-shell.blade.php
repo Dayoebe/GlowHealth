@@ -1,7 +1,7 @@
 @props(['active' => 'home'])
 
 @php
-    $brandLogo = asset('glowfm%20logo.jpeg');
+    $brandLogo = asset('glow-health-logo.png');
     $links = [
         ['key' => 'home', 'label' => 'Home', 'short' => 'Home', 'url' => route('home'), 'icon' => 'fa-house', 'active' => 'text-sky-700', 'hover' => 'hover:text-sky-700'],
         ['key' => 'services', 'label' => 'Services', 'short' => 'Care', 'url' => route('services'), 'icon' => 'fa-stethoscope', 'active' => 'text-emerald-700', 'hover' => 'hover:text-emerald-700'],
@@ -28,12 +28,8 @@
 >
     <header class="sticky top-0 z-50 border-b border-white/70 bg-white/80 shadow-lg shadow-slate-900/5 backdrop-blur-2xl">
         <div class="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
-            <a href="{{ route('home') }}" wire:navigate class="flex min-w-0 items-center gap-3" aria-label="Glow Health Outreach Initiative home">
-                <img src="{{ $brandLogo }}" alt="Glow logo" class="size-11 shrink-0 rounded-xl border border-sky-200 bg-white object-cover shadow-sm" loading="eager" fetchpriority="high">
-                <span class="min-w-0">
-                    <span class="gh-display block truncate text-base leading-5 text-slate-950 sm:text-lg"><span class="text-sky-700">Glow</span> Health Outreach Initiative</span>
-                    <span class="block truncate text-xs leading-5 text-slate-500">Free healthcare outreach across Ondo State</span>
-                </span>
+            <a href="{{ route('home') }}" wire:navigate class="flex shrink-0 items-center" aria-label="Glow Health Outreach Initiative home">
+                <img src="{{ $brandLogo }}" width="940" height="500" alt="Glow Health Outreach Initiative" class="h-12 w-28 object-contain sm:h-14 sm:w-36 lg:w-40" loading="eager" fetchpriority="high">
             </a>
 
             <nav class="hidden items-center gap-4 text-sm font-medium text-slate-600 xl:flex" aria-label="Primary navigation">
@@ -86,7 +82,7 @@
         <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
             <div>
                 <div class="flex items-center gap-3">
-                    <img src="{{ $brandLogo }}" alt="Glow logo" class="size-11 rounded-xl border border-white/10 object-cover">
+                    <img src="{{ $brandLogo }}" width="940" height="500" alt="Glow Health Outreach Initiative" class="h-20 w-36 rounded-xl bg-white object-contain p-2 sm:w-40" loading="lazy">
                     <div>
                         <p class="gh-display text-xl"><span class="text-sky-300">Glow</span> Health Outreach Initiative</p>
                         <p class="text-sm text-slate-400">Health impact enabled by Dr. Ezekiel Akande</p>
