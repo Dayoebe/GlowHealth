@@ -19,9 +19,13 @@ class PublicPagesTest extends TestCase
         ];
 
         foreach ($pages as [$route, $expectedText]) {
-            $this->get(route($route))
+            $response = $this->get(route($route))
                 ->assertOk()
-                ->assertSeeText($expectedText);
+                ->assertSeeText($expectedText)
+                ->assertSeeInOrder(['<header', '<main', '<footer'], false);
+
+            $this->assertSame(1, substr_count($response->getContent(), '<header'));
+            $this->assertSame(1, substr_count($response->getContent(), '<footer'));
         }
     }
 }

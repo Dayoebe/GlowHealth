@@ -177,7 +177,8 @@ html {
     display: none;
 }
 
-.gh-page.gh-js .gh-reveal {
+.gh-page.gh-js .gh-reveal,
+.gh-page .gh-js .gh-reveal {
     opacity: 0;
 }
 
@@ -254,7 +255,8 @@ html {
         transition-duration: .01ms !important;
     }
 
-    .gh-page.gh-js .gh-reveal {
+    .gh-page.gh-js .gh-reveal,
+    .gh-page .gh-js .gh-reveal {
         opacity: 1 !important;
     }
 }

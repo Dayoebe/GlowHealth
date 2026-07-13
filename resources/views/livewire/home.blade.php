@@ -1,5 +1,4 @@
 @php
-    $brandLogo = asset('glow-health-logo.png');
     $heroImage = asset('images/outreach/community-medical-outreach-akure.webp');
     $storyImage = asset('images/outreach/family-health-education-ondo.webp');
     $volunteerImage = asset('images/outreach/medical-volunteers-outreach-table.webp');
@@ -33,9 +32,9 @@
     ];
 @endphp
 
+<x-glow.public-shell active="home">
 <div
-    class="gh-page min-h-screen bg-slate-50 pb-24 text-slate-950 antialiased lg:pb-0"
-    @keydown.escape.window="mobileMenuOpen = false"
+    class="gh-content"
     x-data="{
         mobileMenuOpen: false,
         activeTab: 'top',
@@ -75,103 +74,6 @@
         }
     }"
 >
-    <header class="sticky top-0 z-50 border-b border-white/70 bg-white/80 shadow-lg shadow-slate-900/5 backdrop-blur-2xl">
-        <div class="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
-            <a href="{{ route('home') }}" wire:navigate class="flex shrink-0 items-center" aria-label="Glow Health Outreach Initiative home">
-                <img
-                    src="{{ $brandLogo }}"
-                    width="940"
-                    height="500"
-                    alt="Glow Health Outreach Initiative"
-                    class="h-12 w-28 object-contain sm:h-14 sm:w-36 lg:w-40"
-                    loading="eager"
-                    fetchpriority="high"
-                >
-            </a>
-
-            <nav class="hidden items-center gap-6 text-sm font-medium text-slate-600 xl:flex" aria-label="Primary navigation">
-                <a href="{{ route('services') }}" wire:navigate class="transition hover:text-emerald-700">Services</a>
-                <a href="{{ route('outreach') }}" wire:navigate class="transition hover:text-sky-700">Next Outreach</a>
-                <a href="{{ route('impact') }}" wire:navigate class="transition hover:text-cyan-700">Impact</a>
-                <a href="{{ route('volunteer') }}" wire:navigate class="transition hover:text-amber-700">Volunteer</a>
-                <a href="{{ route('partner') }}" wire:navigate class="transition hover:text-teal-700">Partners</a>
-                <a href="{{ route('contact') }}" wire:navigate class="transition hover:text-slate-900">Contact</a>
-            </nav>
-
-            <div class="flex shrink-0 items-center gap-2">
-                <a
-                    href="mailto:chairman@glowfmhealth.com?subject=Register%20for%20Glow%20FM%20Free%20Medical%20Initiative"
-                    class="gh-button hidden items-center justify-center gap-2 rounded-xl bg-slate-900 px-4 py-2.5 text-sm text-white shadow-sm transition hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2 sm:inline-flex"
-                >
-                    <span>Register</span>
-                    <i class="fa-solid fa-arrow-right text-[0.85rem]" aria-hidden="true"></i>
-                </a>
-
-                <button
-                    type="button"
-                    class="inline-flex size-11 items-center justify-center rounded-2xl border border-slate-200 bg-slate-50 text-slate-800 shadow-sm transition hover:border-sky-200 hover:bg-sky-50 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 xl:hidden"
-                    aria-controls="mobile-menu"
-                    :aria-expanded="mobileMenuOpen.toString()"
-                    @click="mobileMenuOpen = ! mobileMenuOpen"
-                >
-                    <span class="sr-only">Toggle navigation menu</span>
-                    <i class="fa-solid fa-bars text-lg" aria-hidden="true" x-show="! mobileMenuOpen"></i>
-                    <i class="fa-solid fa-xmark text-lg" aria-hidden="true" x-cloak x-show="mobileMenuOpen"></i>
-                </button>
-            </div>
-        </div>
-
-        <div
-            id="mobile-menu"
-            x-cloak
-            x-show="mobileMenuOpen"
-            x-transition.opacity.duration.180ms
-            class="xl:hidden"
-        >
-            <div
-                class="mx-4 mb-3 rounded-[1.5rem] border border-white/70 bg-white/85 p-3 shadow-2xl shadow-slate-900/10 backdrop-blur-2xl"
-                @click.outside="mobileMenuOpen = false"
-            >
-                <nav class="grid gap-2" aria-label="Mobile menu">
-                    <a href="{{ route('services') }}" wire:navigate class="flex items-center gap-3 rounded-2xl px-3 py-3 text-sm font-medium text-slate-700 transition hover:bg-sky-50 hover:text-sky-700">
-                        <span class="flex size-10 items-center justify-center rounded-xl bg-sky-50 text-sky-700"><i class="fa-solid fa-shield-heart text-lg" aria-hidden="true"></i></span>
-                        <span class="text-emerald-700">Free healthcare services</span>
-                    </a>
-                    <a href="{{ route('outreach') }}" wire:navigate class="flex items-center gap-3 rounded-2xl px-3 py-3 text-sm font-medium text-slate-700 transition hover:bg-sky-50 hover:text-sky-700">
-                        <span class="flex size-10 items-center justify-center rounded-xl bg-sky-50 text-sky-700"><i class="fa-solid fa-circle-plus text-lg" aria-hidden="true"></i></span>
-                        <span class="text-sky-700">Next medical outreach</span>
-                    </a>
-                    <a href="{{ route('impact') }}" wire:navigate class="flex items-center gap-3 rounded-2xl px-3 py-3 text-sm font-medium text-slate-700 transition hover:bg-sky-50 hover:text-sky-700">
-                        <span class="flex size-10 items-center justify-center rounded-xl bg-sky-50 text-sky-700"><i class="fa-solid fa-heart-pulse text-lg" aria-hidden="true"></i></span>
-                        <span class="text-cyan-700">Community impact</span>
-                    </a>
-                    <a href="{{ route('volunteer') }}" wire:navigate class="flex items-center gap-3 rounded-2xl px-3 py-3 text-sm font-medium text-slate-700 transition hover:bg-sky-50 hover:text-sky-700">
-                        <span class="flex size-10 items-center justify-center rounded-xl bg-sky-50 text-sky-700"><i class="fa-solid fa-users text-lg" aria-hidden="true"></i></span>
-                        <span class="text-amber-700">Volunteer with us</span>
-                    </a>
-                    <a href="{{ route('partner') }}" wire:navigate class="flex items-center gap-3 rounded-2xl px-3 py-3 text-sm font-medium text-slate-700 transition hover:bg-sky-50 hover:text-sky-700">
-                        <span class="flex size-10 items-center justify-center rounded-xl bg-sky-50 text-sky-700"><i class="fa-solid fa-clipboard-check text-lg" aria-hidden="true"></i></span>
-                        <span class="text-teal-700">Sponsors and partners</span>
-                    </a>
-                    <a href="{{ route('contact') }}" wire:navigate class="flex items-center gap-3 rounded-2xl px-3 py-3 text-sm font-medium text-slate-700 transition hover:bg-sky-50 hover:text-sky-700">
-                        <span class="flex size-10 items-center justify-center rounded-xl bg-sky-50 text-sky-700"><i class="fa-solid fa-envelope text-lg" aria-hidden="true"></i></span>
-                        <span class="text-slate-700">Contact the desk</span>
-                    </a>
-                </nav>
-
-                <div class="mt-3 grid grid-cols-2 gap-2">
-                    <a href="mailto:chairman@glowfmhealth.com?subject=Register%20for%20Glow%20FM%20Free%20Medical%20Initiative" class="gh-button inline-flex items-center justify-center gap-2 rounded-2xl bg-slate-900 px-4 py-3 text-sm text-white shadow-sm">
-                        Register
-                    </a>
-                    <a href="mailto:chairman@glowfmhealth.com?subject=Volunteer%20for%20Glow%20FM%20Free%20Medical%20Initiative" class="gh-button inline-flex items-center justify-center gap-2 rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-800">
-                        Volunteer
-                    </a>
-                </div>
-            </div>
-        </div>
-
-    </header>
-
     <main>
         <section id="top" class="relative isolate overflow-hidden bg-sky-50">
             <div class="absolute inset-0 -z-10" aria-hidden="true">
@@ -188,7 +90,7 @@
                     </p>
 
                     <h1 class="gh-display animate__animated animate__fadeIn mt-5 max-w-4xl text-[2.35rem] font-semibold leading-[1.04] text-slate-950 sm:mt-6 sm:text-5xl lg:text-7xl">
-                        Quality <span class="text-emerald-700">Healthcare</span> Should Not Be a <span class="text-sky-700">Privilege</span>
+                        Quality <span class="text-amber-700">Healthcare</span> Should Not Be a <span class="text-sky-700">Privilege</span>
                     </h1>
 
                     <p class="animate__animated animate__fadeIn mt-4 max-w-2xl text-sm leading-7 text-slate-700 sm:mt-6 sm:text-lg sm:leading-8">
@@ -587,73 +489,5 @@
             </div>
         </section>
     </main>
-
-    <footer id="contact" class="bg-slate-900 text-white">
-        <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
-            <div>
-                <div class="flex items-center gap-3">
-                    <img src="{{ $brandLogo }}" width="940" height="500" alt="Glow Health Outreach Initiative" class="h-20 w-36 rounded-xl bg-white object-contain p-2 sm:w-40" loading="lazy">
-                    <div>
-                        <p class="gh-display text-xl font-semibold"><span class="text-sky-300">Glow</span> Free <span class="text-emerald-300">Medical</span> Initiative</p>
-                        <p class="text-sm text-slate-400">Health impact Enabled by Dr. Ezekiel Akande</p>
-                    </div>
-                </div>
-                <p class="mt-5 max-w-xl text-sm leading-7 text-slate-300">
-                    Free consultations, screenings, medications, health education, referrals, volunteer coordination, and community participation for residents of Ondo State.
-                </p>
-                <div class="mt-6 flex flex-wrap gap-3 text-sm">
-                    <a href="#top" class="rounded-full border border-white/10 px-4 py-2 text-sky-200 hover:text-white">About</a>
-                    <a href="{{ route('services') }}" wire:navigate class="rounded-full border border-white/10 px-4 py-2 text-emerald-200 hover:text-white">Programs</a>
-                    <a href="{{ route('outreach') }}" wire:navigate class="rounded-full border border-white/10 px-4 py-2 text-blue-200 hover:text-white">Outreach</a>
-                    <a href="{{ route('volunteer') }}" wire:navigate class="rounded-full border border-white/10 px-4 py-2 text-amber-200 hover:text-white">Volunteer</a>
-                    <a href="mailto:chairman@glowfmhealth.com?subject=Donate%20to%20Glow%20FM%20Free%20Medical%20Initiative" class="rounded-full border border-white/10 px-4 py-2 text-cyan-200 hover:text-white">Donate</a>
-                    <a href="{{ route('partner') }}" wire:navigate class="rounded-full border border-white/10 px-4 py-2 text-teal-200 hover:text-white">Partners</a>
-                    <a href="{{ route('contact') }}" wire:navigate class="rounded-full border border-white/10 px-4 py-2 text-slate-200 hover:text-white">Contact</a>
-                </div>
-            </div>
-
-            <div class="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl">
-                <h3 class="text-lg font-semibold"><span class="text-cyan-200">Get outreach</span> updates</h3>
-                <p class="mt-2 text-sm leading-6 text-slate-300">Receive health tips, registration notices, volunteer calls, and sponsor updates.</p>
-                <form class="mt-5 grid gap-3 sm:grid-cols-[1fr_auto]">
-                    <label class="sr-only" for="newsletter-email">Email address</label>
-                    <input id="newsletter-email" type="email" placeholder="Email address" class="rounded-xl border border-white/10 bg-white px-4 py-3 text-sm text-slate-950 outline-none focus:ring-2 focus:ring-sky-300">
-                    <button type="submit" class="rounded-xl bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition hover:bg-sky-50">Subscribe</button>
-                </form>
-                <div class="mt-5 flex gap-3 text-sm text-slate-300">
-                    <a href="https://www.glowfmradio.com" class="text-sky-200 hover:text-white">Glow</a>
-                    <a href="{{ route('partner') }}" wire:navigate class="text-teal-200 hover:text-white">Partners</a>
-                    <a href="{{ route('impact') }}" wire:navigate class="text-emerald-200 hover:text-white">Impact</a>
-                </div>
-            </div>
-        </div>
-        <div class="border-t border-white/10 px-4 py-5 text-center text-xs text-slate-500">
-            &copy; {{ date('Y') }} Glow Health Outreach Initiative. Built for community health, dignity, and access.
-        </div>
-    </footer>
-
-    <nav class="fixed inset-x-0 bottom-0 z-50 border-t border-white/70 bg-white/80 px-2 pb-[max(env(safe-area-inset-bottom),0.5rem)] pt-2 shadow-[0_-18px_40px_rgba(15,23,42,0.08)] backdrop-blur-2xl lg:hidden" aria-label="Mobile section tabs">
-        <div class="mx-auto grid max-w-md grid-cols-5 gap-1 rounded-[1.35rem] border border-white/70 bg-slate-100/70 p-1 text-[0.68rem] font-medium text-slate-500 backdrop-blur-xl">
-            <a href="#top" @click="setActiveTab('top')" class="flex min-w-0 flex-col items-center justify-center gap-1 rounded-2xl px-2 py-2 transition" :class="activeTab === 'top' ? 'bg-white text-sky-700 shadow-sm' : 'hover:bg-white hover:text-sky-700'">
-                <i class="fa-solid fa-house text-base" aria-hidden="true"></i>
-                <span class="truncate">Home</span>
-            </a>
-            <a href="{{ route('services') }}" wire:navigate class="flex min-w-0 flex-col items-center justify-center gap-1 rounded-2xl px-2 py-2 transition hover:bg-white hover:text-emerald-700">
-                <i class="fa-solid fa-stethoscope text-base" aria-hidden="true"></i>
-                <span class="truncate">Care</span>
-            </a>
-            <a href="{{ route('outreach') }}" wire:navigate class="flex min-w-0 flex-col items-center justify-center gap-1 rounded-2xl px-2 py-2 transition hover:bg-white hover:text-blue-700">
-                <i class="fa-solid fa-circle-plus text-base" aria-hidden="true"></i>
-                <span class="truncate">Outreach</span>
-            </a>
-            <a href="{{ route('impact') }}" wire:navigate class="flex min-w-0 flex-col items-center justify-center gap-1 rounded-2xl px-2 py-2 transition hover:bg-white hover:text-cyan-700">
-                <i class="fa-solid fa-heart-pulse text-base" aria-hidden="true"></i>
-                <span class="truncate">Impact</span>
-            </a>
-            <a href="{{ route('volunteer') }}" wire:navigate class="flex min-w-0 flex-col items-center justify-center gap-1 rounded-2xl px-2 py-2 transition hover:bg-white hover:text-amber-700">
-                <i class="fa-solid fa-users text-base" aria-hidden="true"></i>
-                <span class="truncate">Join</span>
-            </a>
-        </div>
-    </nav>
 </div>
+</x-glow.public-shell>

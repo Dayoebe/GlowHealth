@@ -78,7 +78,7 @@
 
     {{ $slot }}
 
-    <footer class="bg-slate-950 text-white">
+    <footer id="contact" class="bg-slate-950 text-white">
         <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
             <div>
                 <div class="flex items-center gap-3">
