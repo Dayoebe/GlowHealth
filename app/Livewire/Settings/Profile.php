@@ -50,11 +50,18 @@ class Profile extends Component
             'account_type_other' => ['nullable', 'string', 'max:120', 'required_if:account_type,other'],
         ]);
 
-        $validated['account_type_other'] = $validated['account_type'] === 'other'
-            ? $validated['account_type_other']
-            : null;
+        $requestedRole = $validated['account_type'];
+        $requestedOther = $requestedRole === 'other' ? $validated['account_type_other'] : null;
 
-        $user->fill($validated);
+        $user->fill(collect($validated)->only(['name', 'email'])->all());
+
+        if (! $user->is_super_admin && ($requestedRole !== $user->account_type || $requestedOther !== $user->account_type_other)) {
+            $user->requested_account_type = $requestedRole;
+            $user->requested_account_type_other = $requestedOther;
+            $user->role_change_requested_at = now();
+            $this->account_type = $user->account_type;
+            $this->account_type_other = $user->account_type_other ?? '';
+        }
 
         if ($user->isDirty('email')) {
             $user->email_verified_at = null;
@@ -62,7 +69,8 @@ class Profile extends Component
 
         $user->save();
 
-        $this->dispatch('notify', message: __('Profile updated.'));
+        $message = $user->role_change_requested_at ? 'Profile updated. Your role change is awaiting super-admin approval.' : 'Profile updated.';
+        $this->dispatch('notify', message: $message);
     }
 
     /**

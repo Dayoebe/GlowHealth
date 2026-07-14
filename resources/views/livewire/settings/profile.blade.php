@@ -6,7 +6,7 @@
                 <span class="flex size-16 shrink-0 items-center justify-center rounded-2xl bg-orange-600 text-xl font-extrabold text-white shadow-lg">{{ str(auth()->user()->name)->initials() }}</span>
                 <div><p class="text-xs font-bold uppercase tracking-[0.16em] text-orange-300">Account settings</p><h1 class="mt-1 text-2xl font-extrabold sm:text-3xl">Your Glow Health profile</h1><p class="mt-1 text-sm text-sky-100">Keep your identity, participation role, and contact information accurate.</p></div>
             </div>
-            <a href="{{ route('dashboard') }}" wire:navigate class="inline-flex w-fit items-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-sm font-bold transition hover:bg-white/15"><i class="fa-solid fa-arrow-left text-xs" aria-hidden="true"></i>Back to dashboard</a>
+            <a href="{{ route('dashboard') }}" class="inline-flex w-fit items-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-sm font-bold transition hover:bg-white/15"><i class="fa-solid fa-arrow-left text-xs" aria-hidden="true"></i>Back to dashboard</a>
         </div>
     </div>
 
@@ -74,7 +74,7 @@
                 <article class="rounded-3xl bg-sky-950 p-5 text-white shadow-sm">
                     <span class="flex size-10 items-center justify-center rounded-xl bg-orange-600"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span>
                     <h3 class="mt-4 text-lg font-extrabold">Protect your account</h3><p class="mt-2 text-sm leading-6 text-sky-100">Update your password, enable two-factor authentication, or add a passkey.</p>
-                    <a href="{{ route('security.edit') }}" wire:navigate class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-orange-300 hover:text-orange-200">Open security settings <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i></a>
+                    <a href="{{ route('security.edit') }}" class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-orange-300 hover:text-orange-200">Open security settings <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i></a>
                 </article>
             </aside>
         </div>
