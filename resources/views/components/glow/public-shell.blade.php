@@ -41,10 +41,12 @@
             </nav>
 
             <div class="flex shrink-0 items-center gap-2">
-                <a href="{{ route('contact') }}" wire:navigate class="gh-button hidden items-center justify-center gap-2 rounded-xl bg-slate-900 px-4 py-2.5 text-sm text-white shadow-sm transition hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2 sm:inline-flex">
-                    <span>Get in touch</span>
-                    <i class="fa-solid fa-arrow-right text-[0.85rem]" aria-hidden="true"></i>
-                </a>
+                @auth
+                    <a href="{{ route('dashboard') }}" wire:navigate class="hidden items-center justify-center rounded-xl bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 md:inline-flex">Dashboard</a>
+                @else
+                    <a href="{{ route('login') }}" wire:navigate class="hidden items-center justify-center rounded-xl px-3 py-2.5 text-sm font-semibold text-slate-800 transition hover:bg-sky-50 hover:text-sky-800 md:inline-flex">Log in</a>
+                    <a href="{{ route('register') }}" wire:navigate class="hidden items-center justify-center rounded-xl bg-orange-700 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-orange-800 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 md:inline-flex">Sign up</a>
+                @endauth
 
                 <button
                     type="button"
@@ -71,6 +73,14 @@
                             <span>{{ $link['label'] }}</span>
                         </a>
                     @endforeach
+                    <div class="mt-1 grid grid-cols-2 gap-2 border-t border-slate-200 pt-3">
+                        @auth
+                            <a href="{{ route('dashboard') }}" wire:navigate class="col-span-2 rounded-xl bg-slate-900 px-4 py-3 text-center text-sm font-semibold text-white" @click="closeMenu()">Dashboard</a>
+                        @else
+                            <a href="{{ route('login') }}" wire:navigate class="rounded-xl border border-slate-300 bg-white px-4 py-3 text-center text-sm font-semibold text-slate-800" @click="closeMenu()">Log in</a>
+                            <a href="{{ route('register') }}" wire:navigate class="rounded-xl bg-orange-700 px-4 py-3 text-center text-sm font-semibold text-white" @click="closeMenu()">Sign up</a>
+                        @endauth
+                    </div>
                 </nav>
             </div>
         </div>

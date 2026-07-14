@@ -19,6 +19,8 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
  * @property int $id
  * @property string $name
  * @property string $email
+ * @property string $account_type
+ * @property string|null $account_type_other
  * @property Carbon|null $email_verified_at
  * @property string $password
  * @property string|null $two_factor_secret
@@ -28,12 +30,32 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  */
-#[Fillable(['name', 'email', 'password'])]
+#[Fillable(['name', 'email', 'account_type', 'account_type_other', 'password'])]
 #[Hidden(['password', 'two_factor_secret', 'two_factor_recovery_codes', 'remember_token'])]
 class User extends Authenticatable implements PasskeyUser
 {
     /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable, PasskeyAuthenticatable, TwoFactorAuthenticatable;
+
+    /**
+     * Categories people may choose during registration.
+     *
+     * Staff selection describes intent only and never grants staff permissions.
+     *
+     * @return array<string, string>
+     */
+    public static function accountTypes(): array
+    {
+        return [
+            'community_member' => 'Community member',
+            'volunteer' => 'Volunteer',
+            'healthcare_professional' => 'Healthcare professional',
+            'partner_sponsor' => 'Partner or sponsor',
+            'community_representative' => 'Community representative',
+            'staff' => 'Glow Health staff',
+            'other' => 'Other',
+        ];
+    }
 
     /**
      * Get the attributes that should be cast.

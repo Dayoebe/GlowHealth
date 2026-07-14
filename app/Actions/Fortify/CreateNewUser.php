@@ -6,6 +6,7 @@ use App\Concerns\PasswordValidationRules;
 use App\Concerns\ProfileValidationRules;
 use App\Models\User;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
 
 class CreateNewUser implements CreatesNewUsers
@@ -21,12 +22,16 @@ class CreateNewUser implements CreatesNewUsers
     {
         Validator::make($input, [
             ...$this->profileRules(),
+            'account_type' => ['required', 'string', Rule::in(array_keys(User::accountTypes()))],
+            'account_type_other' => ['nullable', 'string', 'max:120', 'required_if:account_type,other'],
             'password' => $this->passwordRules(),
         ])->validate();
 
         return User::create([
             'name' => $input['name'],
             'email' => $input['email'],
+            'account_type' => $input['account_type'],
+            'account_type_other' => $input['account_type'] === 'other' ? $input['account_type_other'] : null,
             'password' => $input['password'],
         ]);
     }

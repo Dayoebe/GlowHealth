@@ -3,12 +3,16 @@
 namespace App\Livewire\Settings;
 
 use App\Concerns\ProfileValidationRules;
+use App\Models\User;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
 use Livewire\Attributes\Computed;
+use Livewire\Attributes\Layout;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 
+#[Layout('layouts.app')]
 #[Title('Profile settings')]
 class Profile extends Component
 {
@@ -18,6 +22,10 @@ class Profile extends Component
 
     public string $email = '';
 
+    public string $account_type = 'community_member';
+
+    public string $account_type_other = '';
+
     /**
      * Mount the component.
      */
@@ -25,6 +33,8 @@ class Profile extends Component
     {
         $this->name = Auth::user()->name;
         $this->email = Auth::user()->email;
+        $this->account_type = Auth::user()->account_type ?? 'community_member';
+        $this->account_type_other = Auth::user()->account_type_other ?? '';
     }
 
     /**
@@ -34,7 +44,15 @@ class Profile extends Component
     {
         $user = Auth::user();
 
-        $validated = $this->validate($this->profileRules($user->id));
+        $validated = $this->validate([
+            ...$this->profileRules($user->id),
+            'account_type' => ['required', 'string', Rule::in(array_keys(User::accountTypes()))],
+            'account_type_other' => ['nullable', 'string', 'max:120', 'required_if:account_type,other'],
+        ]);
+
+        $validated['account_type_other'] = $validated['account_type'] === 'other'
+            ? $validated['account_type_other']
+            : null;
 
         $user->fill($validated);
 

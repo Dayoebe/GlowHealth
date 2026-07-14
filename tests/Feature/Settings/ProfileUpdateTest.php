@@ -16,7 +16,13 @@ class ProfileUpdateTest extends TestCase
     {
         $this->actingAs($user = User::factory()->create());
 
-        $this->get('/settings/profile')->assertOk();
+        $this->get('/settings/profile')
+            ->assertOk()
+            ->assertSee('<main class="min-w-0 flex-1">', false)
+            ->assertSee('href="'.route('profile.edit').'" wire:navigate', false)
+            ->assertSeeText('Your Glow Health profile')
+            ->assertSeeText('Profile summary')
+            ->assertSeeText('Participation role');
     }
 
     public function test_profile_information_can_be_updated(): void
@@ -53,6 +59,27 @@ class ProfileUpdateTest extends TestCase
         $response->assertHasNoErrors();
 
         $this->assertNotNull($user->refresh()->email_verified_at);
+    }
+
+    public function test_participation_role_can_be_updated(): void
+    {
+        $user = User::factory()->create([
+            'account_type' => 'community_member',
+        ]);
+
+        $this->actingAs($user);
+
+        Livewire::test(Profile::class)
+            ->set('account_type', 'other')
+            ->set('account_type_other', 'Community health researcher')
+            ->call('updateProfileInformation')
+            ->assertHasNoErrors();
+
+        $this->assertDatabaseHas('users', [
+            'id' => $user->id,
+            'account_type' => 'other',
+            'account_type_other' => 'Community health researcher',
+        ]);
     }
 
     public function test_user_can_delete_their_account(): void

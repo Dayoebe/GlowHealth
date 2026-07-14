@@ -22,6 +22,8 @@ class PublicPagesTest extends TestCase
             $response = $this->get(route($route))
                 ->assertOk()
                 ->assertSeeText($expectedText)
+                ->assertSeeText('Log in')
+                ->assertSeeText('Sign up')
                 ->assertSeeInOrder(['<header', '<main', '<footer'], false);
 
             $this->assertSame(1, substr_count($response->getContent(), '<header'));

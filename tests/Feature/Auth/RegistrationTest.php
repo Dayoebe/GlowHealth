@@ -21,7 +21,11 @@ class RegistrationTest extends TestCase
     {
         $response = $this->get(route('register'));
 
-        $response->assertOk();
+        $response
+            ->assertOk()
+            ->assertSeeText('Create your account')
+            ->assertSeeText('Community care starts here')
+            ->assertSeeText('Log in to your account');
     }
 
     public function test_new_users_can_register(): void
@@ -29,6 +33,7 @@ class RegistrationTest extends TestCase
         $response = $this->post(route('register.store'), [
             'name' => 'John Doe',
             'email' => 'test@example.com',
+            'account_type' => 'volunteer',
             'password' => 'password',
             'password_confirmation' => 'password',
         ]);
@@ -37,5 +42,49 @@ class RegistrationTest extends TestCase
             ->assertRedirect(route('dashboard', absolute: false));
 
         $this->assertAuthenticated();
+        $this->assertDatabaseHas('users', [
+            'email' => 'test@example.com',
+            'account_type' => 'volunteer',
+            'account_type_other' => null,
+        ]);
+    }
+
+    public function test_other_category_requires_and_stores_a_description(): void
+    {
+        $this->post(route('register.store'), [
+            'name' => 'Community Advocate',
+            'email' => 'advocate@example.com',
+            'account_type' => 'other',
+            'password' => 'password',
+            'password_confirmation' => 'password',
+        ])->assertSessionHasErrors('account_type_other');
+
+        $this->post(route('register.store'), [
+            'name' => 'Community Advocate',
+            'email' => 'advocate@example.com',
+            'account_type' => 'other',
+            'account_type_other' => 'Health education content contributor',
+            'password' => 'password',
+            'password_confirmation' => 'password',
+        ])->assertSessionHasNoErrors();
+
+        $this->assertDatabaseHas('users', [
+            'email' => 'advocate@example.com',
+            'account_type' => 'other',
+            'account_type_other' => 'Health education content contributor',
+        ]);
+    }
+
+    public function test_unknown_account_category_is_rejected(): void
+    {
+        $this->post(route('register.store'), [
+            'name' => 'Unknown Role',
+            'email' => 'unknown@example.com',
+            'account_type' => 'administrator',
+            'password' => 'password',
+            'password_confirmation' => 'password',
+        ])->assertSessionHasErrors('account_type');
+
+        $this->assertGuest();
     }
 }
