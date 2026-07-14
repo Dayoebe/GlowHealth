@@ -1,101 +1,30 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="dark">
-    <head>
-        @include('partials.head')
-    </head>
-    <body class="min-h-screen bg-white dark:bg-zinc-800">
-        <flux:sidebar sticky collapsible="mobile" class="border-e border-zinc-200 bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900">
-            <flux:sidebar.header>
-                <x-app-logo :sidebar="true" href="{{ route('dashboard') }}" wire:navigate />
-                <flux:sidebar.collapse class="lg:hidden" />
-            </flux:sidebar.header>
-
-            <flux:sidebar.nav>
-                <flux:sidebar.group :heading="__('Platform')" class="grid">
-                    <flux:sidebar.item icon="home" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>
-                        {{ __('Dashboard') }}
-                    </flux:sidebar.item>
-                </flux:sidebar.group>
-            </flux:sidebar.nav>
-
-            <flux:spacer />
-
-            <flux:sidebar.nav>
-                <flux:sidebar.item icon="folder-git-2" href="https://github.com/laravel/livewire-starter-kit" target="_blank">
-                    {{ __('Repository') }}
-                </flux:sidebar.item>
-
-                <flux:sidebar.item icon="book-open-text" href="https://laravel.com/docs/starter-kits#livewire" target="_blank">
-                    {{ __('Documentation') }}
-                </flux:sidebar.item>
-            </flux:sidebar.nav>
-
-            <x-desktop-user-menu class="hidden lg:block" :name="auth()->user()->name" />
-        </flux:sidebar>
-
-        <!-- Mobile User Menu -->
-        <flux:header class="lg:hidden">
-            <flux:sidebar.toggle class="lg:hidden" icon="bars-2" inset="left" />
-
-            <flux:spacer />
-
-            <flux:dropdown position="top" align="end">
-                <flux:profile
-                    :initials="auth()->user()->initials()"
-                    icon-trailing="chevron-down"
-                />
-
-                <flux:menu>
-                    <flux:menu.radio.group>
-                        <div class="p-0 text-sm font-normal">
-                            <div class="flex items-center gap-2 px-1 py-1.5 text-start text-sm">
-                                <flux:avatar
-                                    :name="auth()->user()->name"
-                                    :initials="auth()->user()->initials()"
-                                />
-
-                                <div class="grid flex-1 text-start text-sm leading-tight">
-                                    <flux:heading class="truncate">{{ auth()->user()->name }}</flux:heading>
-                                    <flux:text class="truncate">{{ auth()->user()->email }}</flux:text>
-                                </div>
-                            </div>
-                        </div>
-                    </flux:menu.radio.group>
-
-                    <flux:menu.separator />
-
-                    <flux:menu.radio.group>
-                        <flux:menu.item :href="route('profile.edit')" icon="cog" wire:navigate>
-                            {{ __('Settings') }}
-                        </flux:menu.item>
-                    </flux:menu.radio.group>
-
-                    <flux:menu.separator />
-
-                    <form method="POST" action="{{ route('logout') }}" class="w-full">
-                        @csrf
-                        <flux:menu.item
-                            as="button"
-                            type="submit"
-                            icon="arrow-right-start-on-rectangle"
-                            class="w-full cursor-pointer"
-                            data-test="logout-button"
-                        >
-                            {{ __('Log out') }}
-                        </flux:menu.item>
-                    </form>
-                </flux:menu>
-            </flux:dropdown>
-        </flux:header>
-
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" x-data="{ navOpen: false, userOpen: false, notice: '', theme: localStorage.theme || 'system' }" x-init="document.documentElement.classList.toggle('dark', theme === 'dark' || (theme === 'system' && matchMedia('(prefers-color-scheme: dark)').matches)); $watch('theme', value => { localStorage.theme = value; document.documentElement.classList.toggle('dark', value === 'dark' || (value === 'system' && matchMedia('(prefers-color-scheme: dark)').matches)) })" @notify.window="notice = $event.detail.message; setTimeout(() => notice = '', 3500)">
+<head>@include('partials.head')</head>
+<body class="min-h-screen bg-sky-50 text-slate-950 antialiased dark:bg-slate-950 dark:text-white">
+<div x-cloak x-show="notice" x-transition class="fixed right-4 top-4 z-[100] rounded-xl bg-sky-950 px-4 py-3 text-sm font-semibold text-white shadow-xl" x-text="notice"></div>
+<div class="min-h-screen lg:flex">
+    <div x-cloak x-show="navOpen" class="fixed inset-0 z-40 bg-slate-950/60 lg:hidden" @click="navOpen=false"></div>
+    <aside :class="navOpen ? 'translate-x-0' : '-translate-x-full'" class="fixed inset-y-0 left-0 z-50 flex w-72 flex-col border-r border-sky-100 bg-white p-5 transition lg:sticky lg:translate-x-0 dark:border-slate-700 dark:bg-slate-900">
+        <div class="flex items-center justify-between"><x-app-logo href="{{ route('dashboard') }}" wire:navigate/><button class="rounded-lg p-2 lg:hidden" @click="navOpen=false" aria-label="Close menu">✕</button></div>
+        <nav class="mt-10 grid gap-2">
+            <a href="{{ route('dashboard') }}" wire:navigate class="rounded-xl px-4 py-3 font-semibold {{ request()->routeIs('dashboard') ? 'bg-sky-900 text-white' : 'hover:bg-sky-50 dark:hover:bg-slate-800' }}">Dashboard</a>
+            <a href="{{ route('profile.edit') }}" wire:navigate class="rounded-xl px-4 py-3 font-semibold {{ request()->routeIs('profile.edit') ? 'bg-sky-900 text-white' : 'hover:bg-sky-50 dark:hover:bg-slate-800' }}">Settings</a>
+            <a href="{{ route('home') }}" wire:navigate class="rounded-xl px-4 py-3 font-semibold hover:bg-sky-50 dark:hover:bg-slate-800">Public website</a>
+        </nav>
+        <div class="mt-auto border-t border-slate-200 pt-5 dark:border-slate-700">
+            <p class="truncate font-bold">{{ auth()->user()->name }}</p><p class="truncate text-sm text-slate-500">{{ auth()->user()->email }}</p>
+            <form method="POST" action="{{ route('logout') }}" class="mt-4">@csrf <x-ui.button variant="secondary" type="submit" class="w-full" data-test="logout-button">Log out</x-ui.button></form>
+        </div>
+    </aside>
+    <div class="min-w-0 flex-1">
+        <header class="sticky top-0 z-30 flex h-16 items-center justify-between border-b border-sky-100 bg-white/90 px-4 backdrop-blur lg:px-8 dark:border-slate-700 dark:bg-slate-900/90">
+            <button class="rounded-xl border border-slate-200 p-2 lg:hidden dark:border-slate-700" @click="navOpen=true" aria-label="Open menu">☰</button>
+            <p class="font-bold text-sky-950 dark:text-white">{{ $title ?? 'Glow Health' }}</p>
+            <a href="{{ route('profile.edit') }}" wire:navigate class="rounded-full bg-orange-100 px-3 py-2 text-sm font-bold text-orange-800">{{ str(auth()->user()->name)->initials() }}</a>
+        </header>
         {{ $slot }}
-
-        @persist('toast')
-            <flux:toast.group>
-                <flux:toast />
-            </flux:toast.group>
-        @endpersist
-
-        @fluxScripts
-    </body>
+    </div>
+</div>
+</body>
 </html>

@@ -1,5 +1,5 @@
 <x-layouts::app.sidebar :title="__('Outreach Dashboard')">
-    <flux:main>
+    <main class="min-w-0 flex-1">
         <section class="mx-auto flex w-full max-w-7xl flex-col gap-8 px-4 py-6 sm:px-6 lg:px-8">
             <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
                 <div class="max-w-3xl">
@@ -67,5 +67,5 @@
                 </article>
             </div>
         </section>
-    </flux:main>
+    </main>
 </x-layouts::app.sidebar>

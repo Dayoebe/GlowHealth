@@ -1,13 +1,1 @@
-<section class="w-full">
-    @include('partials.settings-heading')
-
-    <flux:heading class="sr-only">{{ __('Appearance settings') }}</flux:heading>
-
-    <x-settings.layout :heading="__('Appearance')" :subheading=" __('Update the appearance settings for your account')">
-        <flux:radio.group x-data variant="segmented" x-model="$flux.appearance">
-            <flux:radio value="light" icon="sun">{{ __('Light') }}</flux:radio>
-            <flux:radio value="dark" icon="moon">{{ __('Dark') }}</flux:radio>
-            <flux:radio value="system" icon="computer-desktop">{{ __('System') }}</flux:radio>
-        </flux:radio.group>
-    </x-settings.layout>
-</section>
+<section class="mx-auto w-full max-w-5xl px-4 py-8 sm:px-6">@include('partials.settings-heading')<x-settings.layout :heading="__('Appearance')" :subheading="__('Choose how the account area looks')"><div x-data="{choice: localStorage.theme || 'system', set(value){this.choice=value;localStorage.theme=value;document.documentElement.classList.toggle('dark',value==='dark'||(value==='system'&&matchMedia('(prefers-color-scheme: dark)').matches))}}" class="mt-6 grid grid-cols-3 gap-2">@foreach(['light'=>'Light','dark'=>'Dark','system'=>'System'] as $value=>$label)<button type="button" @click="set('{{ $value }}')" :class="choice==='{{ $value }}' ? 'bg-sky-900 text-white' : 'border border-slate-300 bg-white dark:border-slate-700 dark:bg-slate-900'" class="rounded-xl px-4 py-3 text-sm font-bold">{{ $label }}</button>@endforeach</div></x-settings.layout></section>
