@@ -28,7 +28,7 @@
             <div class="absolute inset-x-0 top-0 h-1 bg-sky-200" aria-hidden="true"></div>
             <div class="mx-auto grid max-w-7xl gap-8 px-4 pb-12 pt-8 sm:px-6 sm:py-16 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:px-8">
                 <div>
-                    <a href="{{ $homeUrl }}" wire:navigate class="animate__animated animate__fadeIn inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/75 px-3 py-2 text-xs font-semibold text-sky-800 shadow-sm backdrop-blur-xl sm:px-4 sm:text-sm">
+                    <a href="{{ $homeUrl }}" class="animate__animated animate__fadeIn inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/75 px-3 py-2 text-xs font-semibold text-sky-800 shadow-sm backdrop-blur-xl sm:px-4 sm:text-sm">
                         <i class="fa-solid fa-arrow-left text-[0.75rem]" aria-hidden="true"></i>
                         Back to homepage
                     </a>
@@ -43,7 +43,7 @@
                             <span>Register for Care</span>
                             <i class="fa-solid fa-arrow-right text-[0.85rem]" aria-hidden="true"></i>
                         </a>
-                        <a href="{{ $outreachUrl }}" wire:navigate class="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-800 shadow-sm transition hover:-translate-y-0.5 hover:border-sky-300 hover:text-sky-800 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2">
+                        <a href="{{ $outreachUrl }}" class="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-800 shadow-sm transition hover:-translate-y-0.5 hover:border-sky-300 hover:text-sky-800 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2">
                             <i class="fa-solid fa-calendar-check text-[0.9rem]" aria-hidden="true"></i>
                             <span>View Next Outreach</span>
                         </a>
@@ -146,7 +146,7 @@
                     <a href="mailto:chairman@glowfmhealth.com?subject=Register%20for%20Glow%20FM%20Free%20Medical%20Initiative" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition hover:bg-sky-50">
                         Register Now
                     </a>
-                    <a href="{{ $volunteerUrl }}" wire:navigate class="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
+                    <a href="{{ $volunteerUrl }}" class="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
                         Partner or Volunteer
                     </a>
                 </div>

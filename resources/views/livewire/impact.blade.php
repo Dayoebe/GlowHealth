@@ -28,7 +28,7 @@
             <div class="absolute inset-x-0 top-0 h-1 bg-sky-200" aria-hidden="true"></div>
             <div class="mx-auto grid max-w-7xl gap-8 px-4 pb-12 pt-8 sm:px-6 sm:py-16 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:px-8">
                 <div>
-                    <a href="{{ $homeUrl }}" wire:navigate class="inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/75 px-3 py-2 text-xs font-semibold text-sky-800 shadow-sm backdrop-blur-xl sm:px-4 sm:text-sm">
+                    <a href="{{ $homeUrl }}" class="inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/75 px-3 py-2 text-xs font-semibold text-sky-800 shadow-sm backdrop-blur-xl sm:px-4 sm:text-sm">
                         <i class="fa-solid fa-arrow-left text-[0.75rem]" aria-hidden="true"></i>
                         Back to homepage
                     </a>
@@ -43,7 +43,7 @@
                         Glow Health Outreach Initiative tracks reach, service delivery, referrals, and community feedback so partners can see how free healthcare support is changing lives.
                     </p>
                     <div class="mt-7 grid gap-3 sm:flex">
-                        <a href="{{ $outreachUrl }}" wire:navigate class="inline-flex items-center justify-center gap-2 rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-slate-900/10 transition hover:-translate-y-0.5 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2">
+                        <a href="{{ $outreachUrl }}" class="inline-flex items-center justify-center gap-2 rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-slate-900/10 transition hover:-translate-y-0.5 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2">
                             <span>Join the Next Outreach</span>
                             <i class="fa-solid fa-arrow-right text-[0.85rem]" aria-hidden="true"></i>
                         </a>
@@ -191,7 +191,7 @@
                     <a href="mailto:chairman@glowfmhealth.com?subject=Support%20Glow%20Health%20Impact" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition hover:bg-sky-50">
                         Support Impact
                     </a>
-                    <a href="{{ $outreachUrl }}" wire:navigate class="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
+                    <a href="{{ $outreachUrl }}" class="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
                         Join Outreach
                     </a>
                 </div>

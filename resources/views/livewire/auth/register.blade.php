@@ -4,7 +4,7 @@
         <div class="absolute -left-20 top-24 size-64 rounded-full bg-orange-500/20 blur-3xl" aria-hidden="true"></div>
         <div class="absolute -right-16 bottom-10 size-72 rounded-full bg-sky-500/20 blur-3xl" aria-hidden="true"></div>
         <div class="relative flex h-full flex-col">
-            <a href="{{ route('home') }}" wire:navigate class="w-44 rounded-xl bg-white p-2"><img src="{{ asset('glow-health-logo.png') }}" width="940" height="500" alt="Glow Health Outreach Initiative" class="h-auto w-full"></a>
+            <a href="{{ route('home') }}" class="w-44 rounded-xl bg-white p-2"><img src="{{ asset('glow-health-logo.png') }}" width="940" height="500" alt="Glow Health Outreach Initiative" class="h-auto w-full"></a>
             <div class="py-7 sm:my-auto sm:py-10">
                 <p class="inline-flex items-center gap-2 rounded-full border border-orange-300/30 bg-orange-400/10 px-3 py-2 text-xs font-bold uppercase tracking-[0.16em] text-orange-200"><span class="size-2 rounded-full bg-orange-400"></span> Community care starts here</p>
                 <h1 class="mt-6 text-3xl font-extrabold leading-tight sm:text-4xl">One account.<br><span class="text-orange-300">More ways to make an impact.</span></h1>
@@ -73,7 +73,7 @@
             </form>
 
             <div class="my-7 flex items-center gap-3 text-xs uppercase tracking-widest text-slate-400"><span class="h-px flex-1 bg-slate-200"></span>Already a member?<span class="h-px flex-1 bg-slate-200"></span></div>
-            <a href="{{ route('login') }}" wire:navigate class="flex w-full items-center justify-center rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm font-bold text-sky-900 transition hover:border-sky-300 hover:bg-sky-50 dark:border-slate-700 dark:bg-slate-900 dark:text-white">Log in to your account</a>
+            <a href="{{ route('login') }}" class="flex w-full items-center justify-center rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm font-bold text-sky-900 transition hover:border-sky-300 hover:bg-sky-50 dark:border-slate-700 dark:bg-slate-900 dark:text-white">Log in to your account</a>
             <p class="mt-6 text-center text-xs text-slate-500">Your information is used only to manage your account and participation.</p>
         </div>
     </section>

@@ -13,11 +13,15 @@
     );
 @endphp
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>@include('partials.head')</head>
+<head>
+    @include('partials.head')
+    @livewireStyles
+</head>
 <body class="min-h-screen bg-sky-50 text-slate-950 antialiased dark:bg-slate-950 dark:text-white">
-<div x-data="{ navOpen: false, notice: '', theme: localStorage.theme || 'system', noticeTimer: null }" x-init="document.documentElement.classList.toggle('dark', theme === 'dark' || (theme === 'system' && matchMedia('(prefers-color-scheme: dark)').matches)); $watch('theme', value => { localStorage.theme = value; document.documentElement.classList.toggle('dark', value === 'dark' || (value === 'system' && matchMedia('(prefers-color-scheme: dark)').matches)) })" @notify.window="notice = $event.detail.message; clearTimeout(noticeTimer); noticeTimer = setTimeout(() => notice = '', 3500)" class="min-h-screen">
-<div x-cloak x-show="notice" x-transition class="fixed right-4 top-4 z-[100] rounded-xl bg-sky-950 px-4 py-3 text-sm font-semibold text-white shadow-xl" x-text="notice"></div>
-<div class="min-h-screen lg:flex">
+<div x-data="{ notice: '', timer: null }" @notify.window="notice = $event.detail.message; clearTimeout(timer); timer = setTimeout(() => notice = '', 3500)">
+    <div x-cloak x-show="notice" x-transition class="fixed right-4 top-4 z-[100] rounded-xl bg-sky-950 px-4 py-3 text-sm font-semibold text-white shadow-xl" x-text="notice"></div>
+</div>
+<div x-data="{ navOpen: false }" class="min-h-screen lg:flex">
     <div x-cloak x-show="navOpen" class="fixed inset-0 z-40 bg-slate-950/60 lg:hidden" @click="navOpen=false"></div>
     <aside :class="navOpen ? 'translate-x-0' : '-translate-x-full'" class="fixed inset-y-0 left-0 z-50 flex w-72 flex-col border-r border-sky-100 bg-white p-5 transition lg:sticky lg:translate-x-0 dark:border-slate-700 dark:bg-slate-900">
         <div class="flex items-center justify-between"><x-app-logo href="{{ route('dashboard') }}"/><button class="rounded-lg p-2 lg:hidden" @click="navOpen=false" aria-label="Close menu">✕</button></div>
@@ -32,7 +36,7 @@
                         <span class="min-w-0 flex-1 truncate">{{ $group['label'] }}</span>
                         <i class="fa-solid fa-chevron-down text-[0.65rem] text-slate-400 transition-transform" :class="open && 'rotate-180'" aria-hidden="true"></i>
                     </button>
-                    <div x-cloak x-show="open" x-collapse class="mt-1 grid gap-1 pl-3">
+                    <div x-cloak x-show="open" class="mt-1 grid gap-1 pl-3">
                         @foreach ($group['items'] as $item)
                             @php
                                 $hasRoute = isset($item['route']) && \Illuminate\Support\Facades\Route::has($item['route']);
@@ -65,6 +69,6 @@
         {{ $slot }}
     </div>
 </div>
-</div>
+@livewireScripts
 </body>
 </html>

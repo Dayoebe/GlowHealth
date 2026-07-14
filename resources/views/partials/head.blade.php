@@ -24,6 +24,13 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="{{ asset('glow-health-social.png') }}" />
 
+<script>
+    (() => {
+        const theme = localStorage.theme || 'system';
+        document.documentElement.classList.toggle('dark', theme === 'dark' || (theme === 'system' && matchMedia('(prefers-color-scheme: dark)').matches));
+    })();
+</script>
+
 <title>
     {{ $pageTitle }}
 </title>

@@ -28,13 +28,13 @@
 >
     <header class="sticky top-0 z-50 border-b border-white/70 bg-white/80 shadow-lg shadow-slate-900/5 backdrop-blur-2xl">
         <div class="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
-            <a href="{{ route('home') }}" wire:navigate class="flex shrink-0 items-center" aria-label="Glow Health Outreach Initiative home">
+            <a href="{{ route('home') }}" class="flex shrink-0 items-center" aria-label="Glow Health Outreach Initiative home">
                 <img src="{{ $brandLogo }}" width="940" height="500" alt="Glow Health Outreach Initiative" class="h-12 w-28 object-contain sm:h-14 sm:w-36 lg:w-40" loading="eager" fetchpriority="high">
             </a>
 
             <nav class="hidden items-center gap-4 text-sm font-medium text-slate-600 xl:flex" aria-label="Primary navigation">
                 @foreach ($links as $link)
-                    <a href="{{ $link['url'] }}" wire:navigate @if ($active === $link['key']) aria-current="page" @endif class="{{ $active === $link['key'] ? 'font-semibold '.$link['active'] : 'transition '.$link['hover'] }}">
+                    <a href="{{ $link['url'] }}" @if ($active === $link['key']) aria-current="page" @endif class="{{ $active === $link['key'] ? 'font-semibold '.$link['active'] : 'transition '.$link['hover'] }}">
                         {{ $link['label'] }}
                     </a>
                 @endforeach
@@ -42,10 +42,10 @@
 
             <div class="flex shrink-0 items-center gap-2">
                 @auth
-                    <a href="{{ route('dashboard') }}" wire:navigate class="hidden items-center justify-center rounded-xl bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 md:inline-flex">Dashboard</a>
+                    <a href="{{ route('dashboard') }}" class="hidden items-center justify-center rounded-xl bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 md:inline-flex">Dashboard</a>
                 @else
-                    <a href="{{ route('login') }}" wire:navigate class="hidden items-center justify-center rounded-xl px-3 py-2.5 text-sm font-semibold text-slate-800 transition hover:bg-sky-50 hover:text-sky-800 md:inline-flex">Log in</a>
-                    <a href="{{ route('register') }}" wire:navigate class="hidden items-center justify-center rounded-xl bg-orange-700 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-orange-800 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 md:inline-flex">Sign up</a>
+                    <a href="{{ route('login') }}" class="hidden items-center justify-center rounded-xl px-3 py-2.5 text-sm font-semibold text-slate-800 transition hover:bg-sky-50 hover:text-sky-800 md:inline-flex">Log in</a>
+                    <a href="{{ route('register') }}" class="hidden items-center justify-center rounded-xl bg-orange-700 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-orange-800 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 md:inline-flex">Sign up</a>
                 @endauth
 
                 <button
@@ -66,7 +66,7 @@
             <div class="mx-4 mb-3 rounded-[1.5rem] border border-white/70 bg-white/85 p-3 shadow-2xl shadow-slate-900/10 backdrop-blur-2xl" @click.outside="mobileMenuOpen = false">
                 <nav class="grid gap-2" aria-label="Mobile menu">
                     @foreach ($links as $link)
-                        <a href="{{ $link['url'] }}" wire:navigate @if ($active === $link['key']) aria-current="page" @endif class="{{ $active === $link['key'] ? 'bg-sky-50 font-semibold text-slate-900' : 'text-slate-700 hover:bg-sky-50 hover:text-sky-700' }} flex items-center gap-3 rounded-2xl px-3 py-3 text-sm transition" @click="closeMenu()">
+                        <a href="{{ $link['url'] }}" @if ($active === $link['key']) aria-current="page" @endif class="{{ $active === $link['key'] ? 'bg-sky-50 font-semibold text-slate-900' : 'text-slate-700 hover:bg-sky-50 hover:text-sky-700' }} flex items-center gap-3 rounded-2xl px-3 py-3 text-sm transition" @click="closeMenu()">
                             <span class="flex size-10 items-center justify-center rounded-xl bg-white text-sky-700 shadow-sm">
                                 <i class="fa-solid {{ $link['icon'] }} text-lg" aria-hidden="true"></i>
                             </span>
@@ -75,10 +75,10 @@
                     @endforeach
                     <div class="mt-1 grid grid-cols-2 gap-2 border-t border-slate-200 pt-3">
                         @auth
-                            <a href="{{ route('dashboard') }}" wire:navigate class="col-span-2 rounded-xl bg-slate-900 px-4 py-3 text-center text-sm font-semibold text-white" @click="closeMenu()">Dashboard</a>
+                            <a href="{{ route('dashboard') }}" class="col-span-2 rounded-xl bg-slate-900 px-4 py-3 text-center text-sm font-semibold text-white" @click="closeMenu()">Dashboard</a>
                         @else
-                            <a href="{{ route('login') }}" wire:navigate class="rounded-xl border border-slate-300 bg-white px-4 py-3 text-center text-sm font-semibold text-slate-800" @click="closeMenu()">Log in</a>
-                            <a href="{{ route('register') }}" wire:navigate class="rounded-xl bg-orange-700 px-4 py-3 text-center text-sm font-semibold text-white" @click="closeMenu()">Sign up</a>
+                            <a href="{{ route('login') }}" class="rounded-xl border border-slate-300 bg-white px-4 py-3 text-center text-sm font-semibold text-slate-800" @click="closeMenu()">Log in</a>
+                            <a href="{{ route('register') }}" class="rounded-xl bg-orange-700 px-4 py-3 text-center text-sm font-semibold text-white" @click="closeMenu()">Sign up</a>
                         @endauth
                     </div>
                 </nav>
@@ -107,7 +107,7 @@
                 <h3 class="text-lg font-semibold"><span class="text-cyan-200">Page links</span></h3>
                 <div class="mt-5 flex flex-wrap gap-3 text-sm">
                     @foreach ($links as $link)
-                        <a href="{{ $link['url'] }}" wire:navigate class="rounded-full border border-white/10 px-4 py-2 text-slate-200 hover:text-white">{{ $link['label'] }}</a>
+                        <a href="{{ $link['url'] }}" class="rounded-full border border-white/10 px-4 py-2 text-slate-200 hover:text-white">{{ $link['label'] }}</a>
                     @endforeach
                 </div>
             </div>
@@ -120,7 +120,7 @@
     <nav class="fixed inset-x-0 bottom-0 z-50 border-t border-white/70 bg-white/80 px-2 pb-[max(env(safe-area-inset-bottom),0.5rem)] pt-2 shadow-[0_-18px_40px_rgba(15,23,42,0.08)] backdrop-blur-2xl lg:hidden" aria-label="Mobile page tabs">
         <div class="gh-scrollbar mx-auto flex max-w-md gap-1 overflow-x-auto rounded-[1.35rem] border border-white/70 bg-slate-100/70 p-1 text-[0.68rem] font-medium text-slate-500 backdrop-blur-xl">
             @foreach ($links as $link)
-                <a href="{{ $link['url'] }}" wire:navigate @if ($active === $link['key']) aria-current="page" @endif class="{{ $active === $link['key'] ? 'bg-white '.$link['active'].' shadow-sm' : 'hover:bg-white '.$link['hover'] }} flex min-w-[4.2rem] flex-col items-center justify-center gap-1 rounded-2xl px-2 py-2 transition">
+                <a href="{{ $link['url'] }}" @if ($active === $link['key']) aria-current="page" @endif class="{{ $active === $link['key'] ? 'bg-white '.$link['active'].' shadow-sm' : 'hover:bg-white '.$link['hover'] }} flex min-w-[4.2rem] flex-col items-center justify-center gap-1 rounded-2xl px-2 py-2 transition">
                     <i class="fa-solid {{ $link['icon'] }} text-base" aria-hidden="true"></i>
                     <span class="truncate">{{ $link['short'] }}</span>
                 </a>

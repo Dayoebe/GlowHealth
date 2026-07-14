@@ -222,7 +222,7 @@
                         <p class="text-sm leading-7 text-slate-700 sm:text-base">
                             Services are arranged to identify common health risks early, provide immediate guidance, and connect residents to next-step care where needed.
                         </p>
-                        <a href="{{ route('services') }}" wire:navigate class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-emerald-700 hover:text-emerald-800">
+                        <a href="{{ route('services') }}" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-emerald-700 hover:text-emerald-800">
                             <span>View the full services page</span>
                             <i class="fa-solid fa-arrow-right text-[0.8rem]" aria-hidden="true"></i>
                         </a>
@@ -309,7 +309,7 @@
                     <p class="mt-5 text-sm leading-7 text-slate-600">
                         Registered residents receive arrival guidance, queue grouping, and any venue update before the outreach day.
                     </p>
-                    <a href="{{ route('outreach') }}" wire:navigate class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-blue-700 hover:text-blue-800">
+                    <a href="{{ route('outreach') }}" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-blue-700 hover:text-blue-800">
                         <span>View full outreach details</span>
                         <i class="fa-solid fa-arrow-right text-[0.8rem]" aria-hidden="true"></i>
                     </a>
@@ -347,7 +347,7 @@
                         </article>
                     @endforeach
                 </div>
-                <a href="{{ route('impact') }}" wire:navigate class="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-cyan-700 hover:text-cyan-800">
+                <a href="{{ route('impact') }}" class="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-cyan-700 hover:text-cyan-800">
                     <span>Explore the full impact report</span>
                     <i class="fa-solid fa-arrow-right text-[0.8rem]" aria-hidden="true"></i>
                 </a>

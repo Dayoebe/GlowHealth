@@ -9,7 +9,7 @@
             <div class="absolute inset-x-0 top-0 h-1 bg-amber-200" aria-hidden="true"></div>
             <div class="mx-auto grid max-w-7xl gap-8 px-4 pb-12 pt-8 sm:px-6 sm:py-16 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:px-8">
                 <div>
-                    <a href="{{ route('home') }}" wire:navigate class="animate__animated animate__fadeIn inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/75 px-3 py-2 text-xs font-semibold text-sky-800 shadow-sm backdrop-blur-xl sm:px-4 sm:text-sm">
+                    <a href="{{ route('home') }}" class="animate__animated animate__fadeIn inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/75 px-3 py-2 text-xs font-semibold text-sky-800 shadow-sm backdrop-blur-xl sm:px-4 sm:text-sm">
                         <i class="fa-solid fa-arrow-left text-[0.75rem]" aria-hidden="true"></i>
                         Back to homepage
                     </a>
@@ -24,7 +24,7 @@
                             <i class="fa-solid fa-users text-[0.9rem]" aria-hidden="true"></i>
                             <span>Join the Volunteer Team</span>
                         </a>
-                        <a href="{{ route('outreach') }}" wire:navigate class="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-800 shadow-sm transition hover:-translate-y-0.5 hover:border-sky-300 hover:text-sky-800 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2">
+                        <a href="{{ route('outreach') }}" class="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-800 shadow-sm transition hover:-translate-y-0.5 hover:border-sky-300 hover:text-sky-800 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2">
                             <i class="fa-solid fa-calendar-check text-[0.9rem]" aria-hidden="true"></i>
                             <span>View Next Outreach</span>
                         </a>
@@ -123,7 +123,7 @@
                     <a href="mailto:chairman@glowfmhealth.com?subject=Volunteer%20Registration%20-%20Glow%20Health%20Outreach" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition hover:bg-sky-50">
                         Volunteer Registration
                     </a>
-                    <a href="{{ route('partner') }}" wire:navigate class="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
+                    <a href="{{ route('partner') }}" class="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
                         Partner With Us
                     </a>
                 </div>

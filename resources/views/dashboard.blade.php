@@ -110,7 +110,7 @@
                     <h1 class="mt-2 max-w-3xl text-3xl font-extrabold leading-tight sm:text-4xl">{{ $profile['headline'] }}</h1>
                     <p class="mt-4 max-w-3xl text-sm leading-7 text-sky-100 sm:text-base">{{ $profile['description'] }}</p>
                 </div>
-                <a href="{{ route('profile.edit') }}" wire:navigate class="inline-flex w-fit items-center gap-2 rounded-xl bg-orange-700 px-5 py-3 text-sm font-bold text-white transition hover:bg-orange-800"><i class="fa-solid fa-user-pen" aria-hidden="true"></i>Manage profile</a>
+                <a href="{{ route('profile.edit') }}" class="inline-flex w-fit items-center gap-2 rounded-xl bg-orange-700 px-5 py-3 text-sm font-bold text-white transition hover:bg-orange-800"><i class="fa-solid fa-user-pen" aria-hidden="true"></i>Manage profile</a>
             </div>
         </div>
 
@@ -206,7 +206,7 @@
                         <p class="text-xs font-bold uppercase tracking-[0.14em] text-sky-700">Quick actions</p>
                         <div class="mt-4 grid gap-3">
                             @foreach ($profile['actions'] as [$routeName, $label, $icon])
-                                <a href="{{ route($routeName) }}" wire:navigate class="group flex items-center justify-between rounded-2xl border border-slate-200 px-4 py-3.5 font-semibold transition hover:border-orange-200 hover:bg-orange-50 dark:border-slate-700 dark:hover:bg-orange-950/20"><span class="flex items-center gap-3"><i class="fa-solid {{ $icon }} w-5 text-sky-700" aria-hidden="true"></i>{{ $label }}</span><i class="fa-solid fa-arrow-right text-xs text-slate-400 transition group-hover:translate-x-1 group-hover:text-orange-700" aria-hidden="true"></i></a>
+                                <a href="{{ route($routeName) }}" class="group flex items-center justify-between rounded-2xl border border-slate-200 px-4 py-3.5 font-semibold transition hover:border-orange-200 hover:bg-orange-50 dark:border-slate-700 dark:hover:bg-orange-950/20"><span class="flex items-center gap-3"><i class="fa-solid {{ $icon }} w-5 text-sky-700" aria-hidden="true"></i>{{ $label }}</span><i class="fa-solid fa-arrow-right text-xs text-slate-400 transition group-hover:translate-x-1 group-hover:text-orange-700" aria-hidden="true"></i></a>
                             @endforeach
                         </div>
                     </article>
@@ -217,13 +217,13 @@
                             <p class="flex items-center gap-3"><i class="fa-solid fa-calendar-days w-5 text-orange-300" aria-hidden="true"></i>Saturday, July 18, 2026</p>
                             <p class="flex items-center gap-3"><i class="fa-solid fa-clock w-5 text-orange-300" aria-hidden="true"></i>9:00 AM – 3:00 PM</p>
                             <p class="flex items-center gap-3"><i class="fa-solid fa-location-dot w-5 text-orange-300" aria-hidden="true"></i>Akure South, Ondo State</p>
-                            <a href="{{ route('outreach') }}" wire:navigate class="mt-2 inline-flex items-center justify-center rounded-xl bg-orange-700 px-4 py-3 font-bold transition hover:bg-orange-800">View outreach details</a>
+                            <a href="{{ route('outreach') }}" class="mt-2 inline-flex items-center justify-center rounded-xl bg-orange-700 px-4 py-3 font-bold transition hover:bg-orange-800">View outreach details</a>
                         </div>
                     </article>
                 </div>
 
                 <article class="rounded-3xl border border-sky-100 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-slate-900 sm:p-6">
-                    <div class="flex flex-wrap items-end justify-between gap-4"><div><p class="text-xs font-bold uppercase tracking-[0.14em] text-sky-700">Initiative-wide impact</p><h2 class="mt-2 text-2xl font-extrabold text-sky-950 dark:text-white">Care made possible together</h2></div><a href="{{ route('impact') }}" wire:navigate class="text-sm font-bold text-orange-700 hover:underline">See full impact</a></div>
+                    <div class="flex flex-wrap items-end justify-between gap-4"><div><p class="text-xs font-bold uppercase tracking-[0.14em] text-sky-700">Initiative-wide impact</p><h2 class="mt-2 text-2xl font-extrabold text-sky-950 dark:text-white">Care made possible together</h2></div><a href="{{ route('impact') }}" class="text-sm font-bold text-orange-700 hover:underline">See full impact</a></div>
                     <div class="mt-6 grid grid-cols-2 gap-3 lg:grid-cols-4">
                         @foreach ([['5,000+','Residents reached'],['1,500+','Consultations'],['800+','Medications'],['100+','Volunteers']] as [$value,$label])
                             <div class="rounded-2xl bg-sky-50 p-4 dark:bg-slate-800"><p class="text-2xl font-extrabold text-sky-800 dark:text-sky-200">{{ $value }}</p><p class="mt-1 text-xs font-semibold text-slate-600 dark:text-slate-300">{{ $label }}</p></div>
