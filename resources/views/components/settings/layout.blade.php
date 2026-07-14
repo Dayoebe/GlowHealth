@@ -2,7 +2,7 @@
     <div class="w-full">
         <nav class="grid gap-2" aria-label="{{ __('Settings') }}">
             @foreach ([['profile.edit', __('Profile'), 'fa-user'], ['security.edit', __('Security'), 'fa-shield-halved'], ['appearance.edit', __('Appearance'), 'fa-palette']] as [$routeName, $label, $icon])
-                <a href="{{ route($routeName) }}" wire:navigate class="flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold {{ request()->routeIs($routeName) ? 'bg-sky-950 text-white shadow-lg shadow-sky-950/10' : 'text-slate-700 hover:bg-sky-50 dark:text-slate-200 dark:hover:bg-slate-800' }}"><i class="fa-solid {{ $icon }} w-4 text-center {{ request()->routeIs($routeName) ? 'text-orange-300' : 'text-slate-400' }}" aria-hidden="true"></i>{{ $label }}</a>
+                <a href="{{ route($routeName) }}" class="flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold {{ request()->routeIs($routeName) ? 'bg-sky-950 text-white shadow-lg shadow-sky-950/10' : 'text-slate-700 hover:bg-sky-50 dark:text-slate-200 dark:hover:bg-slate-800' }}"><i class="fa-solid {{ $icon }} w-4 text-center {{ request()->routeIs($routeName) ? 'text-orange-300' : 'text-slate-400' }}" aria-hidden="true"></i>{{ $label }}</a>
             @endforeach
         </nav>
     </div>
