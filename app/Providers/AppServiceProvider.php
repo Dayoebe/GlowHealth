@@ -25,6 +25,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Gate::define('manage-platform', fn ($user): bool => $user->is_super_admin);
+        Gate::define('access-administration', fn ($user): bool => $user->is_super_admin || $user->is_admin);
+        Gate::define('manage-administrators', fn ($user): bool => $user->is_super_admin);
 
         $this->configureDefaults();
     }

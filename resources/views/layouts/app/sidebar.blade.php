@@ -3,10 +3,12 @@
     $signedInUser = auth()->user();
     $signedInRole = $signedInUser->is_super_admin
         ? 'Super administrator'
+        : ($signedInUser->is_admin
+        ? 'Administrator'
         : ($signedInUser->account_type === 'other'
         ? ($signedInUser->account_type_other ?: 'Other participant')
-        : (\App\Models\User::accountTypes()[$signedInUser->account_type] ?? 'Community member'));
-    $navigationRole = $signedInUser->is_super_admin ? 'super_admin' : $signedInUser->account_type;
+        : (\App\Models\User::accountTypes()[$signedInUser->account_type] ?? 'Community member')));
+    $navigationRole = $signedInUser->is_super_admin ? 'super_admin' : ($signedInUser->is_admin ? 'admin' : $signedInUser->account_type);
     $navigationGroups = array_merge(
         config('navigation.shared', []),
         config("navigation.roles.{$navigationRole}", config('navigation.roles.other', [])),

@@ -20,7 +20,7 @@ Route::livewire('/volunteer', Volunteer::class)->name('volunteer');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('dashboard', 'dashboard')->name('dashboard');
-    Route::livewire('admin', AdminIndex::class)->middleware('can:manage-platform')->name('admin.index');
+    Route::livewire('admin', AdminIndex::class)->middleware('can:access-administration')->name('admin.index');
 });
 
 require __DIR__.'/settings.php';

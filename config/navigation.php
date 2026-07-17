@@ -185,6 +185,34 @@ return [
                 ['label' => 'Outreach attendance', 'icon' => 'fa-calendar-check', 'route' => 'outreach'],
             ]],
         ],
+        'admin' => [
+            ['label' => 'Administration', 'icon' => 'fa-user-shield', 'items' => [
+                ['label' => 'Admin control centre', 'icon' => 'fa-gauge-high', 'route' => 'admin.index'],
+                ['label' => 'Assigned tasks', 'icon' => 'fa-list-check', 'href' => '#'],
+                ['label' => 'Administrative activity', 'icon' => 'fa-clock-rotate-left', 'href' => '#'],
+            ]],
+            ['label' => 'Outreach operations', 'icon' => 'fa-truck-medical', 'items' => [
+                ['label' => 'All outreaches', 'icon' => 'fa-calendar-days', 'href' => '#'],
+                ['label' => 'Registrations', 'icon' => 'fa-clipboard-list', 'href' => '#'],
+                ['label' => 'Teams and assignments', 'icon' => 'fa-people-group', 'href' => '#'],
+                ['label' => 'Venues and logistics', 'icon' => 'fa-truck', 'href' => '#'],
+                ['label' => 'Inventory and supplies', 'icon' => 'fa-boxes-stacked', 'href' => '#'],
+                ['label' => 'Incident reports', 'icon' => 'fa-triangle-exclamation', 'href' => '#'],
+            ]],
+            ['label' => 'People and programmes', 'icon' => 'fa-people-group', 'items' => [
+                ['label' => 'Community members', 'icon' => 'fa-house-user', 'href' => '#'],
+                ['label' => 'Volunteers', 'icon' => 'fa-hand-holding-medical', 'href' => '#'],
+                ['label' => 'Healthcare professionals', 'icon' => 'fa-user-doctor', 'href' => '#'],
+                ['label' => 'Community representatives', 'icon' => 'fa-people-roof', 'href' => '#'],
+                ['label' => 'Partners and sponsors', 'icon' => 'fa-handshake', 'href' => '#'],
+            ]],
+            ['label' => 'Communication and reports', 'icon' => 'fa-chart-line', 'items' => [
+                ['label' => 'Announcements', 'icon' => 'fa-bullhorn', 'href' => '#'],
+                ['label' => 'Notifications', 'icon' => 'fa-bell', 'href' => '#'],
+                ['label' => 'Outreach reports', 'icon' => 'fa-file-lines', 'href' => '#'],
+                ['label' => 'Community impact', 'icon' => 'fa-chart-line', 'route' => 'impact'],
+            ]],
+        ],
         'super_admin' => [
             ['label' => 'Control centre', 'icon' => 'fa-shield-halved', 'items' => [
                 ['label' => 'Super-admin dashboard', 'icon' => 'fa-gauge-high', 'route' => 'admin.index'],

@@ -2,9 +2,11 @@
     $user = auth()->user();
     $roleLabel = $user->is_super_admin
         ? 'Super administrator'
+        : ($user->is_admin
+        ? 'Administrator'
         : ($user->account_type === 'other'
         ? ($user->account_type_other ?: 'Other participant')
-        : (\App\Models\User::accountTypes()[$user->account_type] ?? 'Community member'));
+        : (\App\Models\User::accountTypes()[$user->account_type] ?? 'Community member')));
     $assignedTasks = \App\Models\DelegatedTask::query()->where('assigned_to', $user->id)->latest()->limit(6)->get();
 
     $roleProfiles = [
@@ -88,8 +90,10 @@
     ];
 
     $profile = $roleProfiles[$user->account_type] ?? $roleProfiles['community_member'];
-    $accountStatus = $user->is_super_admin ? 'Full platform authority' : ($user->account_type === 'staff' ? 'Awaiting staff verification' : 'Active member');
-    $statusClasses = $user->account_type === 'staff' && ! $user->is_super_admin
+    $accountStatus = $user->is_super_admin
+        ? 'Full platform authority'
+        : ($user->is_admin ? 'Administrative access' : ($user->account_type === 'staff' ? 'Awaiting staff verification' : 'Active member'));
+    $statusClasses = $user->account_type === 'staff' && ! $user->is_super_admin && ! $user->is_admin
         ? 'border-orange-200 bg-orange-50 text-orange-800'
         : 'border-emerald-200 bg-emerald-50 text-emerald-800';
 @endphp

@@ -2,11 +2,48 @@
     <section class="mx-auto grid w-full max-w-7xl gap-6 px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
         <header class="overflow-hidden rounded-[2rem] bg-sky-950 p-6 text-white shadow-xl sm:p-8">
             <p class="text-xs font-bold uppercase tracking-[0.16em] text-orange-300">Restricted administration</p>
-            <h1 class="mt-3 text-3xl font-extrabold sm:text-4xl">Super admin control centre</h1>
-            <p class="mt-3 max-w-3xl leading-7 text-sky-100">Approve participation-role changes, delegate work, and oversee Glow Health accounts from one protected workspace.</p>
+            <h1 class="mt-3 text-3xl font-extrabold sm:text-4xl">{{ auth()->user()->is_super_admin ? 'Super admin control centre' : 'Administration control centre' }}</h1>
+            <p class="mt-3 max-w-3xl leading-7 text-sky-100">{{ auth()->user()->is_super_admin ? 'Manage administrators, approve participation-role changes, delegate work, and oversee Glow Health accounts.' : 'Coordinate delegated work and support Glow Health operations from your authorised workspace.' }}</p>
         </header>
 
+        @if (auth()->user()->is_super_admin)
+            <article class="rounded-3xl border border-orange-200 bg-gradient-to-br from-orange-50 to-white p-5 shadow-sm dark:border-orange-900/40 dark:from-orange-950/20 dark:to-slate-900 sm:p-6">
+                <div class="grid gap-6 xl:grid-cols-[1fr_1.1fr] xl:items-end">
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-[0.14em] text-orange-700">Privilege management</p>
+                        <h2 class="mt-2 text-2xl font-extrabold text-sky-950 dark:text-white">Elevate or downgrade a user</h2>
+                        <p class="mt-3 max-w-xl text-sm leading-6 text-slate-600 dark:text-slate-300">Administrators can operate the administration workspace. Super administrators can additionally approve role changes and manage other administrators.</p>
+                        <div class="mt-4 flex flex-wrap gap-2 text-xs font-bold">
+                            <span class="rounded-full bg-slate-100 px-3 py-1.5 text-slate-700 dark:bg-slate-800 dark:text-slate-200">User: normal account access</span>
+                            <span class="rounded-full bg-sky-100 px-3 py-1.5 text-sky-800">Admin: operational access</span>
+                            <span class="rounded-full bg-orange-100 px-3 py-1.5 text-orange-800">Super admin: full authority</span>
+                        </div>
+                    </div>
+                    <form wire:submit="updatePrivilege" class="grid gap-4 rounded-2xl border border-orange-100 bg-white p-4 dark:border-slate-700 dark:bg-slate-900 sm:grid-cols-2">
+                        <label class="grid gap-2 text-sm font-bold sm:col-span-2">Select user
+                            <select wire:model="privilege_user" class="rounded-xl border border-slate-300 bg-white px-4 py-3 dark:border-slate-600 dark:bg-slate-800">
+                                <option value="">Choose a user</option>
+                                @foreach ($privilegeUsers as $member)
+                                    <option value="{{ $member->id }}">{{ $member->name }} — {{ $member->email }} ({{ $member->is_super_admin ? 'Super admin' : ($member->is_admin ? 'Admin' : 'User') }})</option>
+                                @endforeach
+                            </select>
+                            @error('privilege_user')<span class="text-xs text-red-600">{{ $message }}</span>@enderror
+                        </label>
+                        <label class="grid gap-2 text-sm font-bold">Privilege level
+                            <select wire:model="privilege_level" class="rounded-xl border border-slate-300 bg-white px-4 py-3 dark:border-slate-600 dark:bg-slate-800">
+                                <option value="user">User</option>
+                                <option value="admin">Administrator</option>
+                                <option value="super_admin">Super administrator</option>
+                            </select>
+                        </label>
+                        <button wire:confirm="Apply this privilege change?" class="self-end rounded-xl bg-orange-700 px-5 py-3 font-bold text-white transition hover:bg-orange-800">Update privilege</button>
+                    </form>
+                </div>
+            </article>
+        @endif
+
         <div class="grid gap-6 xl:grid-cols-[1.15fr_.85fr]">
+            @if (auth()->user()->is_super_admin)
             <article class="rounded-3xl border border-sky-100 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-slate-900 sm:p-6">
                 <div class="flex items-center justify-between gap-3">
                     <div><p class="text-xs font-bold uppercase tracking-wider text-orange-700">Approval queue</p><h2 class="mt-2 text-2xl font-extrabold text-sky-950 dark:text-white">Role-change requests</h2></div>
@@ -25,6 +62,7 @@
                     @endforelse
                 </div>
             </article>
+            @endif
 
             <article class="rounded-3xl border border-orange-100 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-slate-900 sm:p-6">
                 <p class="text-xs font-bold uppercase tracking-wider text-orange-700">Team coordination</p><h2 class="mt-2 text-2xl font-extrabold text-sky-950 dark:text-white">Delegate a task</h2>
