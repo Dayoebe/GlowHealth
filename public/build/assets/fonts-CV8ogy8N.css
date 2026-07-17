@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/build/assets/ubuntu-400-normal-CQJ26Fy6.woff2") format("woff2"),
+    url("/build/assets/ubuntu-400-normal-ChuJk2Dr.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/build/assets/ubuntu-500-normal-CnjGCQfM.woff2") format("woff2"),
+    url("/build/assets/ubuntu-500-normal-BMp9VhBY.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/build/assets/montserrat-800-normal-axpkC1rd.woff2") format("woff2"),
+    url("/build/assets/montserrat-800-normal-C3dfDxXV.woff") format("woff");
+}
+
+:root {
+  --font-ubuntu: "Ubuntu", "Ubuntu fallback";
+  --font-montserrat: "Montserrat", "Montserrat fallback";
+}
+
+.font-ubuntu {
+  font-family: var(--font-ubuntu);
+}
+
+.font-montserrat {
+  font-family: var(--font-montserrat);
+}

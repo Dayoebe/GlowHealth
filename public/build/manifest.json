@@ -1,0 +1,58 @@
+{
+  "_fonts-CV8ogy8N.css": {
+    "file": "assets/fonts-CV8ogy8N.css",
+    "src": "_fonts-CV8ogy8N.css"
+  },
+  "_montserrat-800-normal-C3dfDxXV.woff": {
+    "file": "assets/montserrat-800-normal-C3dfDxXV.woff",
+    "src": "_montserrat-800-normal-C3dfDxXV.woff"
+  },
+  "_montserrat-800-normal-axpkC1rd.woff2": {
+    "file": "assets/montserrat-800-normal-axpkC1rd.woff2",
+    "src": "_montserrat-800-normal-axpkC1rd.woff2"
+  },
+  "_ubuntu-400-normal-CQJ26Fy6.woff2": {
+    "file": "assets/ubuntu-400-normal-CQJ26Fy6.woff2",
+    "src": "_ubuntu-400-normal-CQJ26Fy6.woff2"
+  },
+  "_ubuntu-400-normal-ChuJk2Dr.woff": {
+    "file": "assets/ubuntu-400-normal-ChuJk2Dr.woff",
+    "src": "_ubuntu-400-normal-ChuJk2Dr.woff"
+  },
+  "_ubuntu-500-normal-BMp9VhBY.woff": {
+    "file": "assets/ubuntu-500-normal-BMp9VhBY.woff",
+    "src": "_ubuntu-500-normal-BMp9VhBY.woff"
+  },
+  "_ubuntu-500-normal-CnjGCQfM.woff2": {
+    "file": "assets/ubuntu-500-normal-CnjGCQfM.woff2",
+    "src": "_ubuntu-500-normal-CnjGCQfM.woff2"
+  },
+  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2": {
+    "file": "assets/fa-solid-900-DRAAbZTg.woff2",
+    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-DuLaeSoV.css",
+    "name": "app",
+    "names": [
+      "app.css"
+    ],
+    "src": "resources/css/app.css",
+    "isEntry": true,
+    "assets": [
+      "assets/fa-solid-900-DRAAbZTg.woff2"
+    ]
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-DT3GSBHC.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/js/passkeys.js": {
+    "file": "assets/passkeys-ZWACIUjA.js",
+    "name": "passkeys",
+    "src": "resources/js/passkeys.js",
+    "isEntry": true
+  }
+}

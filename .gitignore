@@ -1,6 +1,7 @@
 /.phpunit.cache
 /node_modules
-/public/build
+# Shared hosting does not run Node/Vite during deployment. Keep the production
+# Vite manifest and hashed assets in the repository so @vite() can load them.
 /public/fonts-manifest.dev.json
 /public/hot
 /public/storage

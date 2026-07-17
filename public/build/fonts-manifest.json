@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "style": {
+    "file": "assets/fonts-CV8ogy8N.css",
+    "familyStyles": {
+      "ubuntu": "@font-face {\n  font-family: \"Ubuntu\";\n  font-style: normal;\n  font-weight: 400;\n  font-display: swap;\n  src: url(\"/build/assets/ubuntu-400-normal-CQJ26Fy6.woff2\") format(\"woff2\"),\n    url(\"/build/assets/ubuntu-400-normal-ChuJk2Dr.woff\") format(\"woff\");\n}\n\n@font-face {\n  font-family: \"Ubuntu\";\n  font-style: normal;\n  font-weight: 500;\n  font-display: swap;\n  src: url(\"/build/assets/ubuntu-500-normal-CnjGCQfM.woff2\") format(\"woff2\"),\n    url(\"/build/assets/ubuntu-500-normal-BMp9VhBY.woff\") format(\"woff\");\n}\n\n.font-ubuntu {\n  font-family: var(--font-ubuntu);\n}",
+      "montserrat": "@font-face {\n  font-family: \"Montserrat\";\n  font-style: normal;\n  font-weight: 800;\n  font-display: swap;\n  src: url(\"/build/assets/montserrat-800-normal-axpkC1rd.woff2\") format(\"woff2\"),\n    url(\"/build/assets/montserrat-800-normal-C3dfDxXV.woff\") format(\"woff\");\n}\n\n.font-montserrat {\n  font-family: var(--font-montserrat);\n}"
+    },
+    "variables": {
+      "ubuntu": "--font-ubuntu: \"Ubuntu\", \"Ubuntu fallback\";",
+      "montserrat": "--font-montserrat: \"Montserrat\", \"Montserrat fallback\";"
+    }
+  },
+  "preloads": [],
+  "families": {
+    "ubuntu": {
+      "family": "Ubuntu",
+      "variable": "--font-ubuntu",
+      "fallbackFamily": "Ubuntu fallback",
+      "variants": {
+        "400:normal": {
+          "files": [
+            {
+              "file": "assets/ubuntu-400-normal-CQJ26Fy6.woff2",
+              "format": "woff2"
+            },
+            {
+              "file": "assets/ubuntu-400-normal-ChuJk2Dr.woff",
+              "format": "woff"
+            }
+          ]
+        },
+        "500:normal": {
+          "files": [
+            {
+              "file": "assets/ubuntu-500-normal-CnjGCQfM.woff2",
+              "format": "woff2"
+            },
+            {
+              "file": "assets/ubuntu-500-normal-BMp9VhBY.woff",
+              "format": "woff"
+            }
+          ]
+        }
+      }
+    },
+    "montserrat": {
+      "family": "Montserrat",
+      "variable": "--font-montserrat",
+      "fallbackFamily": "Montserrat fallback",
+      "variants": {
+        "800:normal": {
+          "files": [
+            {
+              "file": "assets/montserrat-800-normal-axpkC1rd.woff2",
+              "format": "woff2"
+            },
+            {
+              "file": "assets/montserrat-800-normal-C3dfDxXV.woff",
+              "format": "woff"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
