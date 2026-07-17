@@ -66,6 +66,7 @@ class User extends Authenticatable implements PasskeyUser
     {
         return [
             'email_verified_at' => 'datetime',
+            'is_admin' => 'boolean',
             'is_super_admin' => 'boolean',
             'password' => 'hashed',
             'role_change_requested_at' => 'datetime',
