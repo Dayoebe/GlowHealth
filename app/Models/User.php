@@ -21,6 +21,11 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
  * @property string $email
  * @property string $account_type
  * @property string|null $account_type_other
+ * @property bool $is_admin
+ * @property bool $is_super_admin
+ * @property string|null $requested_account_type
+ * @property string|null $requested_account_type_other
+ * @property Carbon|null $role_change_requested_at
  * @property Carbon|null $email_verified_at
  * @property string $password
  * @property string|null $two_factor_secret

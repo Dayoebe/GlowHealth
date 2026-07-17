@@ -53,7 +53,10 @@ class Profile extends Component
         $requestedRole = $validated['account_type'];
         $requestedOther = $requestedRole === 'other' ? $validated['account_type_other'] : null;
 
-        $user->fill(collect($validated)->only(['name', 'email'])->all());
+        $user->fill([
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+        ]);
 
         if (! $user->is_super_admin && ($requestedRole !== $user->account_type || $requestedOther !== $user->account_type_other)) {
             $user->requested_account_type = $requestedRole;

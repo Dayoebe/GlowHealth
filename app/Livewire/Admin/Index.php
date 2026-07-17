@@ -5,6 +5,7 @@ namespace App\Livewire\Admin;
 use App\Models\DelegatedTask;
 use App\Models\User;
 use App\Notifications\TaskAssigned;
+use Illuminate\View\View;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Title;
 use Livewire\Component;
@@ -67,14 +68,15 @@ class Index extends Component
             'privilege_level' => ['required', 'in:user,admin,super_admin'],
         ]);
 
-        $user = User::query()->findOrFail($validated['privilege_user']);
+        $user = User::query()->findOrFail((int) $validated['privilege_user']);
+        $privilegeLevel = (string) $validated['privilege_level'];
 
         abort_if($user->email === 'super@admin.com', 422, 'The root super administrator cannot be downgraded.');
-        abort_if($user->is(auth()->user()), 422, 'You cannot change your own administrative privilege.');
+        abort_if($user->is($this->authenticatedUser()), 422, 'You cannot change your own administrative privilege.');
 
         $user->forceFill([
-            'is_admin' => $validated['privilege_level'] === 'admin',
-            'is_super_admin' => $validated['privilege_level'] === 'super_admin',
+            'is_admin' => $privilegeLevel === 'admin',
+            'is_super_admin' => $privilegeLevel === 'super_admin',
         ])->save();
 
         $this->reset('privilege_user');
@@ -91,19 +93,23 @@ class Index extends Component
             'due_at' => ['nullable', 'date', 'after_or_equal:today'],
         ]);
 
+        $assigner = $this->authenticatedUser();
+        $assignee = User::query()->findOrFail((int) $validated['assigned_to']);
+
         $task = DelegatedTask::create([
-            'assigned_by' => auth()->id(),
-            'assigned_to' => $validated['assigned_to'],
+            'assigned_by' => $assigner->id,
+            'assigned_to' => $assignee->id,
             'title' => $validated['task_title'],
             'description' => $validated['task_description'] ?: null,
             'due_at' => $validated['due_at'] ?: null,
         ]);
 
-        $task->load(['assignee', 'assigner']);
+        $task->setRelation('assignee', $assignee);
+        $task->setRelation('assigner', $assigner);
 
         try {
-            $task->assignee->notify(new TaskAssigned($task));
-            $message = "Task delegated and notification email sent to {$task->assignee->email}.";
+            $assignee->notify(new TaskAssigned($task));
+            $message = "Task delegated and notification email sent to {$assignee->email}.";
         } catch (Throwable $exception) {
             report($exception);
             $message = 'Task delegated, but the notification email could not be sent. Please check the mail configuration.';
@@ -113,15 +119,26 @@ class Index extends Component
         $this->dispatch('notify', message: $message);
     }
 
-    public function render()
+    public function render(): View
     {
+        $user = $this->authenticatedUser();
+
         return view('livewire.admin.index', [
-            'users' => User::query()->whereKeyNot(auth()->id())->orderBy('name')->get(),
-            'privilegeUsers' => User::query()->where('email', '!=', 'super@admin.com')->whereKeyNot(auth()->id())->orderBy('name')->get(),
-            'roleRequests' => auth()->user()->is_super_admin
+            'users' => User::query()->whereKeyNot($user->id)->orderBy('name')->get(),
+            'privilegeUsers' => User::query()->where('email', '!=', 'super@admin.com')->whereKeyNot($user->id)->orderBy('name')->get(),
+            'roleRequests' => $user->is_super_admin
                 ? User::query()->whereNotNull('requested_account_type')->oldest('role_change_requested_at')->get()
                 : collect(),
             'tasks' => DelegatedTask::query()->with(['assignee', 'assigner'])->latest()->limit(12)->get(),
         ]);
+    }
+
+    private function authenticatedUser(): User
+    {
+        $user = auth()->user();
+
+        abort_unless($user instanceof User, 401);
+
+        return $user;
     }
 }

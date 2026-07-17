@@ -3,6 +3,7 @@
 namespace App\Notifications;
 
 use App\Models\DelegatedTask;
+use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
@@ -23,6 +24,10 @@ class TaskAssigned extends Notification
 
     public function toMail(object $notifiable): MailMessage
     {
+        if (! $notifiable instanceof User) {
+            throw new \InvalidArgumentException('Task assignment notifications require a user recipient.');
+        }
+
         $assigner = $this->task->assigner;
 
         $message = (new MailMessage)
@@ -40,7 +45,7 @@ class TaskAssigned extends Notification
         }
 
         return $message
-            ->line('Assigned by: '.($assigner?->name ?? 'Glow Health Administration'))
+            ->line('Assigned by: '.$assigner->name)
             ->action('View my task', route('dashboard'))
             ->line('Please sign in to your dashboard to review the assignment and prepare for completion.')
             ->salutation('Glow Health Outreach Initiative');
